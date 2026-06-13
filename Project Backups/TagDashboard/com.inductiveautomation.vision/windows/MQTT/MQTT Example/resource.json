@@ -1,0 +1,20 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "thumbnail.png",
+    "window.bin"
+  ],
+  "attributes": {
+    "xml-format-version": 1,
+    "lastModificationSignature": "1fd3bd2704e6775c28fb940aed7fe63042f03af5feca075c3cdfc627a6dd6ae7",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2021-08-03T16:59:32Z"
+    },
+    "open-on-start": true,
+    "parameter-names": "AuditTableName"
+  }
+}

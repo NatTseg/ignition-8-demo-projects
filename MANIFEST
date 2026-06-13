@@ -1,0 +1,8 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"name": "Ignition 8 Demo Projects",
+	"ignition-version": "8.1.25",
+	"version": "1.0.0",
+	"modules": [{"name": "com.inductiveautomation.alarm-notification"},{"name": "com.inductiveautomation.opcua"},{"name": "com.inductiveautomation.reporting"},{"name": "com.inductiveautomation.sqlbridge"},{"name": "com.inductiveautomation.vision.web-browser"},{"name": "com.inductiveautomation.sfc"},{"name": "com.inductiveautomation.perspective"},{"name": "com.inductiveautomation.webdev"},{"name": "com.inductiveautomation.vision"},{"name": "com.inductiveautomation.taghistorian"}]
+
+}

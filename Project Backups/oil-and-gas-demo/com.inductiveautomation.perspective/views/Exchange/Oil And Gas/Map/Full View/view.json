@@ -1,0 +1,53 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {
+    "params.loaded": {
+      "binding": {
+        "config": {
+          "expression": "true"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    },
+    "params.title": {
+      "binding": {
+        "config": {
+          "expression": "\"Map\""
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "320px",
+          "grow": 1
+        },
+        "props": {
+          "params": {
+            "loaded": true,
+            "title": "Map"
+          },
+          "path": "Exchange/Oil And Gas/Map/Mobile View"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

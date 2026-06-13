@@ -1,0 +1,1027 @@
+{
+  "custom": {
+    "stroke": "rgba(0,0,0,1"
+  },
+  "params": {
+    "site": "Site A"
+  },
+  "propConfig": {
+    "custom.stroke": {
+      "onChange": {
+        "enabled": null,
+        "script": "\troot \u003d self.getChild(\"root\")\n\tdrawing \u003d root.getChild(\"Valve\")\n\t\n\tdef setElementsStroke(elements, stroke):\n\t\t\tfor i in range(len(elements)):\n\t\t\t\ttry:\n\t\t\t\t\tsetElementsStroke(elements[i].elements, stroke)\n\t\t\t\texcept:\n\t\t\t\t\telements[i][\u0027stroke\u0027] \u003d stroke\n\t\t\t\n\tsetElementsStroke(drawing.props.elements, currentValue)\n"
+      },
+      "persistent": true
+    },
+    "params.site": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 70,
+      "width": 70
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Valve"
+        },
+        "position": {
+          "height": 60,
+          "width": 60
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M29.391,64.302c0,0,0.556,5.761-0.901,8.446c-0.812,1.496-3.043,3.564-5.63,3.828   C19.601,76.908,9.797,77.59,9.797,77.59v19.819c0,0,11.9,0.091,15.09,1.464c3.958,1.704,4.392,5.067,4.392,5.067l0.112,8.558h25   v-7.207c0,0-0.012-3.229,3.379-5.742c2.428-1.799,16.215-2.14,16.215-2.14V77.59c0,0-8.788-0.556-11.599-0.789   c-3.626-0.301-5.636-2.27-6.193-2.928c-2.433-2.873-1.802-9.571-1.802-9.571H29.391z",
+                  "fill": {
+                    "paint": {
+                      "cx": "41.8906",
+                      "cy": "88.4004",
+                      "gradientUnits": "userSpaceOnUse",
+                      "r": "28.3787",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "0.14",
+                          "style": {
+                            "stopColor": "#DDDDDD"
+                          }
+                        },
+                        {
+                          "offset": "0.4",
+                          "style": {
+                            "stopColor": "#B8B8B8"
+                          }
+                        },
+                        {
+                          "offset": "0.75",
+                          "style": {
+                            "stopColor": "#7C7C7C"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#4D4D4D"
+                          }
+                        }
+                      ],
+                      "type": "radial"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_BodyAndPort",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M82.093,108.895h-8.108V66.104h8.108V108.895z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "78.0391",
+                      "x2": "78.0391",
+                      "y1": "108.8945",
+                      "y2": "66.1035"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M82.093,73.986h1.802v26.801h-1.802V73.986z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#3B3B3B"
+                          }
+                        },
+                        {
+                          "offset": "0.25",
+                          "style": {
+                            "stopColor": "#757575"
+                          }
+                        },
+                        {
+                          "offset": "0.42",
+                          "style": {
+                            "stopColor": "#989898"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.69",
+                          "style": {
+                            "stopColor": "#818181"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "82.9941",
+                      "x2": "82.9941",
+                      "y1": "100.7871",
+                      "y2": "73.9863"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port2",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M9.797,108.895H1.689V66.104h8.108V108.895z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "5.7427",
+                      "x2": "5.7427",
+                      "y1": "108.8945",
+                      "y2": "66.1035"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M0,73.986h1.689v26.801H0V73.986z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#3B3B3B"
+                          }
+                        },
+                        {
+                          "offset": "0.25",
+                          "style": {
+                            "stopColor": "#757575"
+                          }
+                        },
+                        {
+                          "offset": "0.42",
+                          "style": {
+                            "stopColor": "#989898"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.69",
+                          "style": {
+                            "stopColor": "#818181"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "0.8442",
+                      "x2": "0.8442",
+                      "y1": "100.7871",
+                      "y2": "73.9863"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M65.201,10.474h16.892v18.018H65.201V10.474z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#3B3B3B"
+                          }
+                        },
+                        {
+                          "offset": "0.25",
+                          "style": {
+                            "stopColor": "#757575"
+                          }
+                        },
+                        {
+                          "offset": "0.42",
+                          "style": {
+                            "stopColor": "#989898"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.69",
+                          "style": {
+                            "stopColor": "#818181"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "73.6465",
+                      "x2": "73.6465",
+                      "y1": "28.4917",
+                      "y2": "10.4741"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#3B3B3B"
+                          }
+                        },
+                        {
+                          "offset": "0.25",
+                          "style": {
+                            "stopColor": "#757575"
+                          }
+                        },
+                        {
+                          "offset": "0.42",
+                          "style": {
+                            "stopColor": "#989898"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.69",
+                          "style": {
+                            "stopColor": "#818181"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "73.6465",
+                      "x2": "73.6465",
+                      "y1": "39.3022",
+                      "y2": "0.0015"
+                    }
+                  },
+                  "name": "polygon",
+                  "points": "75.787,7.096 75.787,0.001 73.084,0.001 70.606,0.001 70.606,39.302 73.084,39.302    75.787,39.302 75.787,32.095 76.688,32.095 76.688,7.096  ",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "polygon"
+                },
+                {
+                  "d": "M62.865,7.096h2.336v25h-2.336V7.096z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#3B3B3B"
+                          }
+                        },
+                        {
+                          "offset": "0.25",
+                          "style": {
+                            "stopColor": "#757575"
+                          }
+                        },
+                        {
+                          "offset": "0.42",
+                          "style": {
+                            "stopColor": "#989898"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.69",
+                          "style": {
+                            "stopColor": "#818181"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "64.0332",
+                      "x2": "64.0332",
+                      "y1": "32.0952",
+                      "y2": "7.0957"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M75.787,37.5h0.9v-2.703h-0.9V37.5z",
+                  "fill": {
+                    "paint": "#4C4C4C"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M75.787,14.078h0.9v-2.703h-0.9V14.078z",
+                  "fill": {
+                    "paint": "#4C4C4C"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M75.787,27.591h0.9v-2.703h-0.9V27.591z",
+                  "fill": {
+                    "paint": "#4C4C4C"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#3B3B3B"
+                          }
+                        },
+                        {
+                          "offset": "0.25",
+                          "style": {
+                            "stopColor": "#757575"
+                          }
+                        },
+                        {
+                          "offset": "0.42",
+                          "style": {
+                            "stopColor": "#989898"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.69",
+                          "style": {
+                            "stopColor": "#818181"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "72.7686",
+                      "x2": "73.6465",
+                      "y1": "19.6514",
+                      "y2": "19.6514"
+                    }
+                  },
+                  "height": "39.302",
+                  "name": "rect",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "rect",
+                  "width": "0.878",
+                  "x": "72.769"
+                },
+                {
+                  "d": "M75.787,4.393h0.9V1.69h-0.9V4.393z",
+                  "fill": {
+                    "paint": "#4C4C4C"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port3",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M25.788,45.284h32.207v3.703H25.788V45.284z",
+                  "fill": {
+                    "paint": "#4D4D4D"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M21.283,66.104h6.306V47.185h-6.306V66.104z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "21.2832",
+                      "x2": "27.5894",
+                      "y1": "56.6445",
+                      "y2": "56.6445"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M32.995,66.104h6.306V47.185h-6.306V66.104z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "32.9946",
+                      "x2": "39.3008",
+                      "y1": "56.6445",
+                      "y2": "56.6445"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M44.48,66.104h6.307V47.185H44.48V66.104z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "44.4805",
+                      "x2": "50.7871",
+                      "y1": "56.6445",
+                      "y2": "56.6445"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M56.192,66.104h6.306V47.185h-6.306V66.104z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "56.1924",
+                      "x2": "62.498",
+                      "y1": "56.6445",
+                      "y2": "56.6445"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "18.5806",
+                      "x2": "65.2012",
+                      "y1": "56.6445",
+                      "y2": "56.6445"
+                    }
+                  },
+                  "height": "15.315",
+                  "name": "rect",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "rect",
+                  "width": "46.621",
+                  "x": "18.581",
+                  "y": "48.987"
+                },
+                {
+                  "fill": {
+                    "paint": "#4C4C4C"
+                  },
+                  "height": "0.878",
+                  "name": "rect",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "rect",
+                  "width": "46.621",
+                  "x": "18.581",
+                  "y": "53.677"
+                }
+              ],
+              "name": "Group_Midlayer",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M20.382,3.492h43.017v42.792H20.382V3.492z",
+                  "fill": {
+                    "paint": "#999999"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_MotorBox",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M23.799,8.093l-1.014-0.405L22.38,6.697l0.405-1.013l1.014-0.406l0.991,0.406l0.406,1.013   L24.79,7.688L23.799,8.093",
+                  "fill": {
+                    "paint": {
+                      "cx": "23.7876",
+                      "cy": "6.6855",
+                      "gradientUnits": "userSpaceOnUse",
+                      "r": "1.4077",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#BFBFBF"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#404040"
+                          }
+                        }
+                      ],
+                      "type": "radial"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                },
+                {
+                  "d": "M59.799,45.094l-1.014-0.406l-0.405-0.991l0.405-1.013l1.014-0.406l0.99,0.406l0.406,1.013   l-0.406,0.991L59.799,45.094",
+                  "fill": {
+                    "paint": {
+                      "cx": "59.7871",
+                      "cy": "43.6855",
+                      "gradientUnits": "userSpaceOnUse",
+                      "r": "1.4082",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#BFBFBF"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#404040"
+                          }
+                        }
+                      ],
+                      "type": "radial"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Bolt",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M48.985,7.096h10.811v5.18H48.985V7.096z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Label2",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M36.598,57.095h10.585V62.5H36.598V57.095z",
+                  "fill": {
+                    "paint": "#777777"
+                  },
+                  "name": "path",
+                  "stroke": "rgba(0,0,0,1",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Label1",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 83.89 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Tint"
+        },
+        "position": {
+          "height": 60,
+          "width": 60
+        },
+        "propConfig": {
+          "props.elements[0].fill.paint": {
+            "binding": {
+              "config": {
+                "expression": "{[default]Exchange/Oil And Gas Demo/Timer Tags/Now 500}"
+              },
+              "transforms": [
+                {
+                  "code": "\timport random\n\t\t\n\treturn \u0027#00FF2366\u0027 if random.random() \u003e 0.1 else \u0027#00FF2344\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M72.769 0 L72.769 0.001 L70.606 0.001 L70.606 10.474 L65.201 10.474 L65.201 7.096 L63.399 7.096 L63.399 3.492 L20.382 3.492 L20.382 46.284 L25.788 46.284 L25.788 47.185 L21.283 47.185 L21.283 48.987 L18.581 48.987 L18.581 64.302 L21.283 64.302 L21.283 66.104 L27.589 66.104 L27.589 64.302 L29.391 64.302 L29.391 64.302 C29.391 64.302 29.947 70.063 28.49 72.748 C27.678 74.244 25.447 76.312 22.86 76.576 C19.601 76.908 9.797 77.59 9.797 77.59 L9.797 66.104 L1.689 66.104 L1.689 73.986 L0 73.986 L0 100.787 L1.689 100.787 L1.689 108.895 L9.797 108.895 L9.797 97.409 C9.797 97.409 21.697 97.5 24.887 98.873 C28.845 100.577 29.279 103.94 29.279 103.94 L29.391 112.498 L54.391 112.498 L54.391 105.291 C54.391 105.291 54.379 102.062 57.77 99.549 C60.198 97.75 73.985 97.409 73.985 97.409 L73.985 108.895 L82.093 108.895 L82.093 100.787 L83.895 100.787 L83.895 73.986 L82.093 73.986 L82.093 66.104 L73.985 66.104 L73.985 77.59 C73.985 77.59 65.197 77.034 62.386 76.801 C58.76 76.5 56.75 74.531 56.193 73.873 C53.7612 71.0014 54.3904 64.3085 54.391 64.302 L56.192 64.302 L56.192 66.104 L62.498 66.104 L62.498 64.302 L65.202 64.302 L65.202 48.987 L62.498 48.987 L62.498 47.185 L57.995 47.185 L57.995 46.284 L63.399 46.284 L63.399 32.096 L65.201 32.096 L65.201 28.492 L70.606 28.492 L70.606 39.302 L75.787 39.302 L75.787 37.5 L76.687 37.5 L76.687 34.797 L75.787 34.797 L75.787 32.095 L76.688 32.095 L76.688 28.492 L82.093 28.492 L82.093 10.474 L76.688 10.474 L76.688 7.096 L75.787 7.096 L75.787 4.393 L76.687 4.393 L76.687 1.69 L75.787 1.69 L75.787 0.001 L73.647 0.001 L73.647 0 Z",
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#00610000"
+                  },
+                  "type": "path"
+                }
+              ],
+              "fill": {
+                "opacity": 1
+              },
+              "name": "group",
+              "stroke": {
+                "opacity": 0,
+                "paint": "rgb(128,128,128)"
+              },
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 83.89 112.5"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\t#system.perspective.navigate(page\u003d\u0027/apps/oilgas/Details/%s\u0027 %self.view.params.site)\n\tsystem.perspective.sendMessage(\u0027oilNodeClick\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)\n\tsystem.perspective.sendMessage(\u0027oilNodeMouseLeave\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027) "
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onMouseEnter": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027oilNodeMouseEnter\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onMouseLeave": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027oilNodeMouseLeave\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onMouseOut": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027oilNodeMouseLeave\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)"
+          },
+          "enabled": false,
+          "scope": "G",
+          "type": "script"
+        },
+        "onMouseOver": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027oilNodeMouseEnter\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)"
+          },
+          "enabled": false,
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -6,
+      "y": -5
+    },
+    "props": {
+      "style": {
+        "background": "lightgray",
+        "border": "5px outset white",
+        "boxShadow": "0px 0px 4px 2px rgba(0, 0, 0, 0.5)",
+        "cursor": "pointer"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

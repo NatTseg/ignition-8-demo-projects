@@ -1,0 +1,1726 @@
+{
+  "custom": {
+    "backgroundImage": "linear-gradient(180deg, rgba(93, 130, 159, 1), rgba(19, 42, 73, 1))"
+  },
+  "params": {
+    "backgroundImage": "linear-gradient(180deg, rgba(93, 130, 159, 1), rgba(19, 42, 73, 1))",
+    "color": "rgba(93, 130, 159, 1)",
+    "loaded": "",
+    "site": "",
+    "title": ""
+  },
+  "propConfig": {
+    "custom.backgroundImage": {
+      "binding": {
+        "config": {
+          "path": "view.params.color"
+        },
+        "transforms": [
+          {
+            "code": "\t\n\treturn \u0027linear-gradient(180deg, %s, rgba(19, 42, 73, 1))\u0027 %value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.backgroundImage": {
+      "binding": {
+        "config": {
+          "path": "view.custom.backgroundImage"
+        },
+        "type": "property"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.color": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.loaded": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.site": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 2000,
+      "width": 460
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "684px"
+                },
+                "props": {
+                  "style": {
+                    "marginLeft": "20px"
+                  },
+                  "text": "Oil \u0026 Gas Demo - Production Trends"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "fcHeader"
+            },
+            "position": {
+              "basis": "59px",
+              "display": false
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "slategray",
+                "color": "#FFFFFF",
+                "fontSize": "19px"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "lblProductionToday"
+                    },
+                    "position": {
+                      "basis": "60px"
+                    },
+                    "props": {
+                      "style": {
+                        "backgroundColor": "#EBEBEB",
+                        "color": "#808080",
+                        "textAlign": "center"
+                      },
+                      "text": "Production Today"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "44px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#2B2B2B",
+                        "textAlign": "center"
+                      },
+                      "text": "Composition"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "PieChart"
+                    },
+                    "position": {
+                      "basis": "330px"
+                    },
+                    "propConfig": {
+                      "props.data[0].value": {
+                        "binding": {
+                          "config": {
+                            "expression": "({[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday}/({[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeGasToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t+ {[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t+ {[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t)\r\n) * 100"
+                          },
+                          "overlayOptOut": true,
+                          "type": "expr"
+                        }
+                      },
+                      "props.data[1].value": {
+                        "binding": {
+                          "config": {
+                            "expression": "({[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday}/({[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeGasToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t+ {[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t+ {[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t)\r\n) * 100"
+                          },
+                          "overlayOptOut": true,
+                          "type": "expr"
+                        }
+                      },
+                      "props.data[2].value": {
+                        "binding": {
+                          "config": {
+                            "expression": "({[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeGasToday}/({[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeGasToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t+ {[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t+ {[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t)\r\n) * 100"
+                          },
+                          "overlayOptOut": true,
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "colors": [
+                        "#F8AD03",
+                        "#16457D",
+                        "#808080",
+                        "#00A9C6",
+                        "#E69300",
+                        "#DD4477",
+                        "#994499"
+                      ],
+                      "data": [
+                        {
+                          "type": "Oil"
+                        },
+                        {
+                          "type": "Water"
+                        },
+                        {
+                          "type": "Gas"
+                        }
+                      ],
+                      "showLabels": false
+                    },
+                    "type": "ia.chart.pie"
+                  }
+                ],
+                "meta": {
+                  "name": "composition"
+                },
+                "position": {
+                  "basis": "366px",
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "44px"
+                },
+                "props": {
+                  "alignVertical": "bottom",
+                  "style": {
+                    "color": "#2B2B2B",
+                    "marginTop": "10px",
+                    "textAlign": "center"
+                  },
+                  "text": "Water Cut (%)"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "SimpleGauge"
+                },
+                "position": {
+                  "basis": "169.6px"
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/WaterEmulsionReservoir/WaterCut"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "formatType": "numeric",
+                          "formatValue": "###.0",
+                          "type": "format"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "arc": {
+                    "color": "#16457D",
+                    "width": 7
+                  },
+                  "endAngle": 540,
+                  "label": {
+                    "size": 15
+                  },
+                  "style": {
+                    "classes": []
+                  }
+                },
+                "type": "ia.chart.simple-gauge"
+              },
+              {
+                "meta": {
+                  "name": "Sparkline"
+                },
+                "position": {
+                  "basis": "38px"
+                },
+                "propConfig": {
+                  "props.points": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "MinMax",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "endDate": "now(0)",
+                          "startDate": "setTime(now(0), 0, 0, 0)"
+                        },
+                        "ignoreBadQuality": false,
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "100",
+                          "type": "FIXED"
+                        },
+                        "tags": [
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/Separator/WaterEmulsionReservoir/WaterCut"
+                          }
+                        ],
+                        "valueFormat": "DATASET"
+                      },
+                      "overlayOptOut": true,
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "color": "#16457D",
+                  "style": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "width": 1.5
+                },
+                "type": "ia.display.sparkline"
+              }
+            ],
+            "meta": {
+              "name": "productionToday"
+            },
+            "position": {
+              "basis": "571px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "style": {
+                "color": "#AAAAAA",
+                "fontSize": "10px",
+                "marginLeft": "10px",
+                "marginRight": "10px",
+                "marginTop": "10px"
+              },
+              "text": "Production Today Composition and Water Cut values representative of cumulative production since midnight today."
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "lblProductionHistory24Hr"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#EBEBEB",
+                "color": "#808080",
+                "marginTop": "40px",
+                "textAlign": "center"
+              },
+              "text": "Production (History - Last 24Hr)"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TimeSeriesChart"
+                },
+                "position": {
+                  "basis": "682px",
+                  "display": false
+                },
+                "propConfig": {
+                  "props.series[0].data": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "MinMax",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "mostRecent": "1",
+                          "mostRecentUnits": "HOUR"
+                        },
+                        "ignoreBadQuality": false,
+                        "polling": {
+                          "enabled": false,
+                          "rate": "30"
+                        },
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "100",
+                          "type": "FIXED"
+                        },
+                        "tags": [
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/OilVolume"
+                          },
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/WaterVolume"
+                          },
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/GasVolume"
+                          }
+                        ],
+                        "valueFormat": "DATASET"
+                      },
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "defaultStyles": {
+                    "colorScheme": "BuGn"
+                  },
+                  "series": [
+                    {
+                      "name": "Boiler"
+                    }
+                  ],
+                  "style": {
+                    "backgroundColor": "rgba(250,250,250,1)",
+                    "borderColor": "rgba(120,150,150,1)",
+                    "borderStyle": "solid",
+                    "borderWidth": "2px",
+                    "overflow": "hidden"
+                  },
+                  "title": {
+                    "font": {
+                      "size": 12
+                    },
+                    "height": 35,
+                    "text": "Production History",
+                    "visible": true
+                  }
+                },
+                "type": "ia.chart.timeseries"
+              },
+              {
+                "meta": {
+                  "name": "TimeSeriesChart_0"
+                },
+                "position": {
+                  "basis": "300px"
+                },
+                "propConfig": {
+                  "props.series[0].data": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "Average",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "mostRecent": "1",
+                          "mostRecentUnits": "DAY"
+                        },
+                        "ignoreBadQuality": false,
+                        "polling": {
+                          "enabled": false,
+                          "rate": "30"
+                        },
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "750",
+                          "type": "FIXED"
+                        },
+                        "tags": [
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/OilVolume"
+                          },
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/WaterVolume"
+                          }
+                        ],
+                        "valueFormat": "DATASET"
+                      },
+                      "overlayOptOut": true,
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "defaultStyles": {
+                    "colorScheme": "BuGn"
+                  },
+                  "plots": [
+                    {
+                      "axes": [
+                        {
+                          "alignment": "left",
+                          "label": {
+                            "font": {
+                              "color": "",
+                              "size": 10
+                            },
+                            "offset": 0,
+                            "style": {
+                              "classes": ""
+                            },
+                            "text": "OIL \u0026 WATER",
+                            "visible": true
+                          },
+                          "max": "",
+                          "min": "",
+                          "name": "main",
+                          "style": {
+                            "classes": ""
+                          },
+                          "tick": {
+                            "color": "",
+                            "label": {
+                              "font": {
+                                "color": "",
+                                "size": 10
+                              },
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "style": {
+                              "classes": ""
+                            }
+                          },
+                          "width": 60
+                        }
+                      ],
+                      "markers": [],
+                      "relativeWeight": 1,
+                      "trends": [
+                        {
+                          "axis": "main",
+                          "baselines": [],
+                          "breakLine": true,
+                          "columns": [
+                            {
+                              "color": "#F8AD03",
+                              "key": "OilVolume",
+                              "styles": {
+                                "highlighted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "muted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "normal": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "selected": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "color": "#16457D",
+                              "key": "WaterVolume",
+                              "styles": {
+                                "highlighted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "muted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "normal": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "selected": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "interpolation": "curveLinear",
+                          "radius": 2,
+                          "series": "production",
+                          "stack": true,
+                          "type": "line",
+                          "visible": true
+                        }
+                      ]
+                    }
+                  ],
+                  "series": [
+                    {
+                      "name": "production"
+                    }
+                  ],
+                  "style": {
+                    "backgroundColor": "rgba(250,250,250,1)",
+                    "overflow": "hidden"
+                  },
+                  "timeAxis": {
+                    "color": "#C0C0C0",
+                    "height": 0,
+                    "tick": {
+                      "color": "#C0C0C000"
+                    },
+                    "tickCount": 1,
+                    "visible": false
+                  },
+                  "timeRange": {
+                    "visible": false
+                  },
+                  "title": {
+                    "font": {
+                      "size": 12
+                    },
+                    "height": 0,
+                    "text": "Production History"
+                  }
+                },
+                "type": "ia.chart.timeseries"
+              },
+              {
+                "meta": {
+                  "name": "TimeSeriesChart_1"
+                },
+                "position": {
+                  "basis": "200px"
+                },
+                "propConfig": {
+                  "props.series[0].data": {
+                    "binding": {
+                      "config": {
+                        "aggregate": "Average",
+                        "avoidScanClassValidation": true,
+                        "dateRange": {
+                          "mostRecent": "1",
+                          "mostRecentUnits": "DAY"
+                        },
+                        "ignoreBadQuality": false,
+                        "polling": {
+                          "enabled": false,
+                          "rate": "30"
+                        },
+                        "preventInterpolation": false,
+                        "returnFormat": "Wide",
+                        "returnSize": {
+                          "numRows": "750",
+                          "type": "FIXED"
+                        },
+                        "tags": [
+                          {
+                            "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/GasVolume"
+                          }
+                        ],
+                        "valueFormat": "DATASET"
+                      },
+                      "overlayOptOut": true,
+                      "type": "tag-history"
+                    }
+                  }
+                },
+                "props": {
+                  "defaultStyles": {
+                    "colorScheme": "BuGn"
+                  },
+                  "plots": [
+                    {
+                      "axes": [
+                        {
+                          "alignment": "left",
+                          "label": {
+                            "font": {
+                              "color": "",
+                              "size": 10
+                            },
+                            "offset": 0,
+                            "style": {
+                              "classes": ""
+                            },
+                            "text": "GAS",
+                            "visible": true
+                          },
+                          "max": "",
+                          "min": "",
+                          "name": "gas",
+                          "style": {
+                            "classes": ""
+                          },
+                          "tick": {
+                            "color": "",
+                            "label": {
+                              "font": {
+                                "color": "",
+                                "size": 10
+                              },
+                              "style": {
+                                "classes": ""
+                              }
+                            },
+                            "style": {
+                              "classes": ""
+                            }
+                          },
+                          "width": 60
+                        }
+                      ],
+                      "markers": [],
+                      "relativeWeight": 1,
+                      "trends": [
+                        {
+                          "axis": "gas",
+                          "baselines": [],
+                          "breakLine": true,
+                          "columns": [
+                            {
+                              "color": "#808080",
+                              "key": "GasVolume",
+                              "styles": {
+                                "highlighted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "muted": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "normal": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                },
+                                "selected": {
+                                  "fill": {
+                                    "color": "",
+                                    "opacity": null
+                                  },
+                                  "stroke": {
+                                    "color": "",
+                                    "dashArray": null,
+                                    "opacity": null,
+                                    "width": null
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "interpolation": "curveLinear",
+                          "radius": 2,
+                          "series": "production",
+                          "stack": true,
+                          "type": "line",
+                          "visible": true
+                        }
+                      ]
+                    }
+                  ],
+                  "series": [
+                    {
+                      "name": "production"
+                    }
+                  ],
+                  "style": {
+                    "backgroundColor": "rgba(250,250,250,1)",
+                    "marginTop": "-30px",
+                    "overflow": "hidden"
+                  },
+                  "timeAxis": {
+                    "height": 0
+                  },
+                  "title": {
+                    "font": {
+                      "size": 12
+                    },
+                    "height": 0,
+                    "visible": true
+                  }
+                },
+                "type": "ia.chart.timeseries"
+              }
+            ],
+            "meta": {
+              "name": "fcCharts"
+            },
+            "position": {
+              "basis": "228.1px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "lblProductionRealtime"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#EBEBEB",
+                "color": "#808080",
+                "marginTop": "40px",
+                "textAlign": "center"
+              },
+              "text": "Production (Realtime)"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "20px",
+                      "display": false
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label_0"
+                    },
+                    "position": {
+                      "basis": "20px",
+                      "display": false
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "EmbeddedView"
+                    },
+                    "position": {
+                      "basis": "391px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.params.backgroundImage": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.backgroundImage"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "loading": {
+                        "order": "with-parent"
+                      },
+                      "path": "Exchange/Oil And Gas/Production/GrouplineFacilityHPSmall"
+                    },
+                    "type": "ia.display.view"
+                  }
+                ],
+                "meta": {
+                  "name": "fcTrends"
+                },
+                "position": {
+                  "basis": "395px"
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "visible"
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "fcData"
+            },
+            "position": {
+              "basis": "408px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "justify": "space-between",
+              "style": {
+                "overflow": "visible"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "lblCumulativeProduction"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#EBEBEB",
+                "color": "#808080",
+                "marginTop": "40px",
+                "textAlign": "center"
+              },
+              "text": "Cumulative Today"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "lblOil"
+                        },
+                        "position": {
+                          "basis": "23px"
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          },
+                          "text": "Oil \u0026 Water"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "TimeSeriesChart"
+                        },
+                        "position": {
+                          "basis": "96.5px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.series[0].data": {
+                            "binding": {
+                              "config": {
+                                "aggregate": "MinMax",
+                                "avoidScanClassValidation": true,
+                                "dateRange": {
+                                  "endDate": "now(0)",
+                                  "startDate": "setTime(now(0), 0, 0, 0)"
+                                },
+                                "ignoreBadQuality": false,
+                                "preventInterpolation": false,
+                                "returnFormat": "Wide",
+                                "returnSize": {
+                                  "numRows": "100",
+                                  "type": "FIXED"
+                                },
+                                "tags": [
+                                  {
+                                    "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday"
+                                  },
+                                  {
+                                    "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday"
+                                  }
+                                ],
+                                "valueFormat": "DATASET"
+                              },
+                              "type": "tag-history"
+                            }
+                          }
+                        },
+                        "props": {
+                          "plots": [
+                            {
+                              "axes": [
+                                {
+                                  "alignment": "left",
+                                  "label": {
+                                    "font": {
+                                      "color": "",
+                                      "size": 10
+                                    },
+                                    "offset": 0,
+                                    "style": {
+                                      "classes": ""
+                                    },
+                                    "text": "",
+                                    "visible": true
+                                  },
+                                  "max": "",
+                                  "min": "",
+                                  "name": "barrels",
+                                  "style": {
+                                    "classes": ""
+                                  },
+                                  "tick": {
+                                    "color": "",
+                                    "label": {
+                                      "font": {
+                                        "color": "",
+                                        "size": 10
+                                      },
+                                      "style": {
+                                        "classes": ""
+                                      }
+                                    },
+                                    "style": {
+                                      "classes": ""
+                                    }
+                                  },
+                                  "width": -1
+                                }
+                              ],
+                              "markers": [],
+                              "relativeWeight": 1,
+                              "trends": [
+                                {
+                                  "axis": "barrels",
+                                  "baselines": [],
+                                  "breakLine": true,
+                                  "columns": [
+                                    {
+                                      "color": "#F8AD03",
+                                      "key": "CumulativeOilToday",
+                                      "styles": {
+                                        "highlighted": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        },
+                                        "muted": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        },
+                                        "normal": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        },
+                                        "selected": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "color": "#16457D",
+                                      "key": "CumulativeWaterToday",
+                                      "styles": {
+                                        "highlighted": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": 2,
+                                            "width": 2
+                                          }
+                                        },
+                                        "muted": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        },
+                                        "normal": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        },
+                                        "selected": {
+                                          "fill": {
+                                            "color": "",
+                                            "opacity": null
+                                          },
+                                          "stroke": {
+                                            "color": "",
+                                            "dashArray": null,
+                                            "opacity": null,
+                                            "width": 2
+                                          }
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "interpolation": "curveLinear",
+                                  "radius": 2,
+                                  "series": "oilAndWater",
+                                  "stack": true,
+                                  "type": "line",
+                                  "visible": true
+                                }
+                              ]
+                            }
+                          ],
+                          "series": [
+                            {
+                              "name": "oilAndWater"
+                            }
+                          ],
+                          "timeAxis": {
+                            "height": 15,
+                            "tick": {
+                              "label": {
+                                "font": {
+                                  "size": 8
+                                }
+                              }
+                            }
+                          },
+                          "timeRange": {
+                            "visible": false
+                          },
+                          "title": {
+                            "height": 0
+                          }
+                        },
+                        "type": "ia.chart.timeseries"
+                      },
+                      {
+                        "meta": {
+                          "name": "oilValue"
+                        },
+                        "position": {
+                          "basis": "20px",
+                          "display": false
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \" barrels\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "oilAndWater"
+                    },
+                    "position": {
+                      "basis": "130px",
+                      "display": false
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginTop": "10px",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "lblOil"
+                        },
+                        "position": {
+                          "basis": "23px"
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          },
+                          "text": "Oil"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "sparklineOilVolume"
+                        },
+                        "position": {
+                          "basis": "59px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.points": {
+                            "binding": {
+                              "config": {
+                                "aggregate": "MinMax",
+                                "avoidScanClassValidation": true,
+                                "dateRange": {
+                                  "endDate": "now(0)",
+                                  "startDate": "setTime(now(0), 0, 0, 0)"
+                                },
+                                "ignoreBadQuality": false,
+                                "preventInterpolation": false,
+                                "returnFormat": "Wide",
+                                "returnSize": {
+                                  "numRows": "100",
+                                  "type": "FIXED"
+                                },
+                                "tags": [
+                                  {
+                                    "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday"
+                                  }
+                                ],
+                                "valueFormat": "DATASET"
+                              },
+                              "overlayOptOut": true,
+                              "type": "tag-history"
+                            }
+                          }
+                        },
+                        "props": {
+                          "color": "#F8AD03",
+                          "width": 2
+                        },
+                        "type": "ia.display.sparkline"
+                      },
+                      {
+                        "meta": {
+                          "name": "oilValue"
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeOilToday"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \" barrels\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "oil"
+                    },
+                    "position": {
+                      "basis": "130px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "lblWater"
+                        },
+                        "position": {
+                          "basis": "26px"
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          },
+                          "text": "Water"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "sparklineWater"
+                        },
+                        "position": {
+                          "basis": "71px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.points": {
+                            "binding": {
+                              "config": {
+                                "aggregate": "MinMax",
+                                "avoidScanClassValidation": true,
+                                "dateRange": {
+                                  "endDate": "now(0)",
+                                  "startDate": "setTime(now(0), 0, 0, 0)"
+                                },
+                                "ignoreBadQuality": false,
+                                "preventInterpolation": false,
+                                "returnFormat": "Wide",
+                                "returnSize": {
+                                  "numRows": "100",
+                                  "type": "FIXED"
+                                },
+                                "tags": [
+                                  {
+                                    "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday"
+                                  }
+                                ],
+                                "valueFormat": "DATASET"
+                              },
+                              "overlayOptOut": true,
+                              "type": "tag-history"
+                            }
+                          }
+                        },
+                        "props": {
+                          "color": "#16457D",
+                          "width": 2
+                        },
+                        "type": "ia.display.sparkline"
+                      },
+                      {
+                        "meta": {
+                          "name": "waterValue"
+                        },
+                        "position": {
+                          "basis": "25px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeWaterToday"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "expression": "{value} + \" barrels\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "water"
+                    },
+                    "position": {
+                      "basis": "130px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginTop": "30px",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "lblGas"
+                        },
+                        "position": {
+                          "basis": "19px"
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          },
+                          "text": "Gas"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "sparklineGas"
+                        },
+                        "position": {
+                          "basis": "100px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.points": {
+                            "binding": {
+                              "config": {
+                                "aggregate": "MinMax",
+                                "avoidScanClassValidation": true,
+                                "dateRange": {
+                                  "endDate": "now(0)",
+                                  "startDate": "setTime(now(0), 0, 0, 0)"
+                                },
+                                "ignoreBadQuality": false,
+                                "preventInterpolation": false,
+                                "returnFormat": "Wide",
+                                "returnSize": {
+                                  "numRows": "100",
+                                  "type": "FIXED"
+                                },
+                                "tags": [
+                                  {
+                                    "path": "[default]Exchange/Oil And Gas Demo/Production/KPIs/CumulativeGasToday"
+                                  }
+                                ],
+                                "valueFormat": "DATASET"
+                              },
+                              "overlayOptOut": true,
+                              "type": "tag-history"
+                            }
+                          }
+                        },
+                        "props": {
+                          "color": "#808080",
+                          "width": 2
+                        },
+                        "type": "ia.display.sparkline"
+                      },
+                      {
+                        "meta": {
+                          "name": "gasVolume"
+                        },
+                        "position": {
+                          "basis": "36px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/KPIs/GasVolume"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "#,###.0",
+                                  "type": "format"
+                                },
+                                {
+                                  "expression": "{value} + \" MCF\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "gas"
+                    },
+                    "position": {
+                      "basis": "130px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "marginTop": "30px",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "32px"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#AAAAAA",
+                        "fontSize": "10px",
+                        "marginTop": "10px"
+                      },
+                      "text": "Values displayed are cumulative since midnight today."
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "sparklines"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "overflow": "visible",
+                    "paddingLeft": "10px",
+                    "paddingRight": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "cumulativeProduction"
+            },
+            "position": {
+              "basis": "600px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "basis": "530px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "scroll"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

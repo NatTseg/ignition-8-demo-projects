@@ -1,0 +1,1007 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 270,
+      "width": 383
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "gasOutPipe2"
+        },
+        "position": {
+          "height": 0.0247,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0411,
+          "x": 0.729,
+          "y": 0.0567
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "waterOutPipe1"
+        },
+        "position": {
+          "height": 0.0247,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0709,
+          "x": 0.5575,
+          "y": 0.726
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "lblOilOut"
+        },
+        "position": {
+          "height": 0.0477,
+          "width": 0.1353,
+          "x": 0.7029,
+          "y": 0.9459
+        },
+        "props": {
+          "style": {
+            "fontSize": "1.75vw",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Oil Out"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "oilOutPipe1"
+        },
+        "position": {
+          "height": 0.0247,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0709,
+          "x": 0.734,
+          "y": 0.726
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "oilOutPipe2"
+        },
+        "position": {
+          "height": 0.0247,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0709,
+          "x": 0.733,
+          "y": 0.8666
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "oilValve"
+        },
+        "position": {
+          "height": 0.0771,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0478,
+          "x": 0.7455,
+          "y": 0.7759
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M56.25,28.181l56.249,28.181V0",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": 1,
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": 0.45,
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "0.55",
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.77",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "84.374",
+                      "x2": "84.374",
+                      "y1": "56.3613",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M0.001,56.361V0L56.25,28.181",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": 1,
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.45",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "0.55",
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.77",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "28.1255",
+                      "x2": "28.1255",
+                      "y1": "56.3613",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port2",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 56.36"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Icon_3"
+        },
+        "position": {
+          "height": 0.0499,
+          "width": 0.0264,
+          "x": 0.7554,
+          "y": 0.7055
+        },
+        "props": {
+          "path": "material/south"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "separationTank"
+        },
+        "position": {
+          "height": 0.4741,
+          "width": 0.8131,
+          "x": 0.1506,
+          "y": 0.2204
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M97.973,56.194c0,0,13.84-1.688,13.84-27.815c0-25.869-13.84-27.929-13.84-27.929H14.415  c0,0-13.964,0.902-13.964,27.928c0,25.226,13.964,27.815,13.964,27.815H97.973z",
+                  "fill": {
+                    "paint": "#C0C0C0"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M14.415,0.451v55.744",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M97.973,0.451v55.744",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_TankBody",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 56.758"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "emulsionReservoirOilLevel"
+        },
+        "position": {
+          "height": 0.2246,
+          "width": 0.4517,
+          "x": 0.2416,
+          "y": 0.47
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/WaterEmulsionReservoir/OilLevel"
+              },
+              "transforms": [
+                {
+                  "expression": "{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "capacity": 17,
+          "liquidColor": "#D79500",
+          "liquidOpacity": 1,
+          "strokeWidth": 0,
+          "tankColor": "#D9D9D900",
+          "valueDisplay": {
+            "enabled": false,
+            "style": {
+              "fontSize": "30px"
+            }
+          },
+          "warningThreshold": 1000
+        },
+        "type": "ia.display.cylindrical-tank"
+      },
+      {
+        "meta": {
+          "name": "emulsionReservoirWaterLevel"
+        },
+        "position": {
+          "height": 0.2246,
+          "width": 0.436,
+          "x": 0.2416,
+          "y": 0.4737
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/WaterEmulsionReservoir/WaterLevel"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "capacity": 10,
+          "liquidColor": "#16457D",
+          "liquidOpacity": 1,
+          "strokeWidth": 0,
+          "tankColor": "#D9D9D900",
+          "valueDisplay": {
+            "enabled": false,
+            "style": {
+              "fontSize": "30px"
+            }
+          },
+          "warningThreshold": 1000
+        },
+        "type": "ia.display.cylindrical-tank"
+      },
+      {
+        "meta": {
+          "name": "lblWaterOut"
+        },
+        "position": {
+          "height": 0.0477,
+          "width": 0.1666,
+          "x": 0.5044,
+          "y": 0.9459
+        },
+        "props": {
+          "style": {
+            "fontSize": "1.75vw",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Water Out"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "waterOutPipe2"
+        },
+        "position": {
+          "height": 0.0247,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0709,
+          "x": 0.5572,
+          "y": 0.8768
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "waterValve"
+        },
+        "position": {
+          "height": 0.0748,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0412,
+          "x": 0.5724,
+          "y": 0.7766
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M56.25,28.181l56.249,28.181V0",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": 1,
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.45",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "0.55",
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.77",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "84.374",
+                      "x2": "84.374",
+                      "y1": "56.3613",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M0.001,56.361V0L56.25,28.181",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": 1,
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": 0.45,
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": 0.55,
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": 0.77,
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "28.1255",
+                      "x2": "28.1255",
+                      "y1": "56.3613",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port2",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 56.36"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Icon_2"
+        },
+        "position": {
+          "height": 0.0499,
+          "width": 0.0264,
+          "x": 0.5789,
+          "y": 0.7055
+        },
+        "props": {
+          "path": "material/south"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "gasOutPipe1"
+        },
+        "position": {
+          "height": 0.0247,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0478,
+          "x": 0.7258,
+          "y": 0.1815
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "lblFlowSeparationVessel"
+        },
+        "position": {
+          "height": 0.0476,
+          "width": 0.602,
+          "x": 0.2262,
+          "y": 0.1728
+        },
+        "props": {
+          "style": {
+            "fontSize": "2vw",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Flow Separation Vessel"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "LinearScale_0"
+        },
+        "position": {
+          "height": 0.4037,
+          "width": 0.0627,
+          "x": 0.191,
+          "y": 0.2556
+        },
+        "props": {
+          "indicators": [
+            {
+              "color": "#0000FF",
+              "extent": 15,
+              "indicatorStyle": "range",
+              "label": "High",
+              "labelAngle": 270,
+              "labelColor": "#000000",
+              "length": 25,
+              "opacity": 0.3,
+              "stroke": 1.5,
+              "value": 85
+            },
+            {
+              "color": "#00FF00",
+              "extent": 5,
+              "indicatorStyle": "line",
+              "label": "Low",
+              "labelAngle": 270,
+              "labelColor": "#000000",
+              "length": 25,
+              "opacity": 1,
+              "stroke": 5,
+              "value": 20
+            }
+          ],
+          "labels": {
+            "style": {
+              "fontSize": "10px"
+            }
+          },
+          "majorTicks": {
+            "length": 0,
+            "span": 2
+          },
+          "maxValue": 10
+        },
+        "type": "ia.display.linear-scale"
+      },
+      {
+        "meta": {
+          "name": "Icon_1"
+        },
+        "position": {
+          "height": 0.0499,
+          "width": 0.0264,
+          "x": 0.7356,
+          "y": 0.1769
+        },
+        "props": {
+          "path": "material/north"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "gasValve"
+        },
+        "position": {
+          "height": 0.0771,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.0478,
+          "x": 0.7258,
+          "y": 0.0907
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M56.25,28.181l56.249,28.181V0",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": 1,
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.45",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": 0.55,
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.77",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "84.374",
+                      "x2": "84.374",
+                      "y1": "56.3613",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M0.001,56.361V0L56.25,28.181",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": 1,
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.45",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "0.55",
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.77",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "28.1255",
+                      "x2": "28.1255",
+                      "y1": "56.3613",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Port2",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 56.36"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "inletFlow"
+        },
+        "position": {
+          "height": 0.068,
+          "width": 0.1484,
+          "x": 0.0071,
+          "y": 0.4076
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#C0C0C0"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "lblInletFlow"
+        },
+        "position": {
+          "height": 0.0726,
+          "width": 0.1567,
+          "x": 0.0012,
+          "y": 0.3485
+        },
+        "props": {
+          "style": {
+            "fontSize": "1.75vw",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Inlet Flow"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "height": 0.0658,
+          "width": 0.1353,
+          "x": 0.0083,
+          "y": 0.4083
+        },
+        "props": {
+          "path": "material/east"
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "lblGasOut"
+        },
+        "position": {
+          "height": 0.0408,
+          "width": 0.1353,
+          "x": 0.6817
+        },
+        "props": {
+          "style": {
+            "fontSize": "1.75vw",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Gas Out"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "CylindricalTank"
+        },
+        "position": {
+          "height": 0.1579,
+          "width": 0.188,
+          "x": 0.6737,
+          "y": 0.5374
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/OilReservoir/OilLevel"
+              },
+              "transforms": [
+                {
+                  "expression": "{value}",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "capacity": 11,
+          "liquidColor": "#D79500",
+          "liquidOpacity": 1,
+          "liquidWarningColor": "#C0C0C000",
+          "strokeWidth": 0,
+          "tankColor": "#D9D9D900",
+          "tankWarningColor": "#C0C0C000",
+          "valueDisplay": {
+            "enabled": false
+          },
+          "warningThreshold": 1000
+        },
+        "type": "ia.display.cylindrical-tank"
+      },
+      {
+        "meta": {
+          "name": "weir"
+        },
+        "position": {
+          "height": 0.1631,
+          "width": 0.0164,
+          "x": 0.6645,
+          "y": 0.529
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#555555",
+            "borderRadius": "2px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "lblWier"
+        },
+        "position": {
+          "height": 0.0295,
+          "rotate": {
+            "angle": 90
+          },
+          "width": 0.1275,
+          "x": 0.6095,
+          "y": 0.5822
+        },
+        "props": {
+          "style": {
+            "color": "#FFFFFF",
+            "fontSize": "8px",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Weir"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

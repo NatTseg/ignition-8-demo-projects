@@ -1,0 +1,229 @@
+{
+  "custom": {
+    "expand": false,
+    "selectedSite": ""
+  },
+  "params": {
+    "sites": {
+      "site-a": {
+        "lat": 38.625454,
+        "lng": -121.084629,
+        "site": "site-a"
+      },
+      "site-b": {
+        "lat": 38.6222475,
+        "lng": -121.081905,
+        "site": "site-b"
+      },
+      "site-c": {
+        "lat": 38.620722,
+        "lng": -121.07848,
+        "site": "site-c"
+      },
+      "site-d": {
+        "lat": 38.616647,
+        "lng": -121.073142,
+        "site": "site-d"
+      }
+    }
+  },
+  "propConfig": {
+    "custom.expand": {
+      "persistent": true
+    },
+    "custom.selectedSite": {
+      "persistent": true
+    },
+    "params.loaded": {
+      "binding": {
+        "config": {
+          "expression": "true"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    },
+    "params.sites": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.title": {
+      "binding": {
+        "config": {
+          "expression": "\"Map\""
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 532,
+      "width": 500
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "custom": {
+          "mouseover": null
+        },
+        "meta": {
+          "name": "Map"
+        },
+        "position": {
+          "basis": "399px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.layers.ui.popup": {
+            "binding": {
+              "config": {
+                "path": "this.custom.mouseover"
+              },
+              "transforms": [
+                {
+                  "code": "\tif not value:\n\t\treturn []\n\t\n\tpopups \u003d []\n\t\n\tpopup \u003d {}\n\tpopup[\u0027enabled\u0027] \u003d True\n\tpopup[\u0027content\u0027] \u003d {\u0027text\u0027: value[\u0027site\u0027].replace(\u0027-\u0027, \u0027 \u0027)}\n\tpopup[\u0027pan\u0027] \u003d {\u0027auto\u0027: True}\n\tpopup[\u0027closeButton\u0027] \u003d False\n\tpopup[\u0027autoClose\u0027] \u003d False\n\tpopup[\u0027closeOnEscapeKey\u0027] \u003d False\n\tpopup[\u0027closeOnClick\u0027] \u003d False\n\tpopup[\u0027width\u0027] \u003d {\u0027min\u0027: 35, \u0027max\u0027: 35}\n\tpopup[\u0027lat\u0027] \u003d value[\u0027lat\u0027] + 0.001\n\tpopup[\u0027lng\u0027] \u003d value[\u0027lng\u0027]\n\t\n\tpopups.append(popup)\n\treturn popups",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.layers.ui.view": {
+            "binding": {
+              "config": {
+                "path": "view.custom.selectedSite"
+              },
+              "transforms": [
+                {
+                  "code": "\tsites \u003d []\n\t\n\tnodePath \u003d \u0027Exchange/Oil And Gas/Map/_siteNode\u0027\n\tdetailPath \u003d \u0027Exchange/Oil And Gas/Map/_site\u0027\n\texpandPath \u003d \u0027Exchange/Oil And Gas/Map/_expanded\u0027\n\t\n\tfor k in self.view.params.sites:\n\t\tsiteInfo \u003d self.view.params.sites[k]\n\t\tif value \u003d\u003d siteInfo[\u0027site\u0027]:\n\t\t\tcontinue\n\t\tsite \u003d {}\n\t\tsite[\u0027path\u0027] \u003d nodePath\n\t\tsite[\u0027lat\u0027] \u003d siteInfo[\u0027lat\u0027]\n\t\tsite[\u0027lng\u0027] \u003d siteInfo[\u0027lng\u0027]\n\t\tsite[\u0027transparentBackground\u0027] \u003d True\n\t\tsite[\u0027shadow\u0027] \u003d False\n\t\tsite[\u0027params\u0027] \u003d {\u0027site\u0027: siteInfo[\u0027site\u0027]}\n\t\tsites.append(site)\n\t\n\tif value in self.view.params.sites:\n\t\tsiteInfo \u003d self.view.params.sites[value]\n\t\tsite \u003d {}\n\t\tsite[\u0027path\u0027] \u003d expandPath if self.view.custom.expand else detailPath\n\t\tsite[\u0027lat\u0027] \u003d siteInfo[\u0027lat\u0027]\n\t\tsite[\u0027lng\u0027] \u003d siteInfo[\u0027lng\u0027]\n\t\tsite[\u0027transparentBackground\u0027] \u003d True\n\t\tsite[\u0027shadow\u0027] \u003d False\n\t\tsite[\u0027params\u0027] \u003d {\u0027site\u0027: siteInfo[\u0027site\u0027]}\n\t\tsites.append(site)\n\t\n\t\n\treturn sites",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "init": {
+            "center": {
+              "lat": 38.625454,
+              "lng": -121.084629
+            },
+            "zoom": 15
+          },
+          "layers": {
+            "raster": {
+              "tile": [
+                {
+                  "WMS": {
+                    "format": "image/jpeg",
+                    "layers": "",
+                    "styles": "",
+                    "transparent": false,
+                    "uppercase": false,
+                    "version": "1.1.1"
+                  },
+                  "options": {
+                    "attribution": "Map data \u0026copy; \u003ca href\u003d\u0027https://www.openstreetmap.org/\u0027\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href\u003d\u0027https://creativecommons.org/licenses/by-sa/2.0/\u0027\u003eCC-BY-SA\u003c/a\u003e",
+                    "crossOrigin": false,
+                    "detectRetina": false,
+                    "errorTileUrl": "",
+                    "opacity": 1,
+                    "subdomains": [
+                      "a",
+                      "b",
+                      "c"
+                    ],
+                    "tileSize": {
+                      "height": 256,
+                      "width": 256
+                    },
+                    "tms": false,
+                    "update": {
+                      "interval": 200,
+                      "whenIdle": false,
+                      "whenZooming": true
+                    },
+                    "zIndex": 1,
+                    "zoom": {
+                      "max": 18,
+                      "min": 0,
+                      "native": {
+                        "max": null,
+                        "min": null
+                      },
+                      "offset": 0,
+                      "reverse": false
+                    }
+                  },
+                  "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                  "urlTemplateParams": {}
+                }
+              ]
+            },
+            "ui": {}
+          },
+          "zoom": {
+            "controls": false
+          }
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "oilNodeClick",
+              "pageScope": true,
+              "script": "\t# center, zoom, swap to detailed view\n\t\n\t\n\tsite \u003d payload[\u0027site\u0027]\n\tself.view.custom.selectedSite \u003d site\n\tself.view.custom.expand \u003d False\n\tcenter \u003d {\u0027lat\u0027: self.view.params.sites[site][\u0027lat\u0027], \u0027lng\u0027: self.view.params.sites[site][\u0027lng\u0027]}\n\t#zoom \u003d 16\n\t#self.props.init \u003d {\u0027center\u0027: center, \u0027zoom\u0027: zoom}\n\tself.props.init.center \u003d center\n\t#views in map do not position correctly initially, refresh corrects this\n\timport time\n\ttime.sleep(0.05)\n\tself.refreshBinding(\"props.layers.ui.view\")",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "oilSiteClose",
+              "pageScope": true,
+              "script": "\tsite \u003d payload[\u0027site\u0027]\n\tself.view.custom.selectedSite \u003d \u0027\u0027\n\tself.view.custom.expand \u003d False\n\tcenter \u003d {\u0027lat\u0027: self.view.params.sites[site][\u0027lat\u0027], \u0027lng\u0027: self.view.params.sites[site][\u0027lng\u0027]}\n\t#zoom \u003d 15\n\t#self.props.init \u003d {\u0027center\u0027: center, \u0027zoom\u0027: zoom}\n\tself.props.init.center \u003d center\n\timport time\n\ttime.sleep(0.05)\n\tself.refreshBinding(\"props.layers.ui.view\")",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "oilSiteExpand",
+              "pageScope": true,
+              "script": "\tsite \u003d payload[\u0027site\u0027]\n\tself.view.custom.selectedSite \u003d site\n\tself.view.custom.expand \u003d True\n\tcenter \u003d {\u0027lat\u0027: self.view.params.sites[site][\u0027lat\u0027], \u0027lng\u0027: self.view.params.sites[site][\u0027lng\u0027]}\n\t#zoom \u003d 16\n\t#self.props.init \u003d {\u0027center\u0027: center, \u0027zoom\u0027: zoom}\n\tself.props.init.center \u003d center\n\t#views in map do not position correctly initially, refresh corrects this\n\timport time\n\ttime.sleep(0.05)\n\tself.refreshBinding(\"props.layers.ui.view\")",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "oilNodeMouseEnter",
+              "pageScope": true,
+              "script": "\tsite \u003d payload[\u0027site\u0027]\n\tlat \u003d self.view.params.sites[site][\u0027lat\u0027]\n\tlng \u003d self.view.params.sites[site][\u0027lng\u0027]\n\tself.custom.mouseover \u003d {\u0027site\u0027: site.title(), \u0027lat\u0027: lat, \u0027lng\u0027: lng}",
+              "sessionScope": false,
+              "viewScope": false
+            },
+            {
+              "messageType": "oilNodeMouseLeave",
+              "pageScope": true,
+              "script": "\tself.custom.mouseover \u003d None",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.map"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

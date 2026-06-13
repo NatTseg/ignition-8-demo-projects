@@ -1,0 +1,1241 @@
+{
+  "tags": [
+    {
+      "name": "Automotive",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Arms",
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "historyProvider": "automotive",
+              "name": "Comm",
+              "historyEnabled": true,
+              "value": "01110110",
+              "sampleMode": "TagGroup",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "automotive",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Signal",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "automotive",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Power",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "Cells",
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Trigger",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int4",
+              "name": "VIN",
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Right Arm",
+              "typeId": "Automotive/Arms",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "historySampleRateUnits": "SEC",
+                  "value": 0,
+                  "historySampleRate": 1,
+                  "name": "Power",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Comm",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "historySampleRateUnits": "MS",
+                  "value": 0,
+                  "historySampleRate": 500,
+                  "name": "Signal",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "name": "Duration",
+              "value": 0.0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "AGV",
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "Timer",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "Status",
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Left Arm",
+              "typeId": "Automotive/Arms",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "historySampleRateUnits": "SEC",
+                  "value": 0,
+                  "historySampleRate": 1,
+                  "name": "Power",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "historySampleRateUnits": "MS",
+                  "value": 0,
+                  "historySampleRate": 500,
+                  "name": "Signal",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Comm",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tname \u003d tagPath.split(\"/\")[2]\n\tlogics   \u003d system.sfc.getRunningCharts(\"Automotive/PLCs/\"+name+\"/Logic\")\n\tlogicsInstances \u003d logics.getValueAt(0, \"instanceId\")\n\tcontrols \u003d system.sfc.getRunningCharts(\"Automotive/PLCs/\"+name+\"/Controls\")\n\tcontrolsInstances \u003d logics.getValueAt(0, \"instanceId\") if controls is not None else None\n\n\tchartIDs \u003d [controlsInstances, logicsInstances]\n\t\n\tfor id in chartIDs:\n\t\tsystem.sfc.pauseChart(id) if currentValue.value \u003d\u003d True else system.sfc.resumeChart(id)",
+                  "enabled": false
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "Hold",
+              "value": false,
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "AGV",
+          "typeId": "",
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "expr",
+              "expression": "runScript(\"system.db.runNamedQuery(\u0027OnlineDemo\u0027, \u0027Automotive/Get xCoord Location\u0027, {\u0027location\u0027:\u0027\"+{[.]Location}+\"\u0027})\")",
+              "dataType": "String",
+              "deriveExpressionSetter": "runScript(\"automotive.getCoordinate(\"+{InstanceName}+\")\")",
+              "datasource": "LocalDB",
+              "sourceTagPath": "[.]Location",
+              "query": "SELECT \r\n\txCoord.xCoord\r\nFROM automotive_locations xCoord\r\nINNER JOIN (SELECT id, name FROM automotive_cells) AS cells \r\nWHERE cells.id \u003d xCoord.id AND cells.name \u003d {[.]Location}",
+              "name": "xCoord",
+              "executionMode": "TagGroupRate",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 10,
+              "dataType": "Float8",
+              "historyProvider": "Automotive",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Battery Level",
+              "historyEnabled": true,
+              "value": 100.0,
+              "sampleMode": "TagGroup",
+              "historySampleRate": 5,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int4",
+              "name": "VIN",
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Location",
+              "value": "Charging Station",
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IFM",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "PIPressureSensor",
+          "parameters": {
+            "Hostname": {
+              "dataType": "String"
+            },
+            "XPort": {
+              "dataType": "String"
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "name": "Pressure",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "DeviceInfo",
+              "typeId": "IFM/DeviceInfo",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "DeviceId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Serial",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "VendorId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ProductName",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Out1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Poll",
+              "typeId": "IFM/RESTPoll",
+              "parameters": {
+                "Hostname": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{Hostname}"
+                  }
+                },
+                "XPort": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{XPort}"
+                  }
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "CurrentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Rate",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Hostname",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "XPort",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Error",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Enabled",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PortStatus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LastExecution",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Status",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\ttopTagPath \u003d \"/\".join(tagPath.split(\"/\")[:-2])\n\t\n\tdataValue \u003d currentValue.value\n\toutputs \u003d dataValue[-1]\n\toutputs \u003d int(outputs, 16)\n\tout1 \u003d outputs \u0026 0b0001 \u003d\u003d 0b0001\n\tout2 \u003d outputs \u0026 0b0010 \u003d\u003d 0b0010\n\t\n\tprocessValue \u003d dataValue\n\tprocessValue \u003d int(processValue, 16)\n\tprocessValue \u003d processValue \u003e\u003e 2\n\tpressure \u003d processValue / 10.0\n\t\t\t\t\t\n\tsystem.tag.writeBlocking([\"%s/Pressure\" % topTagPath, \"%s/Out1\" % topTagPath, \"%s/Out2\" % topTagPath], [pressure, out1, out2])"
+                    }
+                  ],
+                  "name": "PDIN",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Running",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Out2",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "DeviceInfo",
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "ProductName",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int4",
+              "name": "DeviceId",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Serial",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int4",
+              "name": "VendorId",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "TVTemperatureSensor",
+          "parameters": {
+            "Hostname": {
+              "dataType": "String"
+            },
+            "XPort": {
+              "dataType": "String"
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "name": "TemperatureF",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "name": "TemperatureC",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Out1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Out2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Poll",
+              "typeId": "IFM/RESTPoll",
+              "parameters": {
+                "Hostname": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{Hostname}"
+                  }
+                },
+                "XPort": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{XPort}"
+                  }
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Error",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CurrentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Enabled",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "XPort",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Rate",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PortStatus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LastExecution",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Running",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Status",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Hostname",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\ttopTagPath \u003d \"/\".join(tagPath.split(\"/\")[:-2])\n\n\tdataValue \u003d currentValue.value\n\toutputs \u003d dataValue[-1]\n\toutputs \u003d int(outputs, 16)\n\tout1 \u003d outputs \u0026 0b0001 \u003d\u003d 0b0001\n\tout2 \u003d outputs \u0026 0b0010 \u003d\u003d 0b0010\n\t\n\tprocessValue \u003d dataValue[0:4]\n\tprocessValue \u003d int(processValue, 16)\n\ttempC \u003d processValue / 10.0\n\ttempF \u003d (tempC * 9.0/5.0) + 32.0\n\t\n\tsystem.tag.writeBlocking([\"%s/TemperatureC\" % topTagPath, \"%s/TemperatureF\" % topTagPath, \"%s/Out1\" % topTagPath, \"%s/Out2\" % topTagPath], [ tempC, tempF, out1, out2])"
+                    }
+                  ],
+                  "name": "PDIN",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "DeviceInfo",
+              "typeId": "IFM/DeviceInfo",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "DeviceId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ProductName",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "VendorId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Serial",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RESTPoll",
+          "parameters": {
+            "Hostname": {
+              "dataType": "String"
+            },
+            "XPort": {
+              "dataType": "String"
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "PDIN",
+              "tagType": "AtomicTag"
+            },
+            {
+              "value": {
+                "bindType": "parameter",
+                "binding": "{XPort}"
+              },
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "XPort",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "Rate",
+              "value": 1000,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "expr",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tdef doInBackground():\n\t\timport traceback\n\t\ttopTagPath \u003d \"/\".join(tagPath.split(\"/\")[:-2])\n\t\ttagValues \u003d system.tag.readBlocking([\"%s/Poll/Running\" % topTagPath, \"%s/Poll/Hostname\" % topTagPath, \"%s/Poll/XPort\" % topTagPath, \"%s/DeviceInfo/VendorId\" % topTagPath])\n\t\trunning \u003d tagValues[0].value\n\t\thostname \u003d tagValues[1].value\n\t\txport \u003d tagValues[2].value\n\t\tvendorId \u003d tagValues[3].value\n\t\tlog \u003d system.util.getLogger(\"IFM\")\n\t\t\n\t\tif not running:\n\t\t\tsystem.tag.writeBlocking([\"%s/Poll/Running\" % topTagPath], [True])\n\t\t\n\t\t\terror \u003d None\t\n\t\t\ttry:\n\t\t\t\turl \u003d hostname\n\t\t\t\t\n\t\t\t\t# Get device info if not set\n\t\t\t\tif vendorId is None:\n\t\t\t\t\tpostData \u003d {\n\t\t\t\t\t\t\"code\":\"request\",\n\t\t\t\t\t\t\"cid\":-1,\n\t\t\t\t\t\t\"adr\":\"/iolinkmaster/port[%s]/iolinkdevice/vendorid/getdata\" % xport\n\t\t\t\t\t}\n\t\t\t\t\tpostData \u003d system.util.jsonEncode(postData)\n\t\t\t\t\tres \u003d system.net.httpPost(url\u003durl, contentType\u003d\"application/json\", postData\u003dpostData)\n\t\t\t\t\tres \u003d system.util.jsonDecode(res)\n\t\t\t\t\tvendorId \u003d res[\"data\"][\"value\"]\n\t\t\t\t\t\n\t\t\t\t\tpostData \u003d {\n\t\t\t\t\t\t\"code\":\"request\",\n\t\t\t\t\t\t\"cid\":-1,\n\t\t\t\t\t\t\"adr\":\"/iolinkmaster/port[%s]/iolinkdevice/deviceid/getdata\" % xport\n\t\t\t\t\t}\n\t\t\t\t\tpostData \u003d system.util.jsonEncode(postData)\n\t\t\t\t\tres \u003d system.net.httpPost(url\u003durl, contentType\u003d\"application/json\", postData\u003dpostData)\n\t\t\t\t\tres \u003d system.util.jsonDecode(res)\n\t\t\t\t\tdeviceId \u003d res[\"data\"][\"value\"]\n\t\t\t\t\t\n\t\t\t\t\tpostData \u003d {\n\t\t\t\t\t\t\"code\":\"request\",\n\t\t\t\t\t\t\"cid\":-1,\n\t\t\t\t\t\t\"adr\":\"/iolinkmaster/port[%s]/iolinkdevice/productname/getdata\" % xport\n\t\t\t\t\t}\n\t\t\t\t\tpostData \u003d system.util.jsonEncode(postData)\n\t\t\t\t\tres \u003d system.net.httpPost(url\u003durl, contentType\u003d\"application/json\", postData\u003dpostData)\n\t\t\t\t\tres \u003d system.util.jsonDecode(res)\n\t\t\t\t\tproductName \u003d res[\"data\"][\"value\"]\n\t\t\t\t\t\n\t\t\t\t\tpostData \u003d {\n\t\t\t\t\t\t\"code\":\"request\",\n\t\t\t\t\t\t\"cid\":-1,\n\t\t\t\t\t\t\"adr\":\"/iolinkmaster/port[%s]/iolinkdevice/serial/getdata\" % xport\n\t\t\t\t\t}\n\t\t\t\t\tpostData \u003d system.util.jsonEncode(postData)\n\t\t\t\t\tres \u003d system.net.httpPost(url\u003durl, contentType\u003d\"application/json\", postData\u003dpostData)\n\t\t\t\t\tres \u003d system.util.jsonDecode(res)\n\t\t\t\t\tserial \u003d res[\"data\"][\"value\"]\n\t\t\t\t\t\n\t\t\t\t\tsystem.tag.writeBlocking([\"%s/DeviceInfo/VendorId\" % topTagPath, \"%s/DeviceInfo/DeviceId\" % topTagPath, \"%s/DeviceInfo/ProductName\" % topTagPath, \"%s/DeviceInfo/Serial\" % topTagPath], [vendorId, deviceId, productName, serial])\n\t\t\t\t\n\t\t\t\tpostData \u003d {\n\t\t\t\t\t\"code\":\"request\",\n\t\t\t\t\t\"cid\":-1,\n\t\t\t\t\t\"adr\":\"/iolinkmaster/port[%s]/iolinkdevice/status/getdata\" % xport\n\t\t\t\t}\n\t\t\t\tpostData \u003d system.util.jsonEncode(postData)\n\t\t\t\tres \u003d system.net.httpPost(url\u003durl, contentType\u003d\"application/json\", postData\u003dpostData)\n\t\t\t\tres \u003d system.util.jsonDecode(res)\n\t\t\t\tstatus \u003d res[\"data\"][\"value\"]\n\t\t\t\t\n\t\t\t\tpostData \u003d {\n\t\t\t\t\t\"code\":\"request\",\n\t\t\t\t\t\"cid\":-1,\n\t\t\t\t\t\"adr\":\"/iolinkmaster/port[%s]/iolinkdevice/pdin/getdata\" % xport\n\t\t\t\t}\n\t\t\t\tpostData \u003d system.util.jsonEncode(postData)\n\t\t\t\tres \u003d system.net.httpPost(url\u003durl, contentType\u003d\"application/json\", postData\u003dpostData)\n\t\t\t\tres \u003d system.util.jsonDecode(res)\n\t\t\t\tdataValue \u003d res[\"data\"][\"value\"]\n\t\t\t\t\n\t\t\t\tsystem.tag.writeBlocking([\"%s/Poll/PortStatus\" % topTagPath, \"%s/Poll/PDIN\" % topTagPath], [status, dataValue])\n\t\t\texcept:\n\t\t\t\terror \u003d traceback.format_exc()\n\t\t\t\n\t\t\tsystem.tag.writeBlocking([\"%s/Poll/Running\" % topTagPath, \"%s/Poll/Status\" % topTagPath, \"%s/Poll/Error\" % topTagPath], [False, \"failed\" if error is not None else \"success\", error])\n\t\t\tif error is None:\n\t\t\t\tsystem.tag.writeBlocking([\"%s/Poll/LastExecution\" % topTagPath], [system.date.now()])\n\tsystem.util.invokeAsynchronous(doInBackground)"
+                }
+              ],
+              "expression": "now(if({[.]Enabled}, {[.]Rate}, 0))",
+              "dataType": "DateTime",
+              "name": "CurrentTime",
+              "executionMode": "EventDriven",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Enabled",
+              "value": true,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Running",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "LastExecution",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "tagType": "AtomicTag"
+            },
+            {
+              "value": {
+                "bindType": "parameter",
+                "binding": "{Hostname}"
+              },
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Hostname",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Status",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "PortStatus",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Error",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "TDTemperatureSensor",
+          "parameters": {
+            "Hostname": {
+              "dataType": "String"
+            },
+            "XPort": {
+              "dataType": "String"
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "name": "TemperatureC",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "DeviceInfo",
+              "typeId": "IFM/DeviceInfo",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "DeviceId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "VendorId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ProductName",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Serial",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Poll",
+              "typeId": "IFM/RESTPoll",
+              "parameters": {
+                "Hostname": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{Hostname}"
+                  }
+                },
+                "XPort": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{XPort}"
+                  }
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Enabled",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\ttopTagPath \u003d \"/\".join(tagPath.split(\"/\")[:-2])\n\t\n\tdataValue \u003d currentValue.value\n\tprocessValue \u003d dataValue\n\tprocessValue \u003d int(processValue, 16)\n\ttempF \u003d processValue / 10.0\n\ttempC \u003d (tempF - 32) * 5.0/9.0\n\t\n\tsystem.tag.writeBlocking([\"%s/TemperatureC\" % topTagPath, \"%s/TemperatureF\" % topTagPath], [ tempC, tempF])"
+                    }
+                  ],
+                  "name": "PDIN",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Running",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LastExecution",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Hostname",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Status",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "XPort",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CurrentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Rate",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PortStatus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Error",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "name": "TemperatureF",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "OGDPhotoelectricDistanceSensor",
+          "parameters": {
+            "Hostname": {
+              "dataType": "String"
+            },
+            "XPort": {
+              "dataType": "String"
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "historyProvider": "",
+              "name": "Out2",
+              "historyEnabled": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "historyProvider": "",
+              "name": "Out1",
+              "historyEnabled": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "historyProvider": "",
+              "name": "Distance",
+              "historyEnabled": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Float8",
+              "historyProvider": "",
+              "name": "Reflectivity",
+              "historyEnabled": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "expr",
+              "expression": "if({[.]Reflectivity} \u003d 32764, \"No Data\", \r\nif({[.]Reflectivity} \u003d 32760, \"Far\", \r\nif({[.]Reflectivity} \u003d 32776, \"Near\", \"OK\")))",
+              "dataType": "String",
+              "name": "ReflectivityStatus",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Poll",
+              "typeId": "IFM/RESTPoll",
+              "parameters": {
+                "Hostname": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{Hostname}"
+                  }
+                },
+                "XPort": {
+                  "dataType": "String",
+                  "value": {
+                    "bindType": "parameter",
+                    "binding": "{XPort}"
+                  }
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Error",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Hostname",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "XPort",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Enabled",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PortStatus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LastExecution",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Running",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Status",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
+                      "script": "\ttopTagPath \u003d \"/\".join(tagPath.split(\"/\")[:-2])\n\t\t\t\n\tdataValue \u003d currentValue.value\n\toutputs \u003d dataValue[-1]\n\toutputs \u003d int(outputs, 16)\n\tout1 \u003d outputs \u0026 0b0001 \u003d\u003d 0b0001\n\tout2 \u003d outputs \u0026 0b0010 \u003d\u003d 0b0010\n\t\n\tdeviceStatus \u003d dataValue[12:14]\n\tdeviceStatus \u003d int(deviceStatus, 16)\n\t\n\tdistance \u003d dataValue[0:4]\n\tdistance \u003d int(distance, 16)\n\t\n\treflectivity \u003d dataValue[8:12]\n\treflectivity \u003d int(reflectivity, 16)\n\t\n\tsystem.tag.writeBlocking([\"%s/Distance\" % topTagPath, \"%s/Reflectivity\" % topTagPath, \"%s/DeviceStatus\" % topTagPath, \"%s/Out1\" % topTagPath, \"%s/Out2\" % topTagPath], [ distance, reflectivity, deviceStatus, out1, out2])"
+                    }
+                  ],
+                  "name": "PDIN",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CurrentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Rate",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "name": "DeviceStatus",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "expr",
+              "expression": "switch({[.]DeviceStatus},\r\n0, 1, 2, 3, 4,\r\n\"OK\",\r\n\"Maintenance Required\",\r\n\"Out of Specification\",\r\n\"Functional Check\",\r\n\"Failure\", \r\n\"Unknown\")",
+              "dataType": "String",
+              "name": "DeviceStatusDisplay",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "expr",
+              "expression": "if({[.]Distance} \u003d 32764, \"No Data\", \r\nif({[.]Distance} \u003d 32760, \"Far\", \r\nif({[.]Distance} \u003d 32776, \"Near\", \"OK\")))",
+              "dataType": "String",
+              "name": "DistanceStatus",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "DeviceInfo",
+              "typeId": "IFM/DeviceInfo",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "DeviceId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "VendorId",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Serial",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ProductName",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataType": "String",
+      "name": "Compressor",
+      "value": "",
+      "parameters": {
+        "CompressorNumber": {
+          "dataType": "String",
+          "value": ""
+        }
+      },
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Compressor{CompressorNumber}/hoa"
+          },
+          "valueSource": "opc",
+          "dataType": "Int4",
+          "historyProvider": "demo",
+          "historicalDeadbandStyle": "Discrete",
+          "historyEnabled": true,
+          "name": "hoa",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "value": {
+            "bindType": "parameter",
+            "binding": "{CompressorNumber}"
+          },
+          "valueSource": "memory",
+          "dataType": "String",
+          "name": "CompressorNumber",
+          "tagType": "AtomicTag"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Compressor{CompressorNumber}/pressureDischarge"
+          },
+          "valueSource": "opc",
+          "dataType": "Int4",
+          "historyProvider": "demo",
+          "historyEnabled": true,
+          "name": "pressureDischarge",
+          "historyTagGroup": "Default",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "name": "HOATag",
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "name": "Mode",
+          "value": 0,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "name": "Hand",
+          "value": -1,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "1",
+          "name": "Auto",
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch({[.]Mode},\r\n2, 0, 1,\r\n{[.]Hand}, 0, {[.]Auto},\r\n0)\r\n// hand 2, off 0, auto 1",
+          "name": "Value",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "dataType": "Int4",
+      "name": "Motor",
+      "value": 0,
+      "parameters": {
+        "MotorNumber": {
+          "dataType": "String",
+          "value": ""
+        }
+      },
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "ns\u003d1;s\u003d[CLX]Global.M{MotorNumber}.HOA"
+          },
+          "valueSource": "opc",
+          "dataType": "Int2",
+          "name": "HOA",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "ns\u003d1;s\u003d[CLX]Global.M{MotorNumber}.STATUS"
+          },
+          "valueSource": "opc",
+          "dataType": "Int2",
+          "name": "STATUS",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "ns\u003d1;s\u003d[CLX]Global.M{MotorNumber}.RUN_CMD"
+          },
+          "valueSource": "opc",
+          "dataType": "Int2",
+          "name": "RUN_CMD",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "ns\u003d1;s\u003d[CLX]Global.M{MotorNumber}.AMPS"
+          },
+          "valueSource": "opc",
+          "dataType": "Float4",
+          "name": "AMPS",
+          "value": 0.0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "dataType": "String",
+      "name": "Pump",
+      "value": "",
+      "parameters": {
+        "PumpNumber": {
+          "dataType": "String",
+          "value": ""
+        }
+      },
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Overview/Motor {PumpNumber}/Amps"
+          },
+          "valueSource": "opc",
+          "dataType": "Int4",
+          "name": "Amps",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "value": {
+            "bindType": "parameter",
+            "binding": "{PumpNumber}"
+          },
+          "valueSource": "memory",
+          "dataType": "String",
+          "name": "PumpNumber",
+          "tagType": "AtomicTag"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Overview/Motor {PumpNumber}/HOA"
+          },
+          "valueSource": "opc",
+          "dataType": "Int4",
+          "name": "HOA",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "dataType": "String",
+      "name": "Tower",
+      "value": "",
+      "parameters": {
+        "TowerNumber": {
+          "dataType": "String",
+          "value": ""
+        }
+      },
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/makeup"
+          },
+          "rawHigh": 100000.0,
+          "valueSource": "opc",
+          "scaleMode": "Linear",
+          "dataType": "Int4",
+          "name": "makeup",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "opcServer": "Ignition OPC UA Server",
+          "scaledHigh": 2.0
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/mmOH"
+          },
+          "rawHigh": 1000.0,
+          "valueSource": "opc",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 100.0,
+          "scaleMode": "Linear",
+          "dataType": "Float4",
+          "historyProvider": "demo",
+          "historyEnabled": true,
+          "name": "mmOH",
+          "value": 0.0,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/fanSpeed"
+          },
+          "valueSource": "opc",
+          "dataType": "Float4",
+          "historyProvider": "demo",
+          "historyEnabled": true,
+          "name": "fanSpeed",
+          "value": 0.0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/pH"
+          },
+          "rawHigh": 2500.0,
+          "valueSource": "opc",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 14.0,
+          "scaleMode": "Linear",
+          "dataType": "Float4",
+          "historyProvider": "demo",
+          "historyEnabled": true,
+          "name": "pH",
+          "value": 0.0,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "value": {
+            "bindType": "parameter",
+            "binding": "{TowerNumber}"
+          },
+          "valueSource": "memory",
+          "dataType": "String",
+          "name": "TowerNumber",
+          "tagType": "AtomicTag"
+        },
+        {
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/temp"
+          },
+          "valueSource": "opc",
+          "dataType": "Float4",
+          "historyProvider": "demo",
+          "historyEnabled": true,
+          "name": "temp",
+          "value": 0.0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "name": "Pumps",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "opcItemPath": {
+                "bindType": "parameter",
+                "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/Pumps/chemHOA"
+              },
+              "rawHigh": 20000.0,
+              "valueSource": "opc",
+              "scaleMode": "Linear",
+              "dataType": "Int4",
+              "name": "chemHOA",
+              "value": 0,
+              "tagType": "AtomicTag",
+              "clampMode": "Clamp_Both",
+              "opcServer": "Ignition OPC UA Server",
+              "scaledHigh": 2.0
+            },
+            {
+              "opcItemPath": {
+                "bindType": "parameter",
+                "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/Pumps/circHOA"
+              },
+              "rawHigh": 60000.0,
+              "valueSource": "opc",
+              "scaleMode": "Linear",
+              "dataType": "Int4",
+              "name": "circHOA",
+              "rawLow": -20000.0,
+              "value": 0,
+              "tagType": "AtomicTag",
+              "clampMode": "Clamp_Both",
+              "opcServer": "Ignition OPC UA Server",
+              "scaledHigh": 2.0
+            },
+            {
+              "opcItemPath": {
+                "bindType": "parameter",
+                "binding": "[Simulator]_Meta:Refrigeration/Tower{TowerNumber}/Pumps/bromineHOA"
+              },
+              "rawHigh": 50000.0,
+              "valueSource": "opc",
+              "scaleMode": "Linear",
+              "dataType": "Int4",
+              "name": "bromineHOA",
+              "rawLow": 5000.0,
+              "value": 0,
+              "tagType": "AtomicTag",
+              "clampMode": "Clamp_Both",
+              "opcServer": "Ignition OPC UA Server",
+              "scaledHigh": 2.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

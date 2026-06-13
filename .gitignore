@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Large database/gateway files excluded due to GitHub 100MB limit
+all_databases.sql
+Ignition Demo VM_Ignition-backup.gwbk
+Database Backups/water.sql

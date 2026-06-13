@@ -1,0 +1,516 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 106,
+      "width": 761
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "60px"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "textAlign": "center"
+              },
+              "text": "HOA"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Multi State Button"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.controlValue": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/HMI_HOA"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.indicatorValue": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.controlValue"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "orientation": "row",
+              "states": [
+                {
+                  "selectedStyle": {
+                    "backgroundColor": "#FFFF00",
+                    "classes": "",
+                    "color": "#000000"
+                  },
+                  "text": "Hand",
+                  "unselectedStyle": {
+                    "classes": ""
+                  },
+                  "value": 2
+                },
+                {
+                  "selectedStyle": {
+                    "backgroundColor": "#FF0000",
+                    "classes": "",
+                    "color": "#000000"
+                  },
+                  "text": "Off",
+                  "unselectedStyle": {
+                    "classes": ""
+                  },
+                  "value": 0
+                },
+                {
+                  "selectedStyle": {
+                    "backgroundColor": "#00FF00",
+                    "classes": "",
+                    "color": "#000000"
+                  },
+                  "text": "Auto",
+                  "unselectedStyle": {
+                    "classes": ""
+                  },
+                  "value": 1
+                }
+              ]
+            },
+            "type": "ia.input.multi-state-button"
+          }
+        ],
+        "meta": {
+          "name": "HOA Cont"
+        },
+        "position": {
+          "basis": "230px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "textAlign": "center"
+              },
+              "text": "Status"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Status"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "custom.status": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/Status"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.status"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d 0:\n\t\treturn \u0027var(--neutral-80)\u0027\n\telif value \u003d\u003d 1:\n\t\treturn \u0027#00FF00\u0027 if self.session.props.theme in [\u0027hvac-dark\u0027,\u0027hvac-dark-warm\u0027] else \u0027#00eb00\u0027\n\telif value \u003d\u003d 2:\n\t\treturn \u0027#FF0000\u0027\n\telif value \u003d\u003d 3:\n\t\treturn \u0027#FFCA8A\u0027\n\telif value \u003d\u003d 4:\n\t\treturn \u0027var(--neutral-80)\u0027\n\telif value \u003d\u003d 5:\n\t\treturn \u0027var(--neutral-80)\u0027\n\telif value \u003d\u003d 6:\n\t\treturn \u0027#FF0000\u0027\n\telse:\n\t\treturn \u0027var(--neutral-80)\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.text"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d \u0027Run Fault\u0027:\n\t\treturn \u0027building-automation-demo/page/controls/framework/fault\u0027\n\telse:\n\t\treturn \u0027\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.theme}\u003d\u0027hvac-dark\u0027 || {session.props.theme}\u003d\u0027hvac-dark-warm\u0027,\u0027--neutral-10\u0027,\u0027--neutral-100\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.status"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value \u003d\u003d 0:\n\t\treturn \u0027Available\u0027\n\telif value \u003d\u003d 1:\n\t\treturn \u0027Running\u0027\n\telif value \u003d\u003d 2:\n\t\treturn \u0027Run Fault\u0027\n\telif value \u003d\u003d 3:\n\t\treturn \u0027Igniting\u0027\n\telif value \u003d\u003d 4:\n\t\treturn \u0027Cooldown\u0027\n\telif value \u003d\u003d 5:\n\t\treturn \u0027Unavailable\u0027\n\telif value \u003d\u003d 6:\n\t\treturn \u0027Stuck Relay\u0027\n\telse:\n\t\treturn \u0027NA\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderColor": "--neutral-50",
+                "borderStyle": "solid",
+                "fontWeight": "bold",
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "basis": "105px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "textAlign": "center"
+              },
+              "text": "Delay"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "custom.TagValue": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/Cooldown_Tmr/ACC"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "numberFormat(60-({this.custom.TagValue}/1000),\u0027#,##0\u0027)"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value) + \u0027sec\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-80",
+                "borderColor": "--neutral-50",
+                "borderStyle": "solid",
+                "color": "--neutral-10",
+                "fontWeight": "bold",
+                "paddingLeft": "5px",
+                "paddingRight": "5px",
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Delay"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "textAlign": "center"
+              },
+              "text": "Hand"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Temp SP"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.inputBounds.maximum": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L_Hand_Lvl_Cmd.engHigh"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.inputBounds.minimum": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L_Hand_Lvl_Cmd.engLow"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L_Hand_Lvl_Cmd"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "inputBounds": {}
+            },
+            "type": "ia.input.numeric-entry-field"
+          }
+        ],
+        "meta": {
+          "name": "Hand"
+        },
+        "position": {
+          "basis": "67px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "textAlign": "center"
+              },
+              "text": "Level"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "direct",
+                    "tagPath": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/Lvl_Cmd"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-80",
+                "borderColor": "--neutral-50",
+                "borderStyle": "solid",
+                "color": "--neutral-10",
+                "fontWeight": "bold",
+                "paddingRight": "5px",
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Lvl"
+        },
+        "position": {
+          "basis": "70px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "60px"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "textAlign": "center"
+              },
+              "text": "1st Floor"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Value"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "numberFormat({[default]BMS/90BR/AHU/AHU2/AHU2_SAT_1stFloorDuct}, {[default]BMS/90BR/AHU/AHU2/AHU2_SAT_1stFloorDuct.formatString}) + \u0027°F\u0027"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-80",
+                "borderColor": "--neutral-50",
+                "borderStyle": "solid",
+                "color": "--neutral-10",
+                "fontWeight": "bold",
+                "paddingRight": "5px",
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Floor"
+        },
+        "position": {
+          "basis": "85px"
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "space-between",
+      "style": {
+        "overflow": "hidden",
+        "paddingLeft": "15px",
+        "paddingRight": "15px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,4776 @@
+{
+  "custom": {
+    "options": [
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Supply HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Supply Fan/HMI_HOA",
+        "type": "fan",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Supply Fan Hand Speed SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Supply Fan/HMI_Main_Spd_SP",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Supply Fan Speed CMD",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Supply Fan/Speed_Cmd",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error",
+          "3,Spindown,#ECCD04"
+        ],
+        "name": "Supply Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Supply Fan/Status",
+        "type": "fan",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Act VAV Pressure Demand",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/90BR/VAV/_Global/Request_Pressure_Duct1_pct",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Min SP VAV Pressure Demand",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/_Demand/AC1_Demand_DP_Scale_LL",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Min SP Duct Pressure",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/_Demand/AC1_Duct_Pressure_Min",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Max SP VAV Pressure Demand",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/_Demand/AC1_Demand_DP_Scale_HL",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Max SP Duct Pressure",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/_Demand/AC1_Duct_Pressure_Max",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Duct Pressure SP",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Duct_Static_Pressure_SP",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Duct Pressure Actual",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Duct_Static_Pressure",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Exhaust HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Exhaust Fan/HMI_HOA",
+        "type": "fan",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Exhaust Fan Hand Speed SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Exhaust Fan/HMI_Main_Spd_SP",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Exhaust Fan Speed CMD",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Exhaust Fan/Speed_Cmd",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error",
+          "3,Spindown,#ECCD04",
+          "4,Wait cycle,#ECCD04"
+        ],
+        "name": "Exhaust Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Exhaust Fan/Status",
+        "type": "fan",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Building Static Pressure SP",
+        "numberFormat": "#,##0.###",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/HMI_Building_Static_Pressure_SP",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Delay Off Time",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Exhaust_Fan_Delay_Off_SP",
+        "type": "fan",
+        "units": "min"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Building Static Pressure",
+        "numberFormat": "#,##0.000",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Building_Static_Pressure",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Exhaust Off SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU1/Exhaust_Fan/AC1_Exhaust_Fan_UnderPressure_SP",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Fan HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Fan/HMI_HOA",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Fan Temp SP",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Fan/HMI_Temp_SP",
+        "type": "condenser",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Fan Delta Setpoint SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Fan/HMI_Delta_SP",
+        "type": "condenser",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Low Speed,#2CDB1A",
+          "2,Hi Speed,#2CDB1A",
+          "3,Lo Run Flt,--error",
+          "4,Hi Run Flt,--error",
+          "5, Coast Down,#2CDB1A"
+        ],
+        "name": "Fan Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Fan/Status",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Water Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Cond_Water_Temp",
+        "type": "condenser",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Fan Speed",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Fan_VFD_Speed_CMD",
+        "type": "condenser",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Water Pump HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Pump/HMI_HOA",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error"
+        ],
+        "name": "Water Pump Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cond_Pump/Status",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Folsom Air Quality Index PM2.5",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/Air_Quality_Index",
+        "type": "economizer",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Close,--error",
+          "1,Auto,#2CDB1A",
+          "2,Max,#ECCD04",
+          "3,Min,#f5a442"
+        ],
+        "name": "HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Economizer/HMI_OCA",
+        "type": "economizer",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Min Open SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Economizer/HMI_Min_Open_SP",
+        "type": "economizer",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Max Open SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Economizer/HMI_Main_Open_SP",
+        "type": "economizer",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Open CMD",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Economizer/Open_Cmd",
+        "type": "economizer",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Close,--neutral-100",
+          "1,Open,#2CDB1A"
+        ],
+        "name": "Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Economizer/Status",
+        "type": "economizer",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Act Demand",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/VAV/_Global/Request_Cool_pct",
+        "type": "compressor",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Cooling Min Demand",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/_Demand/AC1_Cntl_Cooling_Demand_pct_Min",
+        "type": "compressor",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Cooling Max Demand",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/_Demand/AC1_Cntl_Cooling_Demand_pct_Max",
+        "type": "compressor",
+        "units": "%"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Temp High SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Supply_Air_Max_Temp_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Temp Low SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Supply_Air_Min_Temp_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Supply Air Temp SP",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Supply_Air_Temp_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "Supply Air Delta",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Supply_Air_Delta_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Supply Air Temp Actual",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Supply_Air_Temp",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "OSA Cool Min",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/HMI_OSA_Cool_Min_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": true,
+        "mappings": [],
+        "name": "OSA Delta",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/HMI_OSA_Delta_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A"
+        ],
+        "name": "HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Comp1/HMI_HOA",
+        "type": "compressor",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error",
+          "3,Off (Unavailable),--neutral-70",
+          "4,Relay stuck on fault,--error"
+        ],
+        "name": "Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Comp1/Status",
+        "type": "compressor",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Delay On",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Comp1/Delay_On_ACC",
+        "type": "compressor",
+        "units": "sec"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Delay Off",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Comp1/Delay_Off _ACC",
+        "type": "compressor",
+        "units": "sec"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Outside Static Pressure",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/OSA_Static_Pressure",
+        "type": "other",
+        "units": "wc"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [
+          "0,OK,#2CDB1A",
+          "1,FLT,--error"
+        ],
+        "name": "Smoke Alarm",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Smoke_Alarm",
+        "type": "other",
+        "units": ""
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Return Air Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Return_Air_Temp",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "Mixed Air Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Mixed_Air_Temp",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 1,
+        "editable": false,
+        "mappings": [],
+        "name": "VAV Cold Duct Flow",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/90BR/AHU/AHU1/AHU1_CFM_Total",
+        "type": "other",
+        "units": "cfm"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Supply HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Supply Fan/HMI_HOA",
+        "type": "fan",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error",
+          "3,Spindown,#ECCD04"
+        ],
+        "name": "Supply Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Supply Fan/Status",
+        "type": "fan",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Speed CMD",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Supply Fan/Speed_Cmd",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Supply Fan Hand Speed",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Supply Fan/HMI_Main_Spd_SP",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Actual VAV Pressure Demand",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/90BR/VAV/_Global/Request_Pressure_Duct2_pct",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Min SP VAV Pressure Demand",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/_Demand/AC2_Demand_DP_Scale_LL",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Min SP Duct Pressure",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/_Demand/AC2_Duct_Pressure_Min",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Max SP VAV Pressure Demand",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/_Demand/AC2_Demand_DP_Scale_HL",
+        "type": "fan",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Max SP Duct Pressure",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/_Demand/AC2_Duct_Pressure_Max",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Duct Pressure SP",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Duct_Static_Pressure_SP",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Duct Pressure Actual",
+        "numberFormat": "#,##0.00",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Duct_Static_Pressure",
+        "type": "fan",
+        "units": "wc"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Low,#ECCD04",
+          "3,High,#f5a442"
+        ],
+        "name": "Fan HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cond_Fan/HMI_HOA",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Fan Temp SP",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cond_Fan/HMI_Temp_SP",
+        "type": "condenser",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Fan Delta SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cond_Fan/HMI_Delta_SP",
+        "type": "condenser",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Low Speed,#2CDB1A",
+          "2,Hi Speed,#2CDB1A",
+          "3,Lo Run Flt,--error",
+          "4,Hi Run Flt,--error",
+          "5, Coast Down,#2CDB1A"
+        ],
+        "name": "Fan Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cond_Fan/Status",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Water Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Cond_Water_Temp",
+        "type": "condenser",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Water Pump HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cond_Pump/HMI_HOA",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error"
+        ],
+        "name": "Water Pump Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cond_Pump/Status",
+        "type": "condenser",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Heating Temp SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heat_Supply_Air_Temp_SP",
+        "type": "heatingControls",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Return Air Temp",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Return_Air_Temp",
+        "type": "heatingControls",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Supply Air Temp Actual",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Supply_Air_Temp",
+        "type": "heatingControls",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,#D5D5D5",
+          "1,Running,#00FF00",
+          "2,Run Fault,--error",
+          "3,Igniting,#FFCA8A",
+          "4,Cooldown,#D5D5D5"
+        ],
+        "name": "Upper Heater Status",
+        "numberFormat": "",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_U/Status",
+        "type": "heatingControls",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Upper Heater HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_U/HMI_HOA",
+        "type": "heatingControls",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,#D5D5D5",
+          "1,Running,#00FF00",
+          "2,Run Fault,--error",
+          "3,Igniting,#FFCA8A",
+          "4,Cooldown,#D5D5D5"
+        ],
+        "name": "Lower Heater Status",
+        "numberFormat": "",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/Status",
+        "type": "heatingControls",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A",
+          "2,Hand,#ECCD04"
+        ],
+        "name": "Lower Heater HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/HMI_HOA",
+        "type": "heatingControls",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Upper Heater Hand",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_U_Hand_Lvl_Cmd",
+        "type": "heatingControls",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Upper Heater Level",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_U/Lvl_Cmd",
+        "type": "heatingControls",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "SAT 2nd Floor Duct",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/AHU/AHU2/AHU2_SAT_2ndFloorDuct",
+        "type": "heatingControls",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Lower Heater Hand",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L_Hand_Lvl_Cmd",
+        "type": "heatingControls",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Lower Heater Level",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Heater_Variable/AHU2_Heater_L/Lvl_Cmd",
+        "type": "heatingControls",
+        "units": "%"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "SAT 1st Floor Duct",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/AHU/AHU2/AHU2_SAT_1stFloorDuct",
+        "type": "heatingControls",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Request Peak Cool Act Demand",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/VAV/_Global/Request_PeakCool_pct",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Peak Cool Min Demand",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/_Demand/AC2_Cntl_PeakCool_Demand_pct_Min",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Peak Cool Max Demand",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/_Demand/AC2_Cntl_PeakCool_Demand_pct_Max",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Temp High SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Supply_Air_Max_Temp_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Temp Low SP",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Supply_Air_Min_Temp_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Supply Air Temp SP",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Supply_Air_Temp_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "Supply Air Delta",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Supply_Air_Delta_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Supply Air Temp Actual",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Supply_Air_Temp",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "OSA Cool Min",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/HMI_OSA_Cool_Min_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": true,
+        "mappings": [],
+        "name": "OSA Delta",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/HMI_OSA_Delta_SP",
+        "type": "compressor",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--error",
+          "1,Auto,#2CDB1A"
+        ],
+        "name": "HOA",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Comp1/HMI_HOA",
+        "type": "compressor",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,Off,--neutral-100",
+          "1,Running,#2CDB1A",
+          "2,Run Fault,--error",
+          "3,Off (Unavailable),--neutral-70",
+          "4,Relay stuck on fault,--error"
+        ],
+        "name": "Status",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Comp1/Status",
+        "type": "compressor",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Delay On",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Comp1/Delay_On_ACC",
+        "type": "compressor",
+        "units": "sec"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Delay Off",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Comp1/Delay_Off _ACC",
+        "type": "compressor",
+        "units": "sec"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [
+          "0,OK,#2CDB1A",
+          "1,FLT,--error"
+        ],
+        "name": "Smoke Alarm",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Smoke_Alarm",
+        "type": "other",
+        "units": ""
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Return Air Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC2/Cntl/Return_Air_Temp",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "VAV Hot Duct Flow",
+        "numberFormat": "#,##0",
+        "path": "[default]BMS/90BR/AHU/AHU2/AHU2_CFM_Total",
+        "type": "other",
+        "units": "cfm"
+      },
+      {
+        "ac": 2,
+        "editable": false,
+        "mappings": [],
+        "name": "Return To Supply Differential",
+        "numberFormat": "#,##0.##",
+        "path": "[default]BMS/90BR/AHU/AHU2/Return_to_Supply_Differential",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [
+          "1,Auto,#2CDB1A",
+          "0,Off,--error",
+          "2,Hand,--warning"
+        ],
+        "name": "Cooling System Mode",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/_Demand/System_Cool_HOA",
+        "type": "other",
+        "units": ""
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [
+          "1,Auto,#2CDB1A",
+          "0,Off,--error",
+          "2,Hand,--warning"
+        ],
+        "name": "Heating System Mode",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/_Demand/System_Heat_HOA",
+        "type": "other",
+        "units": ""
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [
+          "1,Auto,#2CDB1A",
+          "0,Off,--error",
+          "2,Hand,--warning"
+        ],
+        "name": "Peak System Mode",
+        "numberFormat": "",
+        "path": "[default]BMS/Blue/_Demand/System_PeakCool_HOA",
+        "type": "other",
+        "units": ""
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [],
+        "name": "Outside Air Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/Blue/HVAC/AC1/Cntl/Outside_Air_Temp",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [],
+        "name": "Average Building Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/VAV/_Global/Temp_Avg_Building",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [
+          "1,HEAT,--error",
+          "0,PEAK,--callToAction--active",
+          "2,COOL,--neutral-10",
+          "3,OFF,--neutral-10"
+        ],
+        "name": "System Mode",
+        "numberFormat": "",
+        "path": "System Mode",
+        "type": "other",
+        "units": ""
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [],
+        "name": "Floor 1 Avg Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/VAV/_Global/Temp_Avg_Floor1",
+        "type": "other",
+        "units": "°F"
+      },
+      {
+        "ac": 3,
+        "editable": false,
+        "mappings": [],
+        "name": "Floor 2 Avg Temp",
+        "numberFormat": "#,##0.0",
+        "path": "[default]BMS/90BR/VAV/_Global/Temp_Avg_Floor2",
+        "type": "other",
+        "units": "°F"
+      }
+    ]
+  },
+  "params": {
+    "currentParams": {
+      "ac": -1,
+      "compressor": -1,
+      "editable": false,
+      "highThreshold": "",
+      "icon": "",
+      "iconVisible": true,
+      "lowThreshold": "",
+      "mappings": [],
+      "name": "",
+      "numberFormat": "",
+      "path": "",
+      "type": "",
+      "units": "",
+      "widgetTitle": ""
+    }
+  },
+  "propConfig": {
+    "custom.key": {
+      "persistent": true
+    },
+    "custom.name": {
+      "persistent": true
+    },
+    "custom.options": {
+      "persistent": true
+    },
+    "custom.optionsBackup": {
+      "persistent": true
+    },
+    "custom.selectingColor": {
+      "persistent": true
+    },
+    "params.currentParams": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.currentParams.ac": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t# Get the current value type.\n\ttype \u003d self.params.currentParams.type\n\t\t\n\t# Get the current ac (ahu).\n\tac \u003d currentValue.value\n\t\n\t# Set type to \u0027other\u0027 if ac (ahu) is 3.\n\tif ac \u003d\u003d 3:\n\t\ttype \u003d \u0027other\u0027\n\n\t# Iterate through the tag \u0027options\u0027 custom property,\n\t# finding the appropriate tags based on the selected\n\t# type and selected ac (ahu) and appending these tags\n\t# to the tags list.\n\ttags \u003d []\n\toptions \u003d self.custom.options\n\tfor option in options:\n\t\ttypeProp \u003d option[\u0027type\u0027]\n\t\tacProp \u003d option[\u0027ac\u0027]\n\t\tif typeProp \u003d\u003d type and acProp \u003d\u003d ac:\n\t\t\tname \u003d option[\u0027name\u0027]\n\t\t\tunits \u003d option[\u0027units\u0027]\n\t\t\tpath \u003d option[\u0027path\u0027]\n\t\t\tmappings \u003d option[\u0027mappings\u0027]\n\t\t\tnumberFormat \u003d option[\u0027numberFormat\u0027]\n\t\t\teditable \u003d option[\u0027editable\u0027]\n\t\t\t\n\t\t\ttags.append({\u0027value\u0027:path,\u0027label\u0027:name,\u0027units\u0027:units,\u0027mappings\u0027:mappings,\u0027numberFormat\u0027:numberFormat,\u0027editable\u0027:editable})\n\t\n\t# Set the options for the tag dropdown equal to the tags list.\n\tself.getChild(\"root\").getChild(\"Tag\").getChild(\"Tag\").props.options \u003d tags"
+      }
+    },
+    "params.currentParams.type": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t# Get the current value type.\n\ttype \u003d currentValue.value\n\t\n\t# Get the current ac (ahu).\n\tac \u003d self.params.currentParams.ac\n\n\t# Iterate through the tag \u0027options\u0027 custom property,\n\t# finding the appropriate tags based on the selected\n\t# type and selected ac (ahu) and appending these tags\n\t# to the tags list.\n\ttags \u003d []\n\toptions \u003d self.custom.options\n\tfor option in options:\n\t\ttypeProp \u003d option[\u0027type\u0027]\n\t\tacProp \u003d option[\u0027ac\u0027]\n\t\tif typeProp \u003d\u003d type and acProp \u003d\u003d ac:\n\t\t\tname \u003d option[\u0027name\u0027]\n\t\t\tunits \u003d option[\u0027units\u0027]\n\t\t\tpath \u003d option[\u0027path\u0027]\n\t\t\tmappings \u003d option[\u0027mappings\u0027]\n\t\t\tnumberFormat \u003d option[\u0027numberFormat\u0027]\n\t\t\teditable \u003d option[\u0027editable\u0027]\n\t\t\t\n\t\t\ttags.append({\u0027value\u0027:path,\u0027label\u0027:name,\u0027units\u0027:units,\u0027mappings\u0027:mappings,\u0027numberFormat\u0027:numberFormat,\u0027editable\u0027:editable})\n\t\n\t# Set the options for the tag dropdown equal to the tags list.\n\tself.getChild(\"root\").getChild(\"Tag\").getChild(\"Tag\").props.options \u003d tags"
+      }
+    },
+    "params.key": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 842,
+      "width": 477
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label Widget Title"
+            },
+            "props": {
+              "style": {
+                "color": "--neutral-100",
+                "fontSize": "16px",
+                "white-space": "nowrap"
+              },
+              "text": "Widget Title"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "35px"
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.currentParams.widgetTitle"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-10",
+                "borderBottomStyle": "solid",
+                "borderLeftStyle": "none",
+                "borderRightStyle": "none",
+                "borderTopStyle": "none",
+                "fontSize": "15px",
+                "outlineStyle": "none"
+              }
+            },
+            "type": "ia.input.text-field"
+          }
+        ],
+        "meta": {
+          "name": "Widget Title"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "props": {
+                  "style": {
+                    "color": "--neutral-100",
+                    "fontSize": "16px",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Icon"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Title Cont"
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Name"
+                        },
+                        "propConfig": {
+                          "props.style.color": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the default icon name is being returned (based on what user has selected), then\n\t# change the font color of icon name such that it is darker (like a placeholder).\n\t\n\tif len(value) \u003d\u003d 0:\n\t\treturn \u0027--neutral-60\u0027\n\telse:\n\t\treturn \u0027--neutral-100\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "ac": "{view.params.currentParams.ac}",
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "name": "{view.params.currentParams.name}",
+                                  "path": "{view.params.currentParams.path}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the user has not selected an icon manually, then we can use the current\n\t# params, ac, name, tag path, and type, to figure out a default icon and then\n\t# return the name of it.\n\t\n\ttypeMap \u003d {\u0027fan\u0027:\u0027Fan\u0027,\u0027condenser\u0027:\u0027Condenser\u0027,\u0027economizer\u0027:\u0027Economizer\u0027,\u0027heatingControls\u0027:\u0027Heating Controls\u0027,\u0027compressor\u0027:\u0027Compressor\u0027,\u0027\u0027:\u0027\u0027}\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\tac \u003d value[\u0027ac\u0027]\n\tpath \u003d value[\u0027path\u0027]\n\tname \u003d value[\u0027name\u0027]\n\t\n\tif len(icon) \u003d\u003d 0:\n\t\tif ac \u003d\u003d -1:\n\t\t\treturn \u0027\u0027\n\t\telif ac in [1,2] and type !\u003d \u0027other\u0027:\n\t\t\treturn typeMap[type]\n\t\telif ac in [1,2] and type \u003d\u003d \u0027other\u0027:\n\t\t\tif \u0027pressure\u0027 in name.lower():\n\t\t\t\treturn \u0027Pressure\u0027\n\t\t\telif \u0027smoke\u0027 in name.lower():\n\t\t\t\treturn \u0027smoke free\u0027\n\t\t\telif \u0027temp\u0027 in name.lower() or \u0027differential\u0027 in name.lower():\n\t\t\t\treturn \u0027Temperature\u0027\n\t\t\telif \u0027cold\u0027 in name.lower():\n\t\t\t\treturn \u0027ac unit\u0027\n\t\t\telif \u0027hot\u0027 in name.lower():\n\t\t\t\treturn \u0027whatshot\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027info\u0027\n\t\telif ac \u003d\u003d 3:\n\t\t\tif \u0027cooling\u0027 in name.lower() or \u0027peak\u0027 in name.lower():\n\t\t\t\treturn \u0027ac unit\u0027\n\t\t\telif \u0027heating\u0027 in name.lower():\n\t\t\t\treturn \u0027whatshot\u0027\n\t\t\telif \u0027temp\u0027 in name.lower():\n\t\t\t\treturn \u0027Temperature\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027info\u0027\n\telse:\n\t\treturn icon.replace(\u0027_\u0027,\u0027 \u0027)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "--neutral-10",
+                            "fontSize": "15px",
+                            "marginRight": "10px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Condenser"
+                        },
+                        "position": {
+                          "basis": "28px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the value type is condenser and the user has not manually\n\t# selected an icon, or if the user manually selected the condenser,\n\t# then display the condenser icon.\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif len(icon) \u003d\u003d 0 and type\u003d\u003d\u0027condenser\u0027:\n\t\treturn True\n\telif icon \u003d\u003d \u0027condenser\u0027:\n\t\treturn True\n\telse:\n\t\treturn False\n\t\t",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027condenser\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "d": "M43,611 l-43,-44 0,-524 43,-43 912,0 43,43 0,524 -43,44 -912,0z",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "var(--neutral-20)",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M21,43 l956,0 0,524 -956,0 0,-524z",
+                              "fill": {
+                                "paint": "var(--neutral-10)"
+                              },
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M98,98 l33,0 0,-9 -26,-24 -36,0 -26,24 0,412 33,0 0,-403 11,-7 11,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M151,501 l34,0 0,8 -26,26 -36,0 -25,-26 0,-411 33,0 0,403 10,6 10,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M207,98 l32,0 0,-9 -24,-24 -38,0 -24,24 0,412 32,0 0,-403 10,-7 12,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M261,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M315,98 l34,0 0,-9 -26,-24 -36,0 -26,24 0,412 34,0 0,-403 10,-7 10,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M371,501 l32,0 0,8 -26,26 -36,0 -26,-26 0,-411 34,0 0,403 10,6 12,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M425,98 l34,0 0,-9 -26,-24 -36,0 -26,24 0,412 32,0 0,-403 12,-7 10,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M479,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 34,0 0,403 10,6 10,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M535,98 l32,0 0,-9 -26,-24 -36,0 -26,24 0,412 34,0 0,-403 10,-7 12,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M589,501 l32,0 0,8 -24,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M643,98 l34,0 0,-9 -26,-24 -36,0 -26,24 0,412 34,0 0,-403 10,-7 10,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M699,501 l32,0 0,8 -26,26 -36,0 -26,-26 0,-411 34,0 0,403 10,6 12,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M753,98 l32,0 0,-9 -24,-24 -36,0 -26,24 0,412 32,0 0,-403 12,-7 10,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M807,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M863,98 l32,0 0,-9 -26,-24 -36,0 -24,24 0,412 32,0 0,-403 10,-7 12,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M917,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M971,91 l0,-26 -29,0 -25,24 0,412 34,0 0,-403 9,-7 11,0z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M21,507 l0,28 30,0 25,-26 0,-8 -33,0 -11,6 -11,0z",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "viewBox": "0 0 998 611"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Other"
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the user has manually configured an icon and it is not one of the\n\t# built-in icons, then display this icon component.\n\t\n\tif len(value) \u003e 0 and value not in [\u0027heating_controls\u0027,\u0027fan\u0027,\u0027condenser\u0027,\u0027economizer\u0027,\u0027compressor\u0027,\u0027temperature\u0027,\u0027pressure\u0027]:\n\t\treturn True\n\telse:\n\t\treturn False",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "expression": "\u0027material/\u0027 + {view.params.currentParams.icon}"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "Fallback"
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "ac": "{view.params.currentParams.ac}",
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "name": "{view.params.currentParams.name}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the user has not manually configured an icon and one of the\n\t# built-in icons is not visible, then this \u0027fallback\u0027 icon will\n\t# be displayed.\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\t\n\tif len(icon) \u003e 0:\n\t\treturn False\n\telse:\n\t\tac \u003d value[\u0027ac\u0027]\n\t\ttype \u003d value[\u0027type\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\t\n\t\tif ac \u003d\u003d -1:\n\t\t\treturn False\n\t\telif ac in [1,2] and type !\u003d \u0027other\u0027:\n\t\t\treturn False\n\t\telif ac in [1,2] and type \u003d\u003d \u0027other\u0027:\n\t\t\tif \u0027pressure\u0027 in name.lower() or \u0027temp\u0027 in name.lower() or \u0027differential\u0027 in name.lower():\n\t\t\t\treturn False\n\t\t\telse:\n\t\t\t\treturn True\n\t\telif ac \u003d\u003d 3:\n\t\t\tif \u0027temp\u0027 in name.lower():\n\t\t\t\treturn False\n\t\t\telse:\n\t\t\t\treturn True",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.path": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "ac": "{view.params.currentParams.ac}",
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "name": "{view.params.currentParams.name}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the user has not manually configured an icon, then this displays\n\t# a \u0027fallback\u0027 icon (the icon displayed depends on the values of the\n\t# params).\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\t\n\tif len(icon) \u003e 0:\n\t\treturn \u0027material/info\u0027\n\telse:\n\t\tac \u003d value[\u0027ac\u0027]\n\t\ttype \u003d value[\u0027type\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\t\n\t\tif ac \u003d\u003d -1:\n\t\t\treturn \u0027material/info\u0027\n\t\telif ac in [1,2] and type !\u003d \u0027other\u0027:\n\t\t\treturn \u0027material/info\u0027\n\t\telif ac in [1,2] and type \u003d\u003d \u0027other\u0027:\n\t\t\tif \u0027smoke\u0027 in name.lower():\n\t\t\t\treturn \u0027material/smoke_free\u0027\n\t\t\telif \u0027cold\u0027 in name.lower():\n\t\t\t\treturn \u0027material/ac_unit\u0027\n\t\t\telif \u0027hot\u0027 in name.lower():\n\t\t\t\treturn \u0027material/whatshot\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027material/info\u0027\n\t\telif ac \u003d\u003d 3:\n\t\t\tif \u0027cooling\u0027 in name.lower() or \u0027peak\u0027 in name.lower():\n\t\t\t\treturn \u0027material/ac_unit\u0027\n\t\t\telif \u0027heating\u0027 in name.lower():\n\t\t\t\treturn \u0027material/whatshot\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027material/info\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          }
+                        },
+                        "props": {
+                          "color": "var(--neutral-60)",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "meta": {
+                          "name": "Compressor"
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the value type is compressor and the user has not manually\n\t# selected an icon, or if the user manually selected the compressor,\n\t# then display the compressor icon.\t\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif len(icon) \u003d\u003d 0 and type\u003d\u003d\u0027compressor\u0027:\n\t\treturn True\n\telif icon \u003d\u003d \u0027compressor\u0027:\n\t\treturn True\n\telse:\n\t\treturn False\n\t\t",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027compressor\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "d": "M160,963 l0,-268 -71,0 0,71 18,90 0,17 -36,54 -36,-54 0,-17 18,-90 0,-53 -36,-36 18,-18 0,-142 -35,0 0,-72 53,0 0,-17 54,0 0,17 53,0 0,107 107,-124 0,-268 107,0 0,-71 -71,0 -89,18 -18,0 -54,-36 54,-36 18,0 89,18 53,0 36,-36 18,18 142,0 0,-35 72,0 0,53 18,0 0,54 -18,0 0,321 107,124 0,411 35,0 0,36 -642,0 0,-36 36,0z",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M231,285 l428,0 0,18 -428,0 0,-18z",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M231,249 l428,0 0,18 -428,0 0,-18z",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M231,214 l428,0 0,17 -428,0 0,-17z",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M231,321 l428,0 0,17 -428,0 0,-17z",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M695,891 l0,-214 -3,-38 -8,-36 -13,-34 -19,-31 -22,-28 -26,-25 -29,-21 -33,-17 -34,-11 -37,-7 -13,-1 -13,0 -13,0 -37,5 -35,10 -34,15 -30,19 -27,24 -24,27 -19,30 -15,34 -10,35 -5,38 0,12 0,214",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M160,891 l571,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M160,963 l571,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M267,428 l36,17",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M588,445 l36,-17",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M374,160 l250,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M196,107 l0,-72",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M214,35 l0,72",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M303,89 l0,-36",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M374,89 l-18,-36 54,-18",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M374,107 l178,0 0,-72",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M606,160 l0,-160",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M624,107 l0,-54",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M107,873 l-72,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M107,856 l-72,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M89,766 l-36,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M89,695 l-36,18 -18,-54",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M35,517 l72,0 0,178",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M107,445 l-54,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M0,463 l160,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M160,695 l0,-143",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            }
+                          ],
+                          "style": {
+                            "padding": "2px",
+                            "transform": "scaleX(-1)"
+                          },
+                          "viewBox": "0 0 766 999"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Fan",
+                          "tooltip": {
+                            "enabled": true,
+                            "text": "ACCESS CONTROLS"
+                          }
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the value type is fan and the user has not manually\n\t# selected an icon, or if the user manually selected the fan,\n\t# then display the fan icon.\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif len(icon) \u003d\u003d 0 and type\u003d\u003d\u0027fan\u0027:\n\t\treturn True\n\telif icon \u003d\u003d \u0027fan\u0027:\n\t\treturn True\n\telse:\n\t\treturn False\n\t\t",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027fan\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "d": "M0,0 l999,0 0,999 -999,0 0,-999z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M0,709 l999,-418 0,708 -999,0 0,-290z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M0,751 l999,-418 0,666 -999,0 0,-248z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M0,813 l999,-418 0,604 -999,0 0,-186z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M0,0 l999,0 0,999 -999,0 0,-999",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M675,925 l-116,32 -120,0 -116,-32 -104,-60 -86,-84 -61,-106 -31,-116 0,-120 32,-118 60,-104 84,-84 106,-61 116,-31 120,0 118,31 104,61 84,84 61,104 31,118 0,120 -31,116 -61,106 -84,84 -106,60z",
+                              "fill": {
+                                "paint": "var(--neutral-10)"
+                              },
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M667,907 l-110,29 -116,0 -110,-29 -100,-58 -82,-82 -58,-100 -29,-110 1,-116 28,-112 58,-98 82,-82 100,-58 110,-29 116,0 110,29 100,58 82,82 58,100 29,110 0,116 -29,110 -58,100 -82,82 -100,58z",
+                              "fill": {
+                                "paint": "var(--neutral-10)"
+                              },
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M569,915 l0,-346 -140,0 0,346 140,0z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M569,915 l-18,-31 -14,-31 -11,-33 -6,-33 -3,-34 0,-34 4,-34 8,-33 12,-32 16,-31 6,-10 6,-10 -9,0 -131,0 -18,30 -13,32 -10,32 -7,34 -2,22 -1,11 0,12 2,34 5,33 9,33 13,32 16,31 6,10 9,0 131,0z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M569,915 l0,-346 -140,0 -18,30 -13,32 -10,32 -7,34 -3,33 1,34 4,34 8,33 11,33 15,31 12,20 140,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M895,647 l-302,-174 -68,120 300,174 70,-120z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M895,647 l-36,0 -34,-4 -34,-7 -32,-11 -31,-15 -30,-17 -27,-21 -25,-23 -22,-27 -20,-28 -6,-11 -5,-10 -4,7 -17,31 -17,29 -17,30 -9,15 -4,8 5,10 18,30 22,27 23,25 27,22 29,18 30,16 32,12 33,8 34,5 12,1 11,0 12,0 12,0 17,-30 18,-30 17,-30 13,-23 5,-7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M895,647 l-302,-174 -68,120 17,31 20,28 23,25 26,23 28,20 30,16 31,13 33,10 34,6 34,2 24,0 70,-120",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M825,231 l-300,174 68,120 302,-174 -70,-120z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M825,231 l-18,31 -20,28 -24,25 -25,23 -28,19 -30,17 -31,13 -33,10 -33,7 -35,2 -11,0 -12,-1 4,8 17,29 17,31 17,29 13,23 11,0 12,0 35,-2 34,-6 33,-10 32,-13 30,-17 28,-20 25,-22 24,-26 20,-28 12,-19 6,-11 -5,-7 -17,-30 -18,-30 -17,-30 -9,-15 -4,-8z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M825,231 l-300,174 68,120 11,0 35,0 35,-6 34,-8 31,-13 31,-15 28,-19 27,-22 24,-24 22,-27 18,-29 6,-11 -70,-120",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M429,83 l0,346 140,0 0,-346 -140,0z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M429,83 l18,31 14,31 10,33 7,33 3,34 -1,34 -4,34 -8,33 -12,32 -15,31 -6,10 -6,10 9,0 131,0 18,-30 13,-32 10,-32 7,-34 2,-22 1,-11 0,-12 -2,-34 -5,-33 -9,-33 -13,-32 -16,-31 -6,-10 -9,0 -131,0z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M429,83 l0,346 140,0 18,-30 13,-32 10,-32 7,-34 3,-33 -1,-34 -4,-34 -8,-33 -11,-33 -15,-31 -12,-20 -140,0",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M103,351 l302,174 68,-120 -300,-174 -70,120z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M103,351 l36,0 34,4 34,7 32,11 31,15 30,17 27,21 25,23 22,27 20,28 6,11 5,10 4,-7 17,-31 17,-29 17,-30 9,-15 4,-8 -5,-10 -18,-30 -22,-27 -23,-25 -27,-22 -29,-18 -30,-16 -32,-12 -33,-8 -34,-5 -12,-1 -11,0 -12,0 -12,0 -17,30 -18,30 -17,30 -13,23 -5,7z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M103,351 l302,174 68,-120 -17,-31 -20,-28 -23,-25 -26,-23 -28,-20 -30,-16 -31,-13 -33,-10 -34,-6 -34,-2 -24,0 -70,120",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M173,767 l300,-174 -68,-120 -302,174 70,120z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M173,767 l18,-31 20,-28 24,-25 25,-23 28,-19 30,-17 31,-13 33,-10 33,-7 35,-2 11,0 12,1 -4,-8 -17,-29 -17,-31 -17,-29 -13,-23 -11,0 -12,0 -35,2 -34,6 -33,10 -32,13 -30,17 -28,20 -25,22 -24,26 -20,28 -12,19 -6,11 5,7 17,30 18,30 17,30 9,15 4,8z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M173,767 l300,-174 -68,-120 -11,0 -35,0 -35,6 -34,8 -31,13 -31,15 -28,19 -27,22 -24,24 -22,27 -18,29 -6,11 70,120",
+                              "name": "path",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "cx": "499",
+                              "cy": "499",
+                              "name": "circle",
+                              "r": "122",
+                              "stroke": {
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "circle"
+                            },
+                            {
+                              "cx": "499",
+                              "cy": "499",
+                              "name": "circle",
+                              "r": "104",
+                              "type": "circle"
+                            },
+                            {
+                              "cx": "499",
+                              "cy": "499",
+                              "fill": {
+                                "paint": "var(--neutral-10)"
+                              },
+                              "name": "circle",
+                              "r": 44,
+                              "type": "circle"
+                            },
+                            {
+                              "d": "M62,973 l62,0 0,19 -62,0 0,-19z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M145,973 l62,0 0,19 -62,0 0,-19z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M291,973 l62,0 0,19 -62,0 0,-19z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M936,992 l-62,0 0,-19 62,0 0,19z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M853,992 l-62,0 0,-19 62,0 0,19z",
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M707,992 l-62,0 0,-19 62,0 0,19z",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "viewBox": "0 0 999 999"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Heating"
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the value type is heatingControls and the user has not manually\n\t# selected an icon, or if the user manually selected the heatingControls,\n\t# icon, then display the heatingControls icon.\t\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif len(icon) \u003d\u003d 0 and type\u003d\u003d\u0027heatingControls\u0027:\n\t\treturn True\n\telif icon \u003d\u003d \u0027heating_controls\u0027:\n\t\treturn True\n\telse:\n\t\treturn False\n\t\t",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027heating_controls\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "id": "defs319",
+                              "name": "defs319",
+                              "type": "defs"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "d": "m 59.326109,99.9916 h 16.66875 v 66.14583 h -16.66875 z",
+                                  "id": "path20",
+                                  "name": "path20",
+                                  "stroke": {
+                                    "dasharray": "none",
+                                    "paint": "#4c4c4c",
+                                    "width": "0.529167"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 75.994859,99.9916 h 16.404166 v 66.14583 H 75.994859 Z",
+                                  "id": "path22",
+                                  "name": "path22",
+                                  "stroke": {
+                                    "dasharray": "none",
+                                    "paint": "#4c4c4c",
+                                    "width": "0.529167"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 92.399025,99.9916 h 16.668755 v 66.14583 H 92.399025 Z",
+                                  "id": "path24",
+                                  "name": "path24",
+                                  "stroke": {
+                                    "dasharray": "none",
+                                    "paint": "#4c4c4c",
+                                    "width": "0.529167"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 109.06778,99.9916 h 16.40416 v 66.14583 h -16.40416 z",
+                                  "id": "path26",
+                                  "name": "path26",
+                                  "stroke": {
+                                    "dasharray": "none",
+                                    "paint": "#4c4c4c",
+                                    "width": "0.529167"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 125.47194,99.9916 h 16.66875 v 66.14583 h -16.66875 z",
+                                  "id": "path28",
+                                  "name": "path28",
+                                  "stroke": {
+                                    "dasharray": "none",
+                                    "paint": "#4c4c4c",
+                                    "width": "0.529167"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 142.14069,99.9916 h 16.40417 v 66.14583 h -16.40417 z",
+                                  "id": "path30",
+                                  "name": "path30",
+                                  "stroke": {
+                                    "dasharray": "none",
+                                    "paint": "#4c4c4c",
+                                    "width": "0.529167"
+                                  },
+                                  "type": "path"
+                                }
+                              ],
+                              "id": "layer1",
+                              "name": "layer1",
+                              "transform": "translate(-59.061526,-69.36712)",
+                              "type": "group"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "d": "m 163.9119,40.93401 c -3.27026,0 -5.32934,1.11752 -7.14608,2.07911 -1.57457,0.90956 -2.78584,1.55932 -4.96596,1.55932 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55932 -1.81674,-0.98758 -3.80312,-2.07911 -7.14608,-2.07911 -3.34287,0 -5.32926,1.11752 -7.14608,2.07911 -1.57457,0.90956 -2.78576,1.55932 -4.96587,1.55932 v 5.06781 c 3.27017,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.83167 2.85845,-1.55932 4.96587,-1.55932 2.10751,0 3.39139,0.64966 4.96596,1.55932 1.81683,0.98757 3.80312,2.0791 7.14608,2.0791 3.34287,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.83167 2.85845,-1.55932 4.96596,-1.55932 2.18012,0 3.3913,0.64966 4.96587,1.55932 1.81683,0.98757 3.82738,2.0791 7.14608,2.0791 v -5.06781 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.55932 -1.81682,-0.98758 -3.8759,-2.07911 -7.14608,-2.07911 z",
+                                  "id": "path1375",
+                                  "name": "path1375",
+                                  "stroke": {
+                                    "width": "2.50909"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 171.05798,26.302337 c -1.81682,-0.98757 -3.82738,-2.0791 -7.14608,-2.0791 -3.3187,0 -5.32934,1.09153 -7.14608,2.0791 -1.57457,0.83168 -2.85845,1.55933 -4.96596,1.55933 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55933 -1.81674,-0.96162 -3.80312,-2.0791 -7.14608,-2.0791 -3.34287,0 -5.32926,1.09153 -7.14608,2.0791 -1.57457,0.85761 -2.83419,1.55933 -4.96587,1.55933 v 5.01583 c 3.27017,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.85761 2.83418,-1.55933 4.96587,-1.55933 2.13177,0 3.39139,0.64976 4.96596,1.55933 1.81683,0.98757 3.80312,2.0791 7.14608,2.0791 3.34287,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.83168 2.85845,-1.55933 4.96596,-1.55933 2.18012,0 3.3913,0.64976 4.96587,1.55933 1.81683,0.98757 3.82738,2.0791 7.14608,2.0791 v -5.06781 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.50735 z",
+                                  "id": "path1373",
+                                  "name": "path1373",
+                                  "stroke": {
+                                    "width": "2.50909"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 163.9119,57.696768 c -3.27026,0 -5.32934,1.11751 -7.14608,2.0791 -1.57457,0.83167 -2.85845,1.55932 -4.96596,1.55932 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55932 -1.81674,-0.98757 -3.80312,-2.0791 -7.14608,-2.0791 -3.34287,0 -5.32926,1.11751 -7.14608,2.0791 -1.57457,0.83167 -2.83419,1.55932 -4.96587,1.55932 v 5.06782 c 3.27017,0 5.32925,-1.11752 7.14608,-2.07911 1.57457,-0.90956 2.78575,-1.55932 4.96587,-1.55932 2.18021,0 3.39139,0.64976 4.96596,1.55932 1.81683,0.98758 3.80312,2.07911 7.14608,2.07911 3.34287,0 5.32925,-1.11752 7.14608,-2.07911 1.57457,-0.90956 2.78575,-1.55932 4.96596,-1.55932 2.18012,0 3.3913,0.64976 4.96587,1.55932 1.81683,0.98758 3.82738,2.07911 7.14608,2.07911 v -5.06782 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.55932 -1.81682,-0.98757 -3.8759,-2.0791 -7.14608,-2.0791 z",
+                                  "id": "path1371",
+                                  "name": "path1371",
+                                  "stroke": {
+                                    "width": "2.50909"
+                                  },
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "m 163.9119,74.459519 c -3.27026,0 -5.32934,1.091531 -7.14608,2.079111 -1.57457,0.8576 -2.85845,1.55932 -4.96596,1.55932 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55932 -1.81674,-0.98758 -3.80312,-2.079111 -7.14608,-2.079111 -3.34287,0 -5.32926,1.091531 -7.14608,2.079111 -1.57457,0.8576 -2.83419,1.55932 -4.96587,1.55932 v 5.06781 c 3.27017,0 5.32925,-1.09153 7.14608,-2.0791 1.57457,-0.8576 2.83418,-1.55932 4.96587,-1.55932 2.13177,0 3.39139,0.64966 4.96596,1.55932 1.81683,0.98757 3.80312,2.0791 7.14608,2.0791 3.34287,0 5.32925,-1.09153 7.14608,-2.0791 1.57457,-0.8576 2.85845,-1.55932 4.96596,-1.55932 2.18012,0 3.3913,0.64966 4.96587,1.55932 1.81683,0.98757 3.82738,2.0791 7.14608,2.0791 v -5.06781 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.55932 -1.81682,-0.98758 -3.8759,-2.079111 -7.14608,-2.079111 z",
+                                  "id": "path1108-3",
+                                  "name": "path1108-3",
+                                  "stroke": {
+                                    "width": "2.50909"
+                                  },
+                                  "type": "path"
+                                }
+                              ],
+                              "id": "layer3",
+                              "name": "layer3",
+                              "transform": "matrix(-0.01464824,0.53431864,-0.74671805,0,92.19221,-68.166165)",
+                              "type": "group"
+                            }
+                          ],
+                          "viewBox": "0 0 99.747917 97.034896"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Economizer",
+                          "tooltip": {
+                            "enabled": true,
+                            "text": "ACCESS CONTROLS"
+                          }
+                        },
+                        "position": {
+                          "basis": "20px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the value type is economizer and the user has not manually\n\t# selected an icon, or if the user manually selected the economizer,\n\t# then display the economizer icon.\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif len(icon) \u003d\u003d 0 and type\u003d\u003d\u0027economizer\u0027:\n\t\treturn True\n\telif icon \u003d\u003d \u0027economizer\u0027:\n\t\treturn True\n\telse:\n\t\treturn False\n\t\t",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027economizer\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "id": "defs1667",
+                              "name": "defs1667",
+                              "type": "defs"
+                            },
+                            {
+                              "d": "M 1.3778146,51.361252 H 218.99855 V 438.85555 H 1.3778146 Z",
+                              "id": "path1603",
+                              "name": "path1603",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 218.7514,51.608402 v -13 l 75,-37.0000002 V 14.608402 Z",
+                              "id": "path1605",
+                              "name": "path1605",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 294.72758,0.99905228 -0.1488,0.0731017 -8.5e-4,4.136e-4 L 218.50353,38.434148 0.41557456,38.494808 75.86896,1.2338872 Z",
+                              "id": "path1607",
+                              "name": "path1607",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": 2
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 170.7514,387.6084 v -75 l 11,-5 v 74 z",
+                              "id": "path1609",
+                              "name": "path1609",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 218.7514,438.6084 75,-38 V 14.608402 l -75,37 z",
+                              "id": "path1611",
+                              "name": "path1611",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M 0.58160456,38.166941 H 219.19286 V 52.043413 H 0.58160456 Z M 218.1514,38.687563 v 13.876472 m 0.48705,-1.523633 H 0.02719456 Z m -1.04905,-11.826 H 0.17740456 Z M 1.7014046,38.482666 v 13.876472 m 0.562,-14.138972 v 13.876472",
+                              "id": "path1613",
+                              "name": "path1613",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "1.11708"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M 101.7514,424.6084 V 62.608402 h 5 V 424.6084 Z",
+                              "id": "path1615",
+                              "name": "path1615",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#000000",
+                                "width": "1"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 93.751405,312.6084 12.999995,-5 h 75 l -11,5 z",
+                              "id": "path1629",
+                              "name": "path1629",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 143.7514,115.6084 h -1 -10 l -7,-4 -5,-8 v -3.999998 l 3,-9 5,-4 18,-8 6,-3 11,3 6,7 1,6 -3,8.999998 -5,4 z",
+                              "id": "path1639",
+                              "name": "path1639",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M 93.751405,312.6084 H 167.7514 v 75 H 93.751405 Z",
+                              "id": "path1643",
+                              "name": "path1643",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 136.7514,86.608402 10,4 5,9 -3,9.999998 -9,6 h -3 l -11,-4 -5,-8 v -3.999998 l 5,-9 z",
+                              "id": "path1645",
+                              "name": "path1645",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "M 231.7514,312.6084 V 62.608402 h 38 l 149,124.999998 z",
+                              "id": "path1649",
+                              "name": "path1649",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 231.7514,62.608402 51,-24 h 37 l -50,24 z",
+                              "id": "path1651",
+                              "name": "path1651",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 269.7514,62.608402 50,-24 150,124.999998 -51,24 z",
+                              "id": "path1653",
+                              "name": "path1653",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 418.7514,187.6084 51,-24 -187,125 -51,24 z",
+                              "id": "path1655",
+                              "name": "path1655",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 207.7514,376.6084 v -64 l 6,-2 v 61 z",
+                              "id": "path1657",
+                              "name": "path1657",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 178.7514,312.6084 5,-2 h 30 l -6,2 z",
+                              "id": "path1659",
+                              "name": "path1659",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "d": "m 178.7514,312.6084 h 29 v 64 h -29 z",
+                              "id": "path1661",
+                              "name": "path1661",
+                              "stroke": {
+                                "dasharray": "none",
+                                "paint": "#4c4c4c",
+                                "width": "2"
+                              },
+                              "type": "path"
+                            }
+                          ],
+                          "style": {
+                            "transform": "scaleX(-1)"
+                          },
+                          "viewBox": "0 0 471.59729 440.23611"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Temp"
+                        },
+                        "position": {
+                          "basis": "30px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "ac": "{view.params.currentParams.ac}",
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "name": "{view.params.currentParams.name}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the user selected the \u0027temperature\u0027 icon, or if the user\n\t# did not manually configure an icon and \u0027temp\u0027 or \u0027differential\u0027\n\t# is in the name of the tag, then display the \u0027temperature\u0027 icon.\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\t\n\tif icon \u003d\u003d \u0027temperature\u0027:\n\t\treturn True\n\telif len(icon) \u003e 0:\n\t\treturn False\n\telse:\n\t\tac \u003d value[\u0027ac\u0027]\n\t\ttype \u003d value[\u0027type\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\t\n\t\tif ac in [1,2] and type \u003d\u003d \u0027other\u0027:\n\t\t\tif \u0027temp\u0027 in name.lower() or \u0027differential\u0027 in name.lower():\n\t\t\t\treturn True\n\t\t\telse:\n\t\t\t\treturn False\n\t\telif ac \u003d\u003d 3:\n\t\t\tif \u0027temp\u0027 in name.lower():\n\t\t\t\treturn True\n\t\t\telse:\n\t\t\t\treturn False\n\t\telse:\n\t\t\treturn False",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill.paint": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027temperature\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "elements": [
+                                {
+                                  "d": "M0,0h24v24H0V0z",
+                                  "fill": {
+                                    "paint": "transparent"
+                                  },
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "type": "group"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "d": "M15,13V5c0-1.66-1.34-3-3-3S9,3.34,9,5v8c-1.21,0.91-2,2.37-2,4c0,2.76,2.24,5,5,5s5-2.24,5-5C17,15.37,16.21,13.91,15,13z M11,11V5c0-0.55,0.45-1,1-1s1,0.45,1,1v1h-1v1h1v1v1h-1v1h1v1H11z",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "type": "group"
+                            }
+                          ],
+                          "fill": {},
+                          "viewBox": "0 0 24 24"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Pressure"
+                        },
+                        "position": {
+                          "basis": "30px"
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "ac": "{view.params.currentParams.ac}",
+                                  "icon": "{view.params.currentParams.icon}",
+                                  "name": "{view.params.currentParams.name}",
+                                  "type": "{view.params.currentParams.type}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\t# If the user selected the \u0027pressure\u0027 icon, or if the user\n\t# did not manually configure an icon and \u0027pressure\u0027 is in\n\t# the name of the tag, then display the \u0027pressure\u0027 icon.\t\n\t\n\ticon \u003d value[\u0027icon\u0027]\n\t\n\tif icon \u003d\u003d \u0027pressure\u0027:\n\t\treturn True\n\telif len(icon) \u003e 0:\n\t\treturn False\n\telse:\n\t\tac \u003d value[\u0027ac\u0027]\n\t\ttype \u003d value[\u0027type\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\t\n\t\tif ac in [1,2] and type \u003d\u003d \u0027other\u0027:\n\t\t\tif \u0027pressure\u0027 in name.lower():\n\t\t\t\treturn True\n\t\t\telse:\n\t\t\t\treturn False\n\t\telse:\n\t\t\treturn False",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          },
+                          "props.fill.paint": {
+                            "binding": {
+                              "config": {
+                                "path": "view.params.currentParams.icon"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value \u003d\u003d \u0027pressure\u0027:\n\t\treturn \u0027var(--neutral-100)\u0027\n\telse:\n\t\treturn \u0027var(--neutral-60)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "d": "M0 0h24v24H0z",
+                              "fill": {
+                                "paint": "transparent"
+                              },
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44zm-9.79 6.84a2 2 0 0 0 2.83 0l5.66-8.49-8.49 5.66a2 2 0 0 0 0 2.83z",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "fill": {},
+                          "viewBox": "0 0 24 24"
+                        },
+                        "type": "ia.shapes.svg"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Name Cont"
+                    },
+                    "position": {
+                      "basis": "245px"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\t# Open the \u0027change icon\u0027 popup to give the user the ability to select an icon.\n\t\n\tsystem.perspective.openPopup(\u0027change-icon\u0027,\u0027Building Automation Demo/Page/Systems Overview/Framework/Dashboard/Widgets/Single Status/Framework/Icon Selector/Change Icon\u0027, params \u003d {\u0027material\u0027:self.view.params.currentParams.icon},modal\u003dTrue,showCloseIcon\u003dFalse,draggable\u003dFalse)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        },
+                        "onMouseEnter": {
+                          "config": {
+                            "script": "\tself.props.fill \u003d \u0027var(--neutral-100)\u0027"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        },
+                        "onMouseLeave": {
+                          "config": {
+                            "script": "\tself.props.fill \u003d \u0027var(--neutral-50)\u0027"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Edit",
+                      "tooltip": {
+                        "delay": 800,
+                        "enabled": true,
+                        "text": "CHANGE ICON"
+                      }
+                    },
+                    "position": {
+                      "basis": "25px"
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "d": "M0 0h24v24H0z",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
+                          "name": "path",
+                          "type": "path"
+                        }
+                      ],
+                      "fill": "var(--neutral-50)",
+                      "style": {
+                        "cursor": "pointer",
+                        "transition": "fill 0.25s linear"
+                      },
+                      "viewBox": "0 0 24 24"
+                    },
+                    "type": "ia.shapes.svg"
+                  }
+                ],
+                "meta": {
+                  "name": "Icon Cont"
+                },
+                "position": {
+                  "basis": "270px"
+                },
+                "props": {
+                  "style": {
+                    "borderBottomColor": "--neutral-50",
+                    "borderBottomStyle": "solid",
+                    "borderBottomWidth": "1px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Display"
+                },
+                "position": {
+                  "basis": "165px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.currentParams.iconVisible"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "checkedIcon": {
+                    "color": {
+                      "enabled": "--neutral-100"
+                    },
+                    "style": {
+                      "transition": "fill 0s"
+                    }
+                  },
+                  "text": "Icon Visible",
+                  "textPosition": "left"
+                },
+                "type": "ia.input.checkbox"
+              }
+            ],
+            "meta": {
+              "name": "Icon Cont"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "custom.icon": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.currentParams.icon"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Icon"
+        },
+        "position": {
+          "basis": "55px"
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "fontSize": "15px",
+                "white-space": "nowrap"
+              },
+              "text": "AHU"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(1)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "AHU 1"
+                },
+                "position": {
+                  "basis": "50%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d1,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d1,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d1,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "AHU1"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(2)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "AHU 2"
+                },
+                "position": {
+                  "basis": "50%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d2,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d2,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d2,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "AHU2"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(3)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Other"
+                },
+                "position": {
+                  "basis": "50%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d3,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d3,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.ac}\u003d3,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Other"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "AHU Options"
+            },
+            "position": {
+              "basis": "35px"
+            },
+            "props": {
+              "justify": "space-evenly",
+              "style": {
+                "borderColor": "--neutral-80",
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "marginTop": "10px"
+              }
+            },
+            "scripts": {
+              "customMethods": [
+                {
+                  "name": "updateParams",
+                  "params": [
+                    "ac"
+                  ],
+                  "script": "\t# Update the current AC (AHU) param, and clear out the other\n\t# params (if needed).\t\n\t\n\tself.view.params.currentParams.ac \u003d ac\n\n\tif ac \u003d\u003d 3:\n\t\tif self.view.params.currentParams.type !\u003d \u0027other\u0027:\n\t\t\tself.view.params.currentParams.type \u003d \u0027other\u0027\n\telse:\n\t\tif self.view.params.currentParams.type !\u003d \u0027\u0027:\n\t\t\tself.view.params.currentParams.type \u003d \u0027\u0027\n\t\n\tif len(self.view.params.currentParams.path) \u003e 0:\n\t\tself.view.params.currentParams.path \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.lowThreshold !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.lowThreshold \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.highThreshold !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.highThreshold \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.units !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.units \u003d \u0027\u0027\n\t\t\n\tif len(self.view.params.currentParams.mappings) \u003e 0:\n\t\tself.view.params.currentParams.mappings \u003d []\n\t\n\tif self.view.params.currentParams.numberFormat !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.numberFormat \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.name !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.name \u003d \u0027\u0027\n\t\t\t\n\tif self.view.params.currentParams.compressor !\u003d -1:\n\t\tself.view.params.currentParams.compressor \u003d -1"
+                }
+              ],
+              "extensionFunctions": null,
+              "messageHandlers": []
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "AHU"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "propConfig": {
+          "custom.currAC": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.currentParams.ac"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "fontSize": "15px",
+                "white-space": "nowrap"
+              },
+              "text": "Unit"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(\u0027fan\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Fan"
+                },
+                "position": {
+                  "basis": "14.29%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027fan\u0027,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027fan\u0027,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027fan\u0027,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Fan"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(\u0027condenser\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Condenser"
+                },
+                "position": {
+                  "basis": "14.29%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027condenser\u0027,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027condenser\u0027,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027condenser\u0027,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Condenser"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(\u0027compressor\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Compressor"
+                },
+                "position": {
+                  "basis": "14.29%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027compressor\u0027,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027compressor\u0027,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027compressor\u0027,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Compressor"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(\u0027economizer\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Economizer"
+                },
+                "position": {
+                  "basis": "14.29%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.currentParams.ac}\u003d1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027economizer\u0027,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027economizer\u0027,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027economizer\u0027,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Economizer"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(\u0027heatingControls\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Heating Controls"
+                },
+                "position": {
+                  "basis": "14.29%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.currentParams.ac}\u003d2"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027heatingControls\u0027,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027heatingControls\u0027,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027heatingControls\u0027,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Heating"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.updateParams(\u0027other\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Other"
+                },
+                "position": {
+                  "basis": "14.29%",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027other\u0027,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027other\u0027,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.currentParams.type}\u003d\u0027other\u0027,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "12px",
+                    "textAlign": "center"
+                  },
+                  "text": "Other"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Unit Options"
+            },
+            "position": {
+              "basis": "35px"
+            },
+            "props": {
+              "justify": "space-evenly",
+              "style": {
+                "borderColor": "--neutral-80",
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "marginTop": "10px"
+              }
+            },
+            "scripts": {
+              "customMethods": [
+                {
+                  "name": "updateParams",
+                  "params": [
+                    "type"
+                  ],
+                  "script": "\t# Update the type param, and clear out other params (if needed).\n\t\n\tself.view.params.currentParams.type \u003d type\n\t\n\tif len(self.view.params.currentParams.path) \u003e 0:\n\t\tself.view.params.currentParams.path \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.lowThreshold !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.lowThreshold \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.highThreshold !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.highThreshold \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.units !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.units \u003d \u0027\u0027\n\t\t\n\tif len(self.view.params.currentParams.mappings) \u003e 0:\n\t\tself.view.params.currentParams.mappings \u003d []\n\t\n\tif self.view.params.currentParams.numberFormat !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.numberFormat \u003d \u0027\u0027\n\t\t\n\tif self.view.params.currentParams.name !\u003d \u0027\u0027:\n\t\tself.view.params.currentParams.name \u003d \u0027\u0027\n\t\t\t\n\tif self.view.params.currentParams.compressor !\u003d -1:\n\t\tself.view.params.currentParams.compressor \u003d -1"
+                }
+              ],
+              "extensionFunctions": null,
+              "messageHandlers": []
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Unit"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{view.params.currentParams.ac} \u003e -1 \u0026\u0026 {view.params.currentParams.ac} !\u003d 3"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "fontSize": "15px",
+                "white-space": "nowrap"
+              },
+              "text": "Tag"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Tag"
+            },
+            "position": {
+              "basis": "36px"
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.currentParams.path"
+                  },
+                  "type": "property"
+                },
+                "onChange": {
+                  "enabled": null,
+                  "script": "\t# The user has selected a tag. Utilize the selected tag path to find the \n\t# tag in the options list, grab the tag properties, and set the params\n\t# equal to the tag properties.\t\n\t\n\tif origin !\u003d \u0027Binding\u0027:\n\t\tselectedPath \u003d currentValue.value\n\t\toptions \u003d self.props.options\n\t\t\n\t\tfor option in options:\n\t\t\tif option[\u0027value\u0027] \u003d\u003d selectedPath:\n\t\t\t\tlabel \u003d option[\u0027label\u0027]\n\t\t\t\tunits \u003d option[\u0027units\u0027]\n\t\t\t\tmappings \u003d option[\u0027mappings\u0027]\n\t\t\t\tnumberFormat \u003d option[\u0027numberFormat\u0027]\n\t\t\t\teditable \u003d option[\u0027editable\u0027]\n\t\t\t\t\n\t\t\t\tself.view.params.currentParams.name \u003d label\n\t\t\t\tself.view.params.currentParams.units \u003d units\n\t\t\t\tself.view.params.currentParams.mappings \u003d mappings\n\t\t\t\tself.view.params.currentParams.numberFormat \u003d numberFormat\n\t\t\t\tself.view.params.currentParams.editable \u003d editable\n\t\t\t\t\n\t\t\t\tbreak"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-10",
+                "borderBottomStyle": "solid",
+                "borderLeftStyle": "none",
+                "borderRightStyle": "none",
+                "borderTopStyle": "none",
+                "fontSize": "15px",
+                "outlineStyle": "none"
+              }
+            },
+            "type": "ia.input.dropdown"
+          }
+        ],
+        "meta": {
+          "name": "Tag"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "ac": "{view.params.currentParams.ac}",
+                  "type": "{view.params.currentParams.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# Only display the tag dropdown if the AC (AHU) param is equal to 1 or 2 and\n\t# the type param is greater than 0, or if the AC (AHU) param is equal to 3\n\t# (other).\n\t\n\tac \u003d value[\u0027ac\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif ac in [1,2] and type \u003e 0:\n\t\treturn True\n\telif ac \u003d\u003d 3:\n\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "fontSize": "15px",
+                "white-space": "nowrap"
+              },
+              "text": "Compressor Number"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 1"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp1"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d1,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d1,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d1,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 1
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 2"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp2"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d2,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d2,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d2,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 2
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 3"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp3"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d3,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d3,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d3,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 3
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 4"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp4"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d4,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d4,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d4,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 4
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 5"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp5"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.currentParams.ac}\u003d1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d5,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d5,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d5,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 5
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 6"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp6"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.currentParams.ac}\u003d1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d6,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d6,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d6,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 6
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 7"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp7"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.currentParams.ac}\u003d1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d7,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d7,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d7,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "borderRightColor": "--neutral-80",
+                    "borderRightStyle": "solid",
+                    "borderRightWidth": 1,
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 7
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"Compressor Number\").custom.currCompressor \u003d 8"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Comp8"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.currentParams.ac}\u003d1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d8,\u0027--neutral-100\u0027,\u0027--neutral-10\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d8,\u0027--neutral-10\u0027,\u0027--neutral-90\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.cursor": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../Compressor Number.custom.currCompressor}\u003d8,\u0027auto\u0027,\u0027pointer\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "13px",
+                    "textAlign": "center"
+                  },
+                  "text": 8
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Compressor Options"
+            },
+            "position": {
+              "basis": "35px"
+            },
+            "props": {
+              "justify": "space-evenly",
+              "style": {
+                "borderColor": "--neutral-80",
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "marginTop": "10px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Compressor Number"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "propConfig": {
+          "custom.currCompressor": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.currentParams.compressor"
+              },
+              "type": "property"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.currentParams.path"
+              },
+              "transforms": [
+                {
+                  "code": "\t# Only ask the user to select a compressor number if \u0027Comp\u0027 is\n\t# in the tag path.\t\n\t\n\tif \u0027Comp\u0027 in value:\n\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "props": {
+                  "style": {
+                    "color": "--neutral-100",
+                    "fontSize": "16px",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Low Threshold"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tself.view.params.currentParams.lowThreshold \u003d 0"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Use Low Threshold"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.currentParams.lowThreshold"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# If lowThreshold is not a number, then lowThreshold is not being used,\n\t# so display this button (allows user to utilize a lowThreshold).\t\n\t\n\timport numbers\n\t\t\n\tif isinstance(value,numbers.Number):\n\t\treturn False\n\telse:\n\t\treturn True",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-10",
+                "borderColor": "--neutral-80",
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "color": "--neutral-90",
+                "cursor": "pointer",
+                "fontSize": "13px",
+                "marginRight": "60%",
+                "marginTop": "10px",
+                "textAlign": "center",
+                "white-space": "nowrap"
+              },
+              "text": "Use Low Threshold"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Low Threshold"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.currentParams.lowThreshold"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "align": "left",
+                  "style": {
+                    "backgroundColor": "--neutral-10",
+                    "borderBottomStyle": "solid",
+                    "borderLeftStyle": "none",
+                    "borderRightStyle": "none",
+                    "borderTopStyle": "none",
+                    "fontSize": "15px",
+                    "outlineStyle": "none"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.view.params.currentParams.lowThreshold \u003d \u0027\u0027"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Remove Low Threshold",
+                  "tooltip": {
+                    "enabled": true,
+                    "style": {
+                      "backgroundColor": "var(--neutral-30)",
+                      "color": "var(--neutral-90)"
+                    },
+                    "text": "REMOVE LOW THRESHOLD"
+                  }
+                },
+                "position": {
+                  "basis": "25px"
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M0 0h24v24H0V0z",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": "var(--neutral-100)",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginLeft": "15px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              }
+            ],
+            "meta": {
+              "name": "Low Threshold"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.currentParams.lowThreshold"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# If lowThreshold is a number, then lowThreshold is being used,\n\t# so display this container (displays current lowThreshold).\t\n\t\n\timport numbers\n\t\t\n\tif isinstance(value,numbers.Number):\n\t\treturn True\n\telse:\n\t\treturn False",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Low Threshold"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mappings": "{view.params.currentParams.mappings}",
+                  "typeAndPath": "({view.params.currentParams.type} !\u003d \u0027\u0027 \u0026\u0026 len({view.params.currentParams.path}) \u003e 0)\r\n|| (len({view.params.currentParams.path}) \u003e 0 \u0026\u0026 {view.params.currentParams.ac}\u003d3)"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If the selected tag contains a mapping, then it is not possible to utilize\n\t# a low threshold (so, do not display this container).\n\t\n\tmappings \u003d value[\u0027mappings\u0027]\n\ttypeAndPath \u003d value[\u0027typeAndPath\u0027]\n\t\n\tif typeAndPath \u003d\u003d True:\n\t\tif len(mappings) \u003e 0:\n\t\t\treturn False\n\t\telse:\n\t\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "props": {
+                  "style": {
+                    "color": "--neutral-100",
+                    "fontSize": "16px",
+                    "white-space": "nowrap"
+                  },
+                  "text": "High Threshold"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tself.view.params.currentParams.highThreshold \u003d 0"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Use High Threshold"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.currentParams.highThreshold"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# If highThreshold is not a number, then highThreshold is not being used,\n\t# so display this button (allows user to utilize a highThreshold).\t\n\t\n\timport numbers\n\t\t\n\tif isinstance(value,numbers.Number):\n\t\treturn False\n\telse:\n\t\treturn True",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "--neutral-10",
+                "borderColor": "--neutral-80",
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "color": "--neutral-90",
+                "cursor": "pointer",
+                "fontSize": "13px",
+                "marginRight": "60%",
+                "marginTop": "10px",
+                "textAlign": "center",
+                "white-space": "nowrap"
+              },
+              "text": "Use High Threshold"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "High Threshold"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.params.currentParams.highThreshold"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "align": "left",
+                  "style": {
+                    "backgroundColor": "--neutral-10",
+                    "borderBottomStyle": "solid",
+                    "borderLeftStyle": "none",
+                    "borderRightStyle": "none",
+                    "borderTopStyle": "none",
+                    "fontSize": "15px",
+                    "outlineStyle": "none"
+                  }
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\tself.view.params.currentParams.highThreshold \u003d \u0027\u0027"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Remove High Threshold",
+                  "tooltip": {
+                    "enabled": true,
+                    "style": {
+                      "backgroundColor": "var(--neutral-30)",
+                      "color": "var(--neutral-90)"
+                    },
+                    "text": "REMOVE HIGH THRESHOLD"
+                  }
+                },
+                "position": {
+                  "basis": "25px"
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M0 0h24v24H0V0z",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": "var(--neutral-100)",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginLeft": "15px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              }
+            ],
+            "meta": {
+              "name": "High Threshold"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.currentParams.highThreshold"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# If highThreshold is a number, then highThreshold is being used,\n\t# so display this container (displays current highThreshold).\t\n\t\n\timport numbers\n\t\t\n\tif isinstance(value,numbers.Number):\n\t\treturn True\n\telse:\n\t\treturn False",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "High Threshold"
+        },
+        "position": {
+          "basis": "60px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mappings": "{view.params.currentParams.mappings}",
+                  "typeAndPath": "({view.params.currentParams.type} !\u003d \u0027\u0027 \u0026\u0026 len({view.params.currentParams.path}) \u003e 0)\r\n|| (len({view.params.currentParams.path}) \u003e 0 \u0026\u0026 {view.params.currentParams.ac}\u003d3)"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If the selected tag contains a mapping, then it is not possible to utilize\n\t# a high threshold (so, do not display this container).\n\t\n\tmappings \u003d value[\u0027mappings\u0027]\n\ttypeAndPath \u003d value[\u0027typeAndPath\u0027]\n\t\n\tif typeAndPath \u003d\u003d True:\n\t\tif len(mappings) \u003e 0:\n\t\t\treturn False\n\t\telse:\n\t\t\treturn True\n\telse:\n\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "35px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "flex-start",
+      "direction": "column",
+      "style": {
+        "backgroundColor": "--neutral-10",
+        "padding": "15px"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "updateIcon",
+          "pageScope": true,
+          "script": "\t# When the icon is updated via the \u0027select icon\u0027 popup, this\n\t# handler receives a message containing the icon in the\n\t# payload; then this updates the current icon.\n\t\n\ticon \u003d payload[\u0027icon\u0027]\n\t\n\tself.getChild(\"Icon\").getChild(\"Icon Cont\").custom.icon \u003d icon",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

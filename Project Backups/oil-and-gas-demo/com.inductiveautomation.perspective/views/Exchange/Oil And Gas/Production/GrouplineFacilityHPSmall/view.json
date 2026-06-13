@@ -1,0 +1,921 @@
+{
+  "custom": {},
+  "params": {
+    "backgroundImage": "value"
+  },
+  "propConfig": {
+    "params.backgroundImage": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 373,
+      "width": 400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "GrouplineFacilityHP"
+        },
+        "position": {
+          "basis": "336px"
+        },
+        "props": {
+          "loading": {
+            "order": "with-parent"
+          },
+          "params": {
+            "backgroundImage": "value"
+          },
+          "path": "Exchange/Oil And Gas/Production/GrouplineFacilityHPDisplaySmall"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "29.1px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#FFFFFF",
+                    "fontSize": "2.5vw",
+                    "textAlign": "center"
+                  },
+                  "text": "Inlet"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "2vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Temp"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "31.1px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/InletFlow/Temperature"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###",
+                                  "type": "format"
+                                },
+                                {
+                                  "expression": "{value} + \" °F\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "76px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.4vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Flow Rate (bpd)"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/InletFlow/FlowRate"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###.0",
+                                  "type": "format"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "66.9px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "fcInlet"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.backgroundImage": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.backgroundImage"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "border": "5px ridge rgba(120,150,150,1)",
+                "borderRadius": "10px",
+                "color": "white",
+                "fontSize": "1.1em",
+                "marginLeft": "3px",
+                "marginRight": "3px",
+                "overflow": "hidden",
+                "padding": "2px 2px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "29.1px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#FFFFFF",
+                    "fontSize": "2.5vw",
+                    "textAlign": "center"
+                  },
+                  "text": "Water Collection"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.5vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Valve Open"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/WaterOutlet/ValvePercentOpen"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###",
+                                  "type": "format"
+                                },
+                                {
+                                  "expression": "{value} + \"%\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "76px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.4vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Flow Rate (bpd)"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/WaterOutlet/FlowRate"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###.0",
+                                  "type": "format"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "94px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "66.9px"
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "fcWaterCollection"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.backgroundImage": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.backgroundImage"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "border": "5px ridge rgba(120,150,150,1)",
+                "borderRadius": "10px",
+                "color": "white",
+                "fontSize": "1.1em",
+                "marginLeft": "3px",
+                "marginRight": "3px",
+                "overflow": "hidden",
+                "padding": "2px 2px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "29.1px"
+                },
+                "props": {
+                  "style": {
+                    "color": "#FFFFFF",
+                    "fontSize": "2.5vw",
+                    "textAlign": "center"
+                  },
+                  "text": "Oil Collection"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.5vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Valve Open"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/OilOutlet/ValvePercentOpen"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###",
+                                  "type": "format"
+                                },
+                                {
+                                  "expression": "{value} + \"%\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "76px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.4vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Flow Rate (bpd)"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/OilOutlet/FlowRate"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###.0",
+                                  "type": "format"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "80px"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "66.9px"
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "fcOilCollection"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.backgroundImage": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.backgroundImage"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "border": "5px ridge rgba(120,150,150,1)",
+                "borderRadius": "10px",
+                "color": "white",
+                "fontSize": "1.1em",
+                "marginLeft": "3px",
+                "marginRight": "3px",
+                "overflow": "hidden",
+                "padding": "2px 2px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "29.1px",
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "#FFFFFF",
+                    "fontSize": "2.5vw",
+                    "textAlign": "center"
+                  },
+                  "text": "Gas Collection"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.5vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Valve Open"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/GasOutlet/ValvePercentOpen"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###",
+                                  "type": "format"
+                                },
+                                {
+                                  "expression": "{value} + \"%\"",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "76px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Label"
+                        },
+                        "position": {
+                          "basis": "17px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D5D5D5",
+                            "fontSize": "1.4vw",
+                            "textAlign": "center"
+                          },
+                          "text": "Flow Rate (bpd)"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Label_0"
+                        },
+                        "position": {
+                          "basis": "32px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "fallbackDelay": 2.5,
+                                "mode": "direct",
+                                "tagPath": "[default]Exchange/Oil And Gas Demo/Production/Separator/GasOutlet/FlowRate"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "formatType": "numeric",
+                                  "formatValue": "###.0",
+                                  "type": "format"
+                                }
+                              ],
+                              "type": "tag"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "2.5vw",
+                            "textAlign": "center"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_1"
+                    },
+                    "position": {
+                      "basis": "80px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "backgroundColor": "#D5D5D500",
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "66.9px"
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "fcGasCollection"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.backgroundImage": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.backgroundImage"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "border": "5px ridge rgba(120,150,150,1)",
+                "borderRadius": "10px",
+                "color": "white",
+                "fontSize": "1.1em",
+                "marginLeft": "3px",
+                "marginRight": "3px",
+                "overflow": "hidden",
+                "padding": "2px 2px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "kpis"
+        },
+        "position": {
+          "basis": "85px"
+        },
+        "props": {
+          "justify": "space-evenly"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "visible"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

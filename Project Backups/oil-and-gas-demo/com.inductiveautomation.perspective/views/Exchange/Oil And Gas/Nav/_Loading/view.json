@@ -1,0 +1,73 @@
+{
+  "root": {
+    "type": "ia.container.flex",
+    "props": {
+      "direction": "column",
+      "alignItems": "flex-start",
+      "alignContent": "flex-start",
+      "style": {
+        "background": "linear-gradient(225deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2))"
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "props": {
+          "alignVertical": "bottom",
+          "style": {
+            "fontSize": "2em",
+            "color": "rgba(0, 0, 0, 0.5)",
+            "textAlign": "left"
+          }
+        },
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "grow": 0,
+          "shrink": 0,
+          "basis": "140px"
+        },
+        "propConfig": {
+          "custom.dots": {
+            "binding": {
+              "type": "expr",
+              "config": {
+                "expression": "now(333)"
+              },
+              "transforms": [
+                {
+                  "code": "\tif self.custom.dots \u003d\u003d None:\n\t\tdots \u003d 0\n\telse:\n\t\tdots \u003d self.custom.dots\n\treturn (dots + 1) % 4",
+                  "type": "script"
+                }
+              ]
+            }
+          },
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "this.custom.dots"
+              },
+              "transforms": [
+                {
+                  "code": "\ttry:\n\t\treturn \u0027Loading%s\u0027 %(\u0027\u0027.join(\u0027.\u0027 for i in range(value)))\n\texcept:\n\t\treturn \u0027Loading...\u0027",
+                  "type": "script"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "props": {},
+  "custom": {},
+  "params": {},
+  "propConfig": null,
+  "events": null,
+  "permissions": null
+}

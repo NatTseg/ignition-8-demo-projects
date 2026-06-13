@@ -1,0 +1,3210 @@
+{
+  "custom": {
+    "tagPaths": [
+      {
+        "aggregate": "Average",
+        "path": "[default]Exchange/Oil And Gas Demo/Wells/Site A/Flow"
+      },
+      {
+        "aggregate": "Average",
+        "path": "[default]Exchange/Oil And Gas Demo/Wells/Site A/DP"
+      },
+      {
+        "aggregate": "Average",
+        "path": "[default]Exchange/Oil And Gas Demo/Wells/Site A/SP"
+      },
+      {
+        "aggregate": "Average",
+        "path": "[default]Exchange/Oil And Gas Demo/Wells/Site A/Temp"
+      }
+    ]
+  },
+  "params": {
+    "color": "rgba(93, 130, 159, 1)",
+    "site": "site-a"
+  },
+  "propConfig": {
+    "custom.backgroundImage": {
+      "binding": {
+        "config": {
+          "path": "view.params.color"
+        },
+        "transforms": [
+          {
+            "code": "\t\n\treturn \u0027linear-gradient(180deg, %s, rgba(19, 42, 73, 1))\u0027 %value",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.tagPaths": {
+      "binding": {
+        "config": {
+          "path": "view.params.site"
+        },
+        "transforms": [
+          {
+            "code": "\taggregate \u003d \u0027Average\u0027\n\t\n\treturn [{\u0027path\u0027: \u0027[default]Exchange/Oil And Gas Demo/Wells/%s/Flow\u0027 %self.view.params.site.replace(\u0027-\u0027, \u0027 \u0027).title(), \u0027aggregate\u0027: aggregate},\n\t{\u0027path\u0027: \u0027[default]Exchange/Oil And Gas Demo/Wells/%s/DP\u0027 %self.view.params.site.replace(\u0027-\u0027, \u0027 \u0027).title(), \u0027aggregate\u0027: aggregate},\n\t{\u0027path\u0027: \u0027[default]Exchange/Oil And Gas Demo/Wells/%s/SP\u0027 %self.view.params.site.replace(\u0027-\u0027, \u0027 \u0027).title(), \u0027aggregate\u0027: aggregate},\n\t{\u0027path\u0027: \u0027[default]Exchange/Oil And Gas Demo/Wells/%s/Temp\u0027 %self.view.params.site.replace(\u0027-\u0027, \u0027 \u0027).title(), \u0027aggregate\u0027: aggregate}]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.color": {
+      "paramDirection": "input"
+    },
+    "params.loaded": {
+      "binding": {
+        "config": {
+          "expression": "true"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    },
+    "params.site": {
+      "paramDirection": "input"
+    },
+    "params.title": {
+      "binding": {
+        "config": {
+          "path": "view.params.site"
+        },
+        "transforms": [
+          {
+            "code": "\treturn value.replace(\u0027-\u0027, \u0027 \u0027).title()",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output"
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1000
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Long vertical pipe_0_0"
+        },
+        "position": {
+          "height": 0.0334,
+          "width": 0.0045,
+          "x": 0.377,
+          "y": 0.605
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M7.43,0.016v112.469H0V0.016H7.43z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.18",
+                          "style": {
+                            "stopColor": "#959595"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#666666"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "2.441406e-004",
+                      "x2": "7.4299",
+                      "y1": "56.25",
+                      "y2": "56.25"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Long_Vertical",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 7.43 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Long vertical pipe_0"
+        },
+        "position": {
+          "height": 0.0983,
+          "width": 0.007,
+          "x": 0.4139,
+          "y": 0.45
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M7.43,0.016v112.469H0V0.016H7.43z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.18",
+                          "style": {
+                            "stopColor": "#959595"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#666666"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "2.441406e-004",
+                      "x2": "7.4299",
+                      "y1": "56.25",
+                      "y2": "56.25"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Long_Vertical",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 7.43 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Long vertical pipe"
+        },
+        "position": {
+          "height": 0.2633,
+          "width": 0.007,
+          "x": 0.2581,
+          "y": 0.3733
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M7.43,0.016v112.469H0V0.016H7.43z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.18",
+                          "style": {
+                            "stopColor": "#959595"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#666666"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "2.441406e-004",
+                      "x2": "7.4299",
+                      "y1": "56.25",
+                      "y2": "56.25"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Long_Vertical",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 7.43 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Short horizontal pipe"
+        },
+        "position": {
+          "height": 0.0484,
+          "width": 1,
+          "y": 0.6182
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M112.5,29.924H0V0.224h112.5V29.924z",
+                  "fill": {
+                    "paint": {
+                      "gradientTransform": "matrix(0 -1 1 0 79.2883 124.2117)",
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.16",
+                          "style": {
+                            "stopColor": "#909091"
+                          }
+                        },
+                        {
+                          "offset": "0.49",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "94.2881",
+                      "x2": "123.9873",
+                      "y1": "-23.0383",
+                      "y2": "-23.0383"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Horizonatal_Short",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 29.924"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Control valve - horizontal"
+        },
+        "position": {
+          "height": 0.1867,
+          "width": 0.087,
+          "x": 0.377,
+          "y": 0.4916
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(0 -31.9492 -31.9492 0 3649.5859 107.2415)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#ECECED"
+                              }
+                            },
+                            {
+                              "offset": "0.57",
+                              "style": {
+                                "stopColor": "#D9DADB"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#B1B3B6"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "0.0039",
+                          "x2": "1.0039",
+                          "y1": "112.5059",
+                          "y2": "112.5059"
+                        }
+                      },
+                      "height": "31.948",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "64.351",
+                      "x": "22.95",
+                      "y": "75.15"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                },
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(0 -42.75 -42.75 0 4843.125 112.5021)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#ECECED"
+                              }
+                            },
+                            {
+                              "offset": "0.57",
+                              "style": {
+                                "stopColor": "#D9DADB"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#B1B3B6"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "4.882813e-004",
+                          "x2": "1.0005",
+                          "y1": "112.5",
+                          "y2": "112.5"
+                        }
+                      },
+                      "height": "42.75",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "10.799",
+                      "x": "28.35",
+                      "y": "69.75"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                },
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(0 -42.75 -42.75 0 4886 112.5021)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#ECECED"
+                              }
+                            },
+                            {
+                              "offset": "0.57",
+                              "style": {
+                                "stopColor": "#D9DADB"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#B1B3B6"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "4.882813e-004",
+                          "x2": "1.0005",
+                          "y1": "112.5",
+                          "y2": "112.5"
+                        }
+                      },
+                      "height": "42.75",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "10.574",
+                      "x": "71.326",
+                      "y": "69.75"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                }
+              ],
+              "name": "Group_Port",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(10.8008 0 0 -10.8008 49.8723 1283.8438)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#ECECED"
+                              }
+                            },
+                            {
+                              "offset": "0.57",
+                              "style": {
+                                "stopColor": "#D9DADB"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#B1B3B6"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "-0.0137",
+                          "x2": "0.9863",
+                          "y1": "112.4863",
+                          "y2": "112.4863"
+                        }
+                      },
+                      "height": "23.299",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "10.8",
+                      "x": "49.725",
+                      "y": "57.25"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                }
+              ],
+              "name": "Group_Pipe",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(55.126 0 0 -55.126 27.9111 6232.4321)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#464547"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#A7A9AC"
+                              }
+                            },
+                            {
+                              "offset": "0.66",
+                              "style": {
+                                "stopColor": "#959799"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#8A8C8E"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#464547"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "-0.0039",
+                          "x2": "0.9961",
+                          "y1": "112.4971",
+                          "y2": "112.4971"
+                        }
+                      },
+                      "height": "55.125",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "55.126",
+                      "x": "27.675",
+                      "y": "3.375"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                }
+              ],
+              "name": "Group_Display",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(0 -55.125 -55.125 0 6256.8125 58.5135)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#ECECED"
+                              }
+                            },
+                            {
+                              "offset": "0.57",
+                              "style": {
+                                "stopColor": "#D9DADB"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#B1B3B6"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "-4.882813e-004",
+                          "x2": "0.9995",
+                          "y1": "112.5",
+                          "y2": "112.5"
+                        }
+                      },
+                      "height": "55.125",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "55.126",
+                      "x": "27.675",
+                      "y": "3.375"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                },
+                {
+                  "fill": {
+                    "paint": "#7F7F7F"
+                  },
+                  "height": "13.95",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "3.6",
+                  "x": "24.075",
+                  "y": "38.925"
+                }
+              ],
+              "name": "Group_Bevel",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": {
+                          "gradientTransform": "matrix(64.3506 0 0 -64.3506 23.0522 7270.2715)",
+                          "gradientUnits": "userSpaceOnUse",
+                          "stops": [
+                            {
+                              "offset": "0",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            },
+                            {
+                              "offset": "0.45",
+                              "style": {
+                                "stopColor": "#ECECED"
+                              }
+                            },
+                            {
+                              "offset": "0.57",
+                              "style": {
+                                "stopColor": "#D9DADB"
+                              }
+                            },
+                            {
+                              "offset": "0.77",
+                              "style": {
+                                "stopColor": "#B1B3B6"
+                              }
+                            },
+                            {
+                              "offset": "1",
+                              "style": {
+                                "stopColor": "#5C5D60"
+                              }
+                            }
+                          ],
+                          "type": "linear",
+                          "x1": "-0.002",
+                          "x2": "0.998",
+                          "y1": "112.498",
+                          "y2": "112.498"
+                        }
+                      },
+                      "height": "9.225",
+                      "name": "rect",
+                      "type": "rect",
+                      "width": "64.35",
+                      "x": "22.95",
+                      "y": "26.325"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                },
+                {
+                  "d": "M86.85,26.325H23.625L22.95,27v8.1l0.675,0.45H86.85l0.451-0.45V27L86.85,26.325z M86.176,34.425H24.075   V27.45h62.101V34.425z",
+                  "fill": {
+                    "paint": "#B2B2B2"
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "fill": {
+                        "paint": "#7F7F7F"
+                      },
+                      "name": "polygon",
+                      "points": "43.65,3.375 42.976,0 37.575,0 36.9,3.375   ",
+                      "type": "polygon"
+                    },
+                    {
+                      "fill": {
+                        "paint": "#B2B2B2"
+                      },
+                      "name": "polygon",
+                      "points": "42.525,3.375 42.075,0 37.575,0 36.9,3.375   ",
+                      "type": "polygon"
+                    },
+                    {
+                      "fill": {
+                        "paint": "#D1D1D3"
+                      },
+                      "name": "polygon",
+                      "points": "38.476,0 37.576,0 36.9,3.375 38.025,3.375   ",
+                      "type": "polygon"
+                    }
+                  ],
+                  "name": "group",
+                  "type": "group"
+                }
+              ],
+              "name": "Group_Bolt",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.45",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "0.55",
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.76",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.77",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "-0.125",
+                      "x2": "4.5894",
+                      "y1": "62.126",
+                      "y2": "62.126"
+                    }
+                  },
+                  "height": "26.048",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "4.714",
+                  "x": "-0.125",
+                  "y": "49.102"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientTransform": "matrix(0 1 -1 0 504.168 -317.8354)",
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        },
+                        {
+                          "offset": "0.23",
+                          "style": {
+                            "stopColor": "#A6A6A6"
+                          }
+                        },
+                        {
+                          "offset": "0.24",
+                          "style": {
+                            "stopColor": "#A8A8A8"
+                          }
+                        },
+                        {
+                          "offset": "0.45",
+                          "style": {
+                            "stopColor": "#D9D9D9"
+                          }
+                        },
+                        {
+                          "offset": "0.55",
+                          "style": {
+                            "stopColor": "#ECECEC"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#383838"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "366.1714",
+                      "x2": "361.4595",
+                      "y1": "489.4541",
+                      "y2": "489.4541"
+                    }
+                  },
+                  "height": "4.712",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "18.722",
+                  "x": "5.354",
+                  "y": "43.624"
+                },
+                {
+                  "d": "M5.429,43.621c-2.708,0-5.556,1.86-5.556,5.542l4.709,0.014c0.099-0.649,0.367-0.804,0.832-0.846   C5.468,47.096,5.429,43.621,5.429,43.621z",
+                  "fill": {
+                    "paint": {
+                      "cx": "5.1357",
+                      "cy": "48.8486",
+                      "gradientUnits": "userSpaceOnUse",
+                      "r": "5.5479",
+                      "stops": [
+                        {
+                          "offset": "0.09",
+                          "style": {
+                            "stopColor": "#4D4D4D"
+                          }
+                        },
+                        {
+                          "offset": "0.14",
+                          "style": {
+                            "stopColor": "#696969"
+                          }
+                        },
+                        {
+                          "offset": "0.22",
+                          "style": {
+                            "stopColor": "#949494"
+                          }
+                        },
+                        {
+                          "offset": "0.26",
+                          "style": {
+                            "stopColor": "#A5A5A5"
+                          }
+                        },
+                        {
+                          "offset": "0.36",
+                          "style": {
+                            "stopColor": "#C2C2C2"
+                          }
+                        },
+                        {
+                          "offset": "0.4",
+                          "style": {
+                            "stopColor": "#CCCCCC"
+                          }
+                        },
+                        {
+                          "offset": "0.49",
+                          "style": {
+                            "stopColor": "#DFDFDF"
+                          }
+                        },
+                        {
+                          "offset": "0.56",
+                          "style": {
+                            "stopColor": "#E6E6E6"
+                          }
+                        },
+                        {
+                          "offset": "0.65",
+                          "style": {
+                            "stopColor": "#C9C9C9"
+                          }
+                        },
+                        {
+                          "offset": "0.87",
+                          "style": {
+                            "stopColor": "#7E7E7E"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#4D4D4D"
+                          }
+                        }
+                      ],
+                      "type": "radial"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Bend_Pipe",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 87.3 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Generic transmitter"
+        },
+        "position": {
+          "height": 0.1867,
+          "width": 0.073,
+          "x": 0.2245,
+          "y": 0.2
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M42.004,109.234h30.97V3.153h-30.97v-2.59H31.644v2.59H0.563   v106.082h31.081l1.465,1.802l3.716,0.788l3.604-0.788L42.004,109.234z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "81.3923",
+                      "x2": "-7.8537",
+                      "y1": "100.8164",
+                      "y2": "11.5704"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M8.333,109.234v-3.829H4.504V7.095h64.641v98.312h-3.941v3.828",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M31.644,3.153h10.359",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M8.333,105.405h56.869",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M4.504,98.874h64.641",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M31.644,109.234h10.359",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Transmitter_Unit",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M8.333,80.743V34.234h56.869v46.509H39.414l-2.59-2.591l-2.59,2.591   H8.333z",
+                  "fill": {
+                    "paint": "#E4E4E4"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Label",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 73.648 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center",
+                "textTransform": "capitalize"
+              },
+              "text": "Flow"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.5643,
+              "y": 0.4999
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.custom.tagPaths[0].path}"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "formatType": "numeric",
+                      "formatValue": "#.00",
+                      "type": "format"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.5571,
+              "x": 0.4695,
+              "y": 0.5123
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "bpd"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer"
+        },
+        "position": {
+          "height": 0.1333,
+          "width": 0.15,
+          "x": 0.3455,
+          "y": 0.2333
+        },
+        "propConfig": {
+          "props.style.backgroundImage": {
+            "binding": {
+              "config": {
+                "path": "view.custom.backgroundImage"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "border": "5px ridge rgba(120,150,150,1)",
+            "borderRadius": "10px",
+            "color": "white",
+            "fontSize": "1.1em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "Long horizontal pipe"
+        },
+        "position": {
+          "height": 0.0116,
+          "width": 0.156,
+          "x": 0.261,
+          "y": 0.4384
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M0.016,0h112.469v7.43H0.016V0z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.16",
+                          "style": {
+                            "stopColor": "#909091"
+                          }
+                        },
+                        {
+                          "offset": "0.49",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "56.2505",
+                      "x2": "56.2505",
+                      "y1": "7.4302",
+                      "y2": "4.882813e-004"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Long_Horizontal",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 7.43"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Right angle 2"
+        },
+        "position": {
+          "height": 0.0283,
+          "width": 0.017,
+          "x": 0.405,
+          "y": 0.4367
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M56.25,112.5h56.25V0L56.25,17.95V112.5z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.18",
+                          "style": {
+                            "stopColor": "#959595"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#666666"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "56.25",
+                      "x2": "112.5",
+                      "y1": "56.25",
+                      "y2": "56.25"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M0,56.25V0h112.5L56.25,56.25H0z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.16",
+                          "style": {
+                            "stopColor": "#909091"
+                          }
+                        },
+                        {
+                          "offset": "0.49",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "56.2505",
+                      "x2": "56.2505",
+                      "y1": "56.25",
+                      "y2": "0"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Right_Angle",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Tee 7"
+        },
+        "position": {
+          "height": 0.03,
+          "width": 0.0181,
+          "x": 0.257,
+          "y": 0.4283
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M56.25,0v112.5H0V0H56.25z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.18",
+                          "style": {
+                            "stopColor": "#959595"
+                          }
+                        },
+                        {
+                          "offset": "0.5",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#666666"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "0",
+                      "x2": "56.25",
+                      "y1": "56.25",
+                      "y2": "56.25"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Tee_V",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M112.5,84.375H56.25c0,0-28.125-0.825-28.125-28.125c0-28.125,28.125-28.125,28.125-28.125h56.25",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.16",
+                          "style": {
+                            "stopColor": "#909091"
+                          }
+                        },
+                        {
+                          "offset": "0.49",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "70.3125",
+                      "x2": "70.3125",
+                      "y1": "84.375",
+                      "y2": "28.1255"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Tee_H",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 112.5"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Temperature"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.7286,
+              "y": 0.4997
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.custom.tagPaths[3].path}"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "formatType": "numeric",
+                      "formatValue": "#.00",
+                      "type": "format"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.4286,
+              "x": 0.5981,
+              "y": 0.512
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "°F"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer_0"
+        },
+        "position": {
+          "height": 0.1333,
+          "width": 0.15,
+          "x": 0.522,
+          "y": 0.7283
+        },
+        "propConfig": {
+          "props.style.backgroundImage": {
+            "binding": {
+              "config": {
+                "path": "view.custom.backgroundImage"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "border": "5px ridge rgba(120,150,150,1)",
+            "borderRadius": "10px",
+            "color": "white",
+            "fontSize": "1.1em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Pressure SP"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.5357,
+              "y": 0.4999
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.custom.tagPaths[2].path}"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "formatType": "numeric",
+                      "formatValue": "#.00",
+                      "type": "format"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.5571,
+              "x": 0.4695,
+              "y": 0.5123
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "psi"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer_0_0"
+        },
+        "position": {
+          "height": 0.1333,
+          "width": 0.15,
+          "x": 0.345,
+          "y": 0.7283
+        },
+        "propConfig": {
+          "props.style.backgroundImage": {
+            "binding": {
+              "config": {
+                "path": "view.custom.backgroundImage"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "border": "5px ridge rgba(120,150,150,1)",
+            "borderRadius": "10px",
+            "color": "white",
+            "fontSize": "1.1em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "Pressure DP"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_0"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.6429,
+              "y": 0.4994
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "expression",
+                    "tagPath": "{view.custom.tagPaths[1].path}"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "formatType": "numeric",
+                      "formatValue": "#.00",
+                      "type": "format"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Label_1"
+            },
+            "position": {
+              "height": 0.5,
+              "width": 0.3714,
+              "x": 0.6552,
+              "y": 0.512
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "psi"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer_0_0_0"
+        },
+        "position": {
+          "height": 0.1333,
+          "width": 0.15,
+          "x": 0.164,
+          "y": 0.7283
+        },
+        "propConfig": {
+          "props.style.backgroundImage": {
+            "binding": {
+              "config": {
+                "path": "view.custom.backgroundImage"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "border": "5px ridge rgba(120,150,150,1)",
+            "borderRadius": "10px",
+            "color": "white",
+            "fontSize": "1.1em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "Microwave sludge density meter"
+        },
+        "position": {
+          "height": 0.185,
+          "width": 0.112,
+          "x": 0.2135,
+          "y": 0.5174
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M3.716,36.037L2.252,38.74L0.9,47.073L0.113,59.235L0,73.875   L0.113,88.74l0.788,12.051l1.352,8.106l1.464,3.041h9.347v-75.9H3.716",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "6.5317",
+                      "x2": "6.5317",
+                      "y1": "111.9377",
+                      "y2": "36.0378"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "cx": "13.176",
+                  "cy": "73.987",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "ellipse",
+                  "rx": "3.941",
+                  "ry": "37.951",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "ellipse"
+                }
+              ],
+              "name": "Group_Wheel2",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M104.617,54.393H12.5v39.19h92.117V54.393z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "58.5586",
+                      "x2": "58.5586",
+                      "y1": "93.5833",
+                      "y2": "54.3933"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M14.527,54.393l-0.675,1.577l-0.789,4.279L12.5,66.33v7.545v7.546l0.563,6.306l0.789,4.279l0.675,1.577   h-1.239L12.5,92.005l-0.451-4.279l-0.45-6.306v-7.546V66.33l0.45-6.081L12.5,55.97l0.788-1.577H14.527z",
+                  "fill": {
+                    "paint": "#7F7F7F"
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Sludge",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M70.834,53.154l-1.577,1.239v-9.233l1.577-1.576V53.154z",
+                  "fill": {
+                    "paint": "#E0E0E0"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Microwave",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M103.828,36.037l-0.9,2.703l-0.9,8.333l-0.45,12.161   l-0.226,14.641l0.226,14.864l0.45,12.051l0.9,8.106l0.9,3.041h6.082v-75.9H103.828",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "105.6309",
+                      "x2": "105.6309",
+                      "y1": "111.9377",
+                      "y2": "36.0378"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "cx": "109.91",
+                  "cy": "73.987",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "ellipse",
+                  "rx": "2.477",
+                  "ry": "37.951",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "ellipse"
+                },
+                {
+                  "d": "M109.91,60.811l-0.451,3.717l-0.338,9.348l0.338,9.347l0.451,3.717l0.788-3.717l0.226-9.347l-0.226-9.348   L109.91,60.811z",
+                  "fill": {
+                    "paint": "#1F1F1F"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M109.91,38.064l-0.227,1.014v2.478v2.59l0.227,1.014l0.225-1.014v-2.59v-2.478L109.91,38.064z",
+                  "fill": {
+                    "paint": "#1F1F1F"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M109.91,100.115l-0.227,1.014v2.477v2.252l0.227,1.015l0.225-1.015v-2.252v-2.477L109.91,100.115z",
+                  "fill": {
+                    "paint": "#1F1F1F"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M108.107,71.848l-0.226,1.014v2.253v2.477l0.226,1.014V77.59l0.338-2.478l-0.338-2.252V71.848z",
+                  "fill": {
+                    "paint": "#1F1F1F"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M111.938,71.848v1.014l-0.226,2.253l0.226,2.477v1.014l0.226-1.014v-2.477v-2.253L111.938,71.848z",
+                  "fill": {
+                    "paint": "#1F1F1F"
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "d": "M109.91,54.956l-0.789,5.518l-0.449,13.401l0.449,13.626l0.789,5.518   l1.014-5.518l0.338-13.626l-0.338-13.401L109.91,54.956",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Wheel1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M43.356,55.406h27.703l4.279,4.279V87.5l-4.279,4.278H43.356   L38.964,87.5V59.686L43.356,55.406z",
+                  "fill": {
+                    "paint": "#E5E5E5"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M42.117,56.757H69.82l4.279,4.167v27.813l-4.279,4.279H42.117   l-4.392-4.279V60.924L42.117,56.757z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "71.96",
+                      "x2": "39.8653",
+                      "y1": "90.8782",
+                      "y2": "58.7835"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Meter_BOx",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M41.779,59.235l0.788,0.226l0.563,1.014l-0.563,0.789l-0.788,0.225   l-0.788-0.225l-0.451-0.789l0.451-1.014L41.779,59.235z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M40.991,59.686l1.576,1.238",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M41.779,88.29l0.788,0.449l0.563,0.788l-0.563,0.677l-0.788,0.563   l-0.788-0.563l-0.451-0.677l0.451-0.788L41.779,88.29z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M40.991,88.965l1.576,1.013",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M69.82,59.235l0.676,0.226l0.563,1.014l-0.563,0.789l-0.676,0.225   l-1.014-0.225l-0.227-0.789l0.227-1.014L69.82,59.235z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M68.807,59.686l1.465,1.238",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M69.82,88.29l0.676,0.449l0.563,0.788l-0.563,0.677l-0.676,0.563   l-1.014-0.563l-0.227-0.677l0.227-0.788L69.82,88.29z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M68.807,88.965l1.465,1.013",
+                  "fill": {
+                    "paint": "none"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Fasteners",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M42.342,54.393h26.915v-9.233H42.342V54.393z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "64.8359",
+                      "x2": "46.7619",
+                      "y1": "58.8127",
+                      "y2": "40.7387"
+                    }
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Density_Controller",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M91.441,3.942l-4.504,4.617v36.6l4.504-4.617V3.942z",
+                  "fill": {
+                    "paint": "#6666CC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M25.451,8.559h61.486v36.6H25.451V8.559z",
+                  "fill": {
+                    "paint": "#BFBFFF"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M91.441,3.942l-4.504,4.617V4.505l4.504-4.504V3.942z",
+                  "fill": {
+                    "paint": "#6666CC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M29.729,0.001h61.712l-4.504,4.504H25.451L29.729,0.001z",
+                  "fill": {
+                    "paint": "#CCCCFF"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M25.451,8.559h61.486V4.505H25.451V8.559z",
+                  "fill": {
+                    "paint": "#BFBFFF"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Microwave_Box",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M51.126,32.996h9.798v4.729h-9.798V32.996z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Label2",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M51.126,47.411h9.798v5.066h-9.798V47.411z",
+                  "fill": {
+                    "paint": "#CCCCCC"
+                  },
+                  "name": "path",
+                  "stroke": {
+                    "paint": "#4C4C4C",
+                    "width": "0.25"
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Label1",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "77.5898",
+                      "x2": "82.0938",
+                      "y1": "68.0754",
+                      "y2": "68.0754"
+                    }
+                  },
+                  "height": "1.465",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "4.504",
+                  "x": "77.59",
+                  "y": "67.343"
+                },
+                {
+                  "d": "M81.982,72.073l-1.578,1.802h-4.053v0.788h-1.465v-5.631h1.465v0.788h1.801v-1.014H77.59v-1.464   h0.789v-20.72h-1.014v-1.464h5.066v1.464h-0.787v20.721h0.449v1.464h-0.111V72.073z",
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.68",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "74.8867",
+                      "x2": "82.4316",
+                      "y1": "59.9114",
+                      "y2": "59.9114"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "77.3652",
+                      "x2": "82.4316",
+                      "y1": "45.8914",
+                      "y2": "45.8914"
+                    }
+                  },
+                  "height": "1.464",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "5.066",
+                  "x": "77.365",
+                  "y": "45.159"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "75.6191",
+                      "x2": "75.6191",
+                      "y1": "74.6633",
+                      "y2": "69.0325"
+                    }
+                  },
+                  "height": "5.631",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "1.465",
+                  "x": "74.887",
+                  "y": "69.032"
+                },
+                {
+                  "fill": {
+                    "paint": {
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        },
+                        {
+                          "offset": "0.51",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#595959"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "78.3789",
+                      "x2": "81.625",
+                      "y1": "58.2219",
+                      "y2": "58.2219"
+                    }
+                  },
+                  "height": "23.197",
+                  "name": "rect",
+                  "type": "rect",
+                  "width": "3.246",
+                  "x": "78.379",
+                  "y": "46.623"
+                }
+              ],
+              "name": "Group_Pressure_Reliever",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 111.938"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Short horizontal pipe_0"
+        },
+        "position": {
+          "height": 0.0484,
+          "width": 0.016,
+          "x": 0.3222,
+          "y": 0.6182
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M112.5,29.924H0V0.224h112.5V29.924z",
+                  "fill": {
+                    "paint": {
+                      "gradientTransform": "matrix(0 -1 1 0 79.2883 124.2117)",
+                      "gradientUnits": "userSpaceOnUse",
+                      "stops": [
+                        {
+                          "offset": "0.01",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        },
+                        {
+                          "offset": "0.16",
+                          "style": {
+                            "stopColor": "#909091"
+                          }
+                        },
+                        {
+                          "offset": "0.49",
+                          "style": {
+                            "stopColor": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "offset": "1",
+                          "style": {
+                            "stopColor": "#646566"
+                          }
+                        }
+                      ],
+                      "type": "linear",
+                      "x1": "94.2881",
+                      "x2": "123.9873",
+                      "y1": "-23.0383",
+                      "y2": "-23.0383"
+                    }
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "Group_Horizonatal_Short",
+              "type": "group"
+            }
+          ],
+          "preserveAspectRatio": "none",
+          "viewBox": "0 0 112.5 29.924"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 0.9459,
+              "width": 1
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              },
+              "text": "OK"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer_1"
+        },
+        "position": {
+          "height": 0.0784,
+          "width": 0.055,
+          "x": 0.234,
+          "y": 0.255
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "backgroundImage": "linear-gradient(180deg, rgba(193, 230, 159, 1), rgba(93, 230, 59, 1))",
+            "border": "5px ridge rgba(120,150,150,1)",
+            "borderRadius": "10px",
+            "color": "black",
+            "fontSize": "1.4em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "height": 1,
+              "width": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.site"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn value.replace(\u0027-\u0027,\u0027 \u0027).title()",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "CoordinateContainer_2"
+        },
+        "position": {
+          "height": 0.1084,
+          "width": 0.15,
+          "x": 0.1861,
+          "y": 0.0641
+        },
+        "propConfig": {
+          "props.style.backgroundImage": {
+            "binding": {
+              "config": {
+                "path": "view.custom.backgroundImage"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "mode": "percent",
+          "style": {
+            "border": "5px ridge rgba(120,150,150,1)",
+            "borderRadius": "10px",
+            "color": "white",
+            "fontSize": "1.7em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          }
+        },
+        "type": "ia.container.coord"
+      },
+      {
+        "meta": {
+          "name": "TimeSeriesChart"
+        },
+        "position": {
+          "height": 0.528,
+          "width": 0.476,
+          "x": 0.5109,
+          "y": 0.0239
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "aggregate": "MinMax",
+                "avoidScanClassValidation": true,
+                "dateRange": {
+                  "mostRecent": "24",
+                  "mostRecentUnits": "HOUR"
+                },
+                "enableValueCache": true,
+                "ignoreBadQuality": false,
+                "polling": {
+                  "enabled": true,
+                  "rate": "60"
+                },
+                "preventInterpolation": false,
+                "returnFormat": "Wide",
+                "returnSize": {
+                  "numRows": "96",
+                  "type": "FIXED"
+                },
+                "tags": "{view.custom.tagPaths}",
+                "valueFormat": "DATASET"
+              },
+              "type": "tag-history"
+            }
+          }
+        },
+        "props": {
+          "defaultStyles": {
+            "colorScheme": "Set1"
+          },
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "label": {
+                    "font": {
+                      "color": "#303030",
+                      "size": 14
+                    },
+                    "offset": 0,
+                    "style": {},
+                    "text": "Flow, SP",
+                    "visible": true
+                  },
+                  "max": 800,
+                  "min": 0,
+                  "name": "flow",
+                  "style": {},
+                  "tick": {
+                    "color": "",
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "style": {}
+                    },
+                    "style": {}
+                  },
+                  "width": 50
+                },
+                {
+                  "alignment": "right",
+                  "label": {
+                    "font": {
+                      "color": "#303030",
+                      "size": 14
+                    },
+                    "offset": 0,
+                    "style": {},
+                    "text": "DP, Temp",
+                    "visible": true
+                  },
+                  "max": 80,
+                  "min": 0,
+                  "name": "dp",
+                  "style": {},
+                  "tick": {
+                    "color": "",
+                    "label": {
+                      "font": {
+                        "color": "",
+                        "size": 10
+                      },
+                      "style": {}
+                    },
+                    "style": {}
+                  },
+                  "width": 50
+                }
+              ],
+              "markers": [],
+              "relativeWeight": 1,
+              "trends": [
+                {
+                  "axis": "flow",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [
+                    {
+                      "color": "#0000FF",
+                      "key": "Flow",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 2
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "color": "#00FF00",
+                      "key": "SP",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 2
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Boiler",
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                },
+                {
+                  "axis": "dp",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [
+                    {
+                      "color": "#FFB400",
+                      "key": "DP",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 2
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "color": "#FF0000",
+                      "key": "Temp",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 2
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Boiler",
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {
+              "name": "Boiler"
+            }
+          ],
+          "style": {
+            "backgroundColor": "rgba(250,250,250,1)",
+            "borderColor": "rgba(120,150,150,1)",
+            "borderStyle": "solid",
+            "borderWidth": "2px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

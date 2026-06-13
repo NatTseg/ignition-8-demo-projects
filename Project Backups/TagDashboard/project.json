@@ -1,0 +1,7 @@
+{
+  "title": "IIoT Demo",
+  "description": "A project that provides a dashboard to view all tags in Ignition. You can view the live values of the tags, write to the tags, view history, and view alarms.",
+  "parent": "global",
+  "enabled": true,
+  "inheritable": false
+}

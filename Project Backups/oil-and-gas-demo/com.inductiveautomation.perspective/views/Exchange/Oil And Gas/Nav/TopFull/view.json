@@ -1,0 +1,923 @@
+{
+  "custom": {
+    "currView": "/"
+  },
+  "params": {
+    "nav": true,
+    "navigating": false,
+    "title": "Overview"
+  },
+  "propConfig": {
+    "custom.currView": {
+      "binding": {
+        "config": {
+          "path": "page.props.path"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.nav": {
+      "paramDirection": "inout"
+    },
+    "params.navigating": {
+      "paramDirection": "inout"
+    },
+    "params.siz": {
+      "paramDirection": "input"
+    },
+    "params.tit": {
+      "paramDirection": "input"
+    },
+    "params.title": {
+      "paramDirection": "input"
+    },
+    "params.wind": {
+      "paramDirection": "input"
+    },
+    "params.window": {
+      "paramDirection": "input"
+    },
+    "params.windowTit": {
+      "paramDirection": "input"
+    },
+    "params.windowTitle": {
+      "paramDirection": "input"
+    },
+    "params.windwo": {
+      "paramDirection": "input"
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 108,
+      "width": 1129
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "events": {
+                  "dom": {
+                    "onClick": [
+                      {
+                        "config": {
+                          "page": "/"
+                        },
+                        "enabled": false,
+                        "scope": "C",
+                        "type": "nav"
+                      },
+                      {
+                        "config": {
+                          "script": "\tmainDemoProj \u003d \"OnlineDemo\"\n\tlocalDemoAddr  \u003d str(self.session.props.gateway.address) + \"/data/perspective/client/OnlineDemo/\"\n\tpublicDemoAddr \u003d \"https://demo.ia.io\"\n\tlocalProjNames \u003d system.project.getProjectNames()\n\tsystem.perspective.navigate(url \u003d localDemoAddr if mainDemoProj in localProjNames else publicDemoAddr)"
+                        },
+                        "scope": "G",
+                        "type": "script"
+                      }
+                    ]
+                  }
+                },
+                "meta": {
+                  "name": "Home"
+                },
+                "position": {
+                  "basis": "30px",
+                  "grow": 1
+                },
+                "props": {
+                  "color": "white",
+                  "path": "material/home",
+                  "style": {
+                    "background": "rgba(0, 0, 0, 0.1)",
+                    "border": "4px outset white",
+                    "cursor": "pointer",
+                    "marginRight": "10px",
+                    "maxHeight": "76px"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "custom": {
+                  "siteName": "Overview"
+                },
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t\t#import time\n\t\t\n\t\t#self.view.params.navigating \u003d True\n\t\t#time.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/overview/site-a\u0027)\n\t\t#system.perspective.sendMessage(\u0027oilNavigate\u0027, {\u0027screen\u0027: \u0027Overview\u0027, \u0027site\u0027: \u0027Site_A\u0027}, \u0027page\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Main"
+                },
+                "position": {
+                  "basis": "30px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.background": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.currView"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/overview/site-a\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.border": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.currView"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/overview/site-a\u0027 else \u00274px outset white\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "color": "white",
+                  "path": "material/list",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginRight": "10px",
+                    "maxHeight": "76px"
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "custom": {
+                  "siteName": "Map"
+                },
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t#\timport time\n\t\t\n\t#\tself.view.params.navigating \u003d True\n\t#\ttime.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/map/site-a\u0027)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Map"
+                },
+                "position": {
+                  "basis": "30px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.background": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.currView"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/map/site-a\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.border": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.currView"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/map/site-a\u0027 else \u00274px outset white\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "color": "white",
+                  "path": "material/place",
+                  "style": {
+                    "cursor": "pointer",
+                    "marginRight": "10px",
+                    "maxHeight": "76px"
+                  }
+                },
+                "type": "ia.display.icon"
+              }
+            ],
+            "meta": {
+              "name": "FlexContainer_0"
+            },
+            "position": {
+              "basis": "240px"
+            },
+            "props": {
+              "style": {
+                "maxWidth": "240px",
+                "minWidth": "120px",
+                "overflow": "visible"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "custom": {
+                      "siteName": "productiontrends"
+                    },
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t#\timport time\n\t#\t\n\t#\tself.view.params.navigating \u003d True\n\t#\ttime.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/productiontrends\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "productiontrends"
+                    },
+                    "position": {
+                      "basis": "100px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "page.props.dimensions.viewport.width"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": true,
+                              "inputType": "range",
+                              "mappings": [
+                                {
+                                  "input": {
+                                    "max": 700,
+                                    "min": 0
+                                  },
+                                  "output": false
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.background": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currView"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/productiontrends\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.border": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.currView"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/productiontrends\u0027 else \u00274px outset white\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "page.props.dimensions.viewport.width"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\treturn \u0027Production Trends\u0027 if value \u003e 700 else \u0027Trends\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "cursor": "pointer",
+                        "fontSize": "1.1em",
+                        "maxHeight": "76px",
+                        "textAlign": "center",
+                        "width": "100px"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tsystem.perspective.navigate(page\u003d\u0027/productiontrends\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "30px",
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "page.props.dimensions.viewport.width"
+                          },
+                          "transforms": [
+                            {
+                              "fallback": false,
+                              "inputType": "range",
+                              "mappings": [
+                                {
+                                  "input": {
+                                    "max": 700,
+                                    "min": 0
+                                  },
+                                  "output": true
+                                }
+                              ],
+                              "outputType": "scalar",
+                              "type": "map"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "path": "material/trending_up",
+                      "style": {
+                        "background": "rgba(0, 0, 0, 0.1)",
+                        "border": "4px outset white",
+                        "classes": "",
+                        "cursor": "pointer",
+                        "fontSize": "1.1em",
+                        "maxHeight": "76px",
+                        "textAlign": "center",
+                        "width": "100px"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer_0"
+                },
+                "position": {
+                  "basis": "150px"
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible",
+                    "paddingRight": "10px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "custom": {
+                          "siteName": "Site A"
+                        },
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t#\timport time\n\t#\t\n\t#\tself.view.params.navigating \u003d True\n\t#\ttime.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/details/site-a\u0027)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "SiteA"
+                        },
+                        "position": {
+                          "basis": "100px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.style.background": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/details/site-a\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.style.border": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/details/site-a\u0027 else \u00274px outset white\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "page.props.dimensions.viewport.width"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027Site A\u0027 if value \u003e 700 else \u0027A\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "fontSize": "1.1em",
+                            "marginRight": "10px",
+                            "maxHeight": "76px",
+                            "textAlign": "center",
+                            "width": "100px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "custom": {
+                          "siteName": "Site B"
+                        },
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t#\timport time\n\t#\t\n\t#\tself.view.params.navigating \u003d True\n\t#\ttime.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/details/site-b\u0027)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "SiteB"
+                        },
+                        "position": {
+                          "basis": "100px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.style.background": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/details/site-b\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.style.border": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/details/site-b\u0027 else \u00274px outset white\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "page.props.dimensions.viewport.width"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027Site B\u0027 if value \u003e 700 else \u0027B\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "fontSize": "1.1em",
+                            "maxHeight": "76px",
+                            "textAlign": "center",
+                            "width": "100px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer_0"
+                    },
+                    "position": {
+                      "basis": "220px"
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "visible",
+                        "padding": "0px 10px 0px 0px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "custom": {
+                          "siteName": "Site C"
+                        },
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t#\timport time\n\t#\t\n\t#\tself.view.params.navigating \u003d True\n\t#\ttime.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/details/site-c\u0027)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "SiteC"
+                        },
+                        "position": {
+                          "basis": "100px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.style.background": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/details/site-c\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.style.border": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/details/site-c\u0027 else \u00274px outset white\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "page.props.dimensions.viewport.width"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027Site C\u0027 if value \u003e 700 else \u0027C\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "fontSize": "1.1em",
+                            "marginRight": "10px",
+                            "maxHeight": "76px",
+                            "textAlign": "center",
+                            "width": "100px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "custom": {
+                          "siteName": "Site D"
+                        },
+                        "events": {
+                          "dom": {
+                            "onClick": {
+                              "config": {
+                                "script": "\t#if self.view.params.title !\u003d self.custom.siteName:\n\t#\timport time\n\t#\t\n\t#\tself.view.params.navigating \u003d True\n\t#\ttime.sleep(0.1)\n\tsystem.perspective.navigate(page\u003d\u0027/details/site-d\u0027)"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "name": "SiteD"
+                        },
+                        "position": {
+                          "basis": "100px",
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.style.background": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027rgba(255, 255, 255, 0.1)\u0027 if value \u003d\u003d \u0027/details/site-d\u0027 else \u0027rgba(0, 0, 0, 0.1)\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.style.border": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.currView"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u00274px inset white\u0027 if value \u003d\u003d \u0027/details/site-d\u0027 else \u00274px outset white\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          },
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "page.props.dimensions.viewport.width"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027Site D\u0027 if value \u003e 700 else \u0027D\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "cursor": "pointer",
+                            "fontSize": "1.1em",
+                            "maxHeight": "76px",
+                            "textAlign": "center",
+                            "width": "100px"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "220px"
+                    },
+                    "props": {
+                      "style": {
+                        "overflow": "visible",
+                        "padding": "0px 10px 0px 0px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "FlexContainer"
+                },
+                "position": {
+                  "basis": "500px"
+                },
+                "props": {
+                  "style": {
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Links"
+            },
+            "position": {
+              "basis": "480px"
+            },
+            "props": {
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "nav"
+        },
+        "position": {
+          "basis": "754px"
+        },
+        "props": {
+          "style": {
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "color": "white",
+              "path": "material/person",
+              "style": {
+                "width": "32px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.auth.authenticated}, \"Logout\", \"Login\")"
+                  },
+                  "type": "expr"
+                }
+              },
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.size"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn \u00270px\u0027 if value \u003d\u003d \u0027xs\u0027 else \u0027auto\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({page.props.dimensions.viewport.width}\u003e700, {this.custom.text}, \"\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.session.props.auth.authenticated:\n\t\tsystem.perspective.logout()\n\telse:\n\t\tsystem.perspective.login()"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Login"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "style": {
+            "border": "4px outset white",
+            "cursor": "pointer",
+            "maxHeight": "76px",
+            "overflow": "visible",
+            "padding": "0px 5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "space-between",
+      "style": {
+        "backgroundImage": "linear-gradient(180deg, rgba(83, 120, 149, 1), rgba(9, 32, 63, 1))",
+        "borderBottom": "5px ridge rgba(120,150,150,1)",
+        "color": "white",
+        "overflow": "visible",
+        "padding": "10px 5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

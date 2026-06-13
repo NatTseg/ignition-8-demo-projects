@@ -1,0 +1,1147 @@
+{
+  "tags": [
+    {
+      "name": "Alarm",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "memory",
+          "dataType": "Boolean",
+          "alarms": [
+            {
+              "setpointA": 1.0,
+              "name": "Alarm",
+              "priority": "High"
+            }
+          ],
+          "name": "Alarm",
+          "value": true,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "alarms": [
+            {
+              "mode": "AboveValue",
+              "setpointA": 90.0,
+              "name": "High",
+              "priority": "High"
+            },
+            {
+              "mode": "BelowValue",
+              "setpointA": 20.0,
+              "name": "Low"
+            }
+          ],
+          "name": "Priority",
+          "value": 95,
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "Alert Tags",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "alarms": [
+            {
+              "mode": "BetweenValues",
+              "setpointA": 85.0,
+              "notes": "Notes for the level tag.",
+              "setpointB": 95.0,
+              "name": "Hi",
+              "displayPath": "Level",
+              "priority": "Medium",
+              "inclusiveB": false
+            },
+            {
+              "mode": "BetweenValues",
+              "notes": "Notes for the level tag.",
+              "setpointB": 5.0,
+              "name": "Lo Lo",
+              "displayPath": "Level",
+              "priority": "Medium"
+            },
+            {
+              "mode": "BetweenValues",
+              "setpointA": 5.0,
+              "notes": "Notes for the level tag.",
+              "setpointB": 15.0,
+              "name": "Lo",
+              "displayPath": "Level",
+              "inclusiveA": false
+            },
+            {
+              "mode": "BetweenValues",
+              "setpointA": 95.0,
+              "notes": "Notes for the level tag.",
+              "setpointB": 100.0,
+              "name": "Hi Hi",
+              "displayPath": "Level",
+              "priority": "Critical"
+            },
+            {
+              "mode": "AboveValue",
+              "setpointA": 99.0,
+              "name": "Super Hi"
+            }
+          ],
+          "historyEnabled": true,
+          "name": "Level",
+          "value": 50,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Float4",
+          "historyProvider": "IADemo",
+          "engHigh": 300.0,
+          "alarms": [
+            {
+              "mode": "AboveValue",
+              "setpointA": 212.0,
+              "notes": "Notes for the temperature tag.",
+              "name": "Boiling",
+              "displayPath": "Temperature",
+              "priority": "Critical"
+            },
+            {
+              "mode": "BelowValue",
+              "setpointA": 32.0,
+              "notes": "Notes for the temperature tag.",
+              "name": "Freezing",
+              "displayPath": "Temperature",
+              "priority": "Critical"
+            }
+          ],
+          "historyEnabled": true,
+          "name": "Temperature",
+          "formatString": "#,##0.00",
+          "value": 50.0,
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "Aquarium",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/Motor 2/HOA",
+          "dataType": "Int4",
+          "name": "fill",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/Compressor1/tonnageCurrent",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "flowMeter",
+          "value": 144,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "dataType": "String",
+          "name": "Pump 7",
+          "typeId": "Pump",
+          "value": "",
+          "parameters": {
+            "PumpNumber": {
+              "dataType": "String",
+              "value": "7"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "Amps",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "HOA",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PumpNumber",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/Motor 1/HOA",
+          "dataType": "Int4",
+          "name": "heatingUnitOn",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "dataType": "String",
+          "name": "Pump 5",
+          "typeId": "Pump",
+          "value": "",
+          "parameters": {
+            "PumpNumber": {
+              "dataType": "String",
+              "value": "5"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "HOA",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Amps",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PumpNumber",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "name": "temperature",
+          "value": 39,
+          "tagType": "AtomicTag"
+        },
+        {
+          "dataType": "String",
+          "name": "Pump 6",
+          "typeId": "Pump",
+          "value": "",
+          "parameters": {
+            "PumpNumber": {
+              "dataType": "String",
+              "value": "6"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "HOA",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PumpNumber",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Amps",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/Motor 3/HOA",
+          "dataType": "Int4",
+          "name": "pumpValve",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/Motor 4/HOA",
+          "dataType": "Int4",
+          "name": "saltValve",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Batching Line",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "name": "Cycle Complete",
+          "value": 1,
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "Machine 2",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "Tag 3",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "Tag 4",
+              "value": "XYZ123",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "Machine 1",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Float4",
+              "name": "Tag 1",
+              "value": 15.67,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Int4",
+              "name": "Tag 2",
+              "value": 25,
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dairy",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/Compressor1/pressureInletOil",
+          "dataType": "Int4",
+          "name": "pressureInlet",
+          "value": 127,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/Compressor1/tempSuction",
+          "dataType": "Int4",
+          "name": "tempSuction",
+          "value": 20,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/AU 1/Fan 2 HOA",
+          "dataType": "Int4",
+          "name": "valve",
+          "value": 1,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Boolean",
+          "name": "Trigger",
+          "value": true,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/receiverLevel",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "mixerLevel",
+          "historyTagGroup": "Default",
+          "value": 97,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/dischargeTemp",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "dischargeTemp",
+          "historyTagGroup": "Default",
+          "value": 160,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/AU 1/Fan 1 HOA",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "pump",
+          "historyTagGroup": "Default",
+          "value": 1,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Overview/AU 2/Fan 1 HOA",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "fan",
+          "historyTagGroup": "Default",
+          "value": 1,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/dischargePressure",
+          "dataType": "Float4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "dischargePressure",
+          "historyTagGroup": "Default",
+          "value": 30.742205,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/accumulatorLevel",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "fillLevel",
+          "historyTagGroup": "Default",
+          "value": 35,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/Compressor1/tempInletOil",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "tempInlet",
+          "historyTagGroup": "Default",
+          "value": 96,
+          "tagType": "AtomicTag",
+          "sampleMode": "TagGroup",
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 100.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Temp",
+          "rawLow": -100.0,
+          "value": 71.78503229480373,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 300.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic3",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 100.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Speed 2",
+          "rawLow": -100.0,
+          "value": 12.5,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 200.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic4",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 90.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Power",
+          "rawLow": -100.0,
+          "value": 17.639794032745083,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic1",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 90.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Speed",
+          "rawLow": -100.0,
+          "value": 32.50305311570833,
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "name": "HMI Optimization",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n1,2,0,0,1,1,0,0,2,2,1,1,1,1,0,1,2,0,0,1,1,2,1,0,\n\n1)",
+          "dataType": "Int4",
+          "name": "Transfer Pump",
+          "value": 0,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "scaleMode": "Linear",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "dataType": "Float8",
+          "name": "Pump 2 RPM",
+          "value": 871.4012917921491,
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "opcServer": "Ignition OPC UA Server",
+          "scaledHigh": 2000.0
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n1,2,0,3,1,2,1,0,1,1,0,0,2,2,1,1,1,3,0,3,2,0,0,1,\n\n1)",
+          "dataType": "Int4",
+          "alarms": [
+            {
+              "setpointA": 3.0,
+              "name": "Fault",
+              "displayPath": "Pump 1",
+              "priority": "Medium"
+            }
+          ],
+          "name": "Pump 1",
+          "value": 1,
+          "tagType": "AtomicTag"
+        },
+        {
+          "rawHigh": 300.0,
+          "valueSource": "opc",
+          "scaledLow": 32.0,
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic1",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 120.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "name": "Tank 2 Temp",
+          "rawLow": -150.0,
+          "value": 55.90256135398683,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 300.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 2000.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "name": "Pump 3 RPM",
+          "rawLow": -200.0,
+          "value": 974.2802583584298,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 300.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "engHigh": 20.0,
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 20.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Flow 2",
+          "rawLow": -150.0,
+          "value": 8.60311398176033,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 175.0,
+          "valueSource": "opc",
+          "scaledLow": 32.0,
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic1",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 120.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "name": "Tank 1 Temp",
+          "rawLow": -300.0,
+          "value": 82.43400549325068,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 130.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic1",
+          "alarms": [
+            {
+              "mode": "AboveValue",
+              "setpointA": 90.0,
+              "name": "Hi",
+              "displayPath": "Tank 1",
+              "priority": "Critical"
+            },
+            {
+              "mode": "BelowValue",
+              "setpointA": 10.0,
+              "name": "Lo",
+              "displayPath": "Tank 1",
+              "priority": "Medium"
+            }
+          ],
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 100.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Tank 1",
+          "rawLow": -80.0,
+          "value": 24.870955677998232,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n1,2,0,0,1,0,0,1,2,1,0,1,1,0,3,2,2,1,1,3,1,0,1,2,\n\n1)",
+          "dataType": "Int4",
+          "alarms": [
+            {
+              "setpointA": 3.0,
+              "name": "Fault",
+              "displayPath": "Pump 3",
+              "priority": "Medium"
+            }
+          ],
+          "name": "Pump 3",
+          "value": 2,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n1,2,1,0,1,3,0,0,2,1,2,0,3,2,1,1,0,1,2,3,0,1,1,1,\n\n1)",
+          "dataType": "Int4",
+          "alarms": [
+            {
+              "setpointA": 3.0,
+              "name": "Fault",
+              "displayPath": "Pump 2",
+              "priority": "Medium"
+            }
+          ],
+          "name": "Pump 2",
+          "value": 1,
+          "tagType": "AtomicTag"
+        },
+        {
+          "rawHigh": 150.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic1",
+          "alarms": [
+            {
+              "mode": "AboveValue",
+              "setpointA": 90.0,
+              "name": "Hi",
+              "displayPath": "Tank 2",
+              "priority": "Critical"
+            },
+            {
+              "mode": "BelowValue",
+              "setpointA": 10.0,
+              "name": "Lo",
+              "displayPath": "Tank 2",
+              "priority": "Medium"
+            }
+          ],
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 100.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Tank 2",
+          "rawLow": -50.0,
+          "value": 11.114503461898146,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "rawHigh": 25.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic1",
+          "alarms": [
+            {
+              "mode": "AboveValue",
+              "setpointA": 90.0,
+              "name": "Hi",
+              "displayPath": "Day Tank",
+              "priority": "Critical"
+            },
+            {
+              "mode": "BelowValue",
+              "setpointA": 10.0,
+              "name": "Lo",
+              "displayPath": "Day Tank",
+              "priority": "Medium"
+            }
+          ],
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 100.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Day Tank",
+          "rawLow": -150.0,
+          "value": 69.84514681359788,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n2,0,0,1,2,1,0,1,1,0,0,2,2,1,3,1,1,0,1,3,0,0,1,3,\n\n1)",
+          "dataType": "Int4",
+          "alarms": [
+            {
+              "setpointA": 3.0,
+              "name": "Fault",
+              "displayPath": "Pump 4",
+              "priority": "Medium"
+            }
+          ],
+          "name": "Pump 4",
+          "value": 3,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n0,1,0,1,1,2,1,1,1,2,0,0,1,1,0,0,2,1,0,1,1,2,1,0,\n\n1)",
+          "dataType": "Int4",
+          "name": "Valve 2",
+          "value": 0,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n0,0,1,1,0,0,2,0,0,0,1,2,1,0,2,1,0,1,2,1,2,1,1,2,\n\n1)",
+          "dataType": "Int4",
+          "name": "Valve 1",
+          "value": 2,
+          "tagType": "AtomicTag"
+        },
+        {
+          "rawHigh": 400.0,
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 2000.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "name": "Pump 4 RPM",
+          "rawLow": -175.0,
+          "value": 760.2437029203738,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "expr",
+          "expression": "switch(dateExtract(now(0), \"hour\"),\n\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,\n\n1,2,1,0,0,1,0,0,1,1,0,0,2,0,1,1,2,1,1,1,2,1,0,1,\n\n1)",
+          "dataType": "Int4",
+          "name": "Valve 3",
+          "value": 1,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "engHigh": 20.0,
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "scaledHigh": 20.0,
+          "scaleMode": "Linear",
+          "dataType": "Float8",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "Flow 1",
+          "rawLow": -100.0,
+          "value": 14.357006458960747,
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "scaleMode": "Linear",
+          "opcItemPath": "[Generic]_Meta:Realistic/Realistic2",
+          "dataType": "Float8",
+          "name": "Pump 1 RPM",
+          "rawLow": -100.0,
+          "value": 1435.7006458960745,
+          "tagType": "AtomicTag",
+          "clampMode": "Clamp_Both",
+          "opcServer": "Ignition OPC UA Server",
+          "scaledHigh": 2000.0
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "expr",
+          "eventScripts": [
+            {
+              "eventid": "valueChanged",
+              "script": "\tif currentValue and str(currentValue.quality) \u003d\u003d \u0027Good\u0027 and currentValue.value:\n\t\tsystem.tag.writeBlocking([\u0027[~]News/Data\u0027], [currentValue.value])"
+            }
+          ],
+          "expression": "runScript(\"shared.news.getNews()\", 3600000)",
+          "dataType": "DataSet",
+          "name": "LiveData",
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "DataSet",
+          "name": "Data",
+          "value": "{\"columns\":[{\"name\":\"Published\",\"type\":\"java.lang.String\"},{\"name\":\"Title\",\"type\":\"java.lang.String\"},{\"name\":\"Link\",\"type\":\"java.lang.String\"},{\"name\":\"Description\",\"type\":\"java.lang.String\"}],\"rows\":[[\"Mon, 13 Jan 2020 10:30:00 -0600\",\"The Benefits of Bringing in a Partner for Assessment and Project Planning\",\"https://www.automationworld.com/factory/oee/blog/21109698/the-benefits-of-bringing-in-a-partner-for-assessment-and-project-planning\",\"When it comes to operational improvements, tight time constraints can be a problem. A partner who can help get some long-forgotten initiatives off the ground may be the key to hitting your operational goals.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 06 Jan 2020 00:49:00 -0600\",\"Start Small with Analytics to Build Momentum\",\"https://www.automationworld.com/factory/iiot/blog/21109455/start-small-with-analytics-to-build-momentum\",\"Figuring out which analytics platform works for you may, at first, seem daunting, developing a strategy and small-scale analytics pilots could what helps you finally make that investment.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 30 Dec 2019 10:30:00 -0600\",\"Stop Buying Serial RS232 Devices, Please\",\"https://www.automationworld.com/products/blog/21106851/stop-buying-serial-rs232-devices-please\",\"At one point, the Serial RS232 Communication protocol was the height of communication, but there are better and more reliable communication protocols out there. Will Aja lays out why its time to move on from Serial RS232 Devices.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 23 Dec 2019 10:30:00 -0600\",\"How Can a System Integrator Support Environmental Sustainability?\",\"https://www.automationworld.com/factory/plant-maintenance/blog/21106847/how-can-a-system-integrator-support-environmental-sustainability\",\"Sustainability is on the mind of many companies, but are they using one of their most valuable assets? A system integrator can possibly be the missing link to making your organization green.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 16 Dec 2019 10:59:48 -0600\",\"The Introduction of Collaborative Robots\",\"https://www.automationworld.com/factory/robotics/blog/21106484/the-introduction-of-collaborative-robots\",\"As collaborative robots continue to be introduced in manufacturing, some key safety hazards need to be addressed before collaborative robots can be safely implemented on the line.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Thu, 12 Dec 2019 11:26:33 -0600\",\"The Edge-to-Enterprise Strategy\",\"https://www.automationworld.com/factory/iiot/blog/21106054/the-edgetoenterprise-strategy\",\"As advances in automation technology make plant-floor-to-corporate-office connectivity a tangible reality, Aveva claims to be the first supplier to deliver a complete edge-to-enterprise system.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 09 Dec 2019 10:30:00 -0600\",\"How Developing a Batching Systems Phases Is all About Balance\",\"https://www.automationworld.com/process/plant-maintenance/blog/21105109/how-developing-a-batching-systems-phases-is-all-about-balance\",\"There are a lot of parts to be aware of when developing a flexible batching system. However, if you want to ensure operational efficiency, developing well-balanced phases is the most integral piece.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Wed, 04 Dec 2019 10:30:00 -0600\",\"Extending Analytics to EAM and Operations Users\",\"https://www.automationworld.com/home/blog/21103958/extending-analytics-to-eam-and-operations-users\",\"As industrys digital transformation unfolds, new analytics tools are emerging that empower operations, maintenance, and other users who lack data science expertise to participate\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Tue, 03 Dec 2019 07:56:37 -0600\",\"How IO-Link Benefits OEMs and End Users\",\"https://www.automationworld.com/factory/blog/21104002/how-iolink-benefits-oems-and-end-users\",\"Already popular in Europe, the IO-Link industrial communication technology is reportedly growing by double digits in the U.S. Learn why this point-to-point data communication method is increasingly preferred across industry for delivering device data.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 02 Dec 2019 14:32:20 -0600\",\"Transforming IE Companies into Living Businesses\",\"https://www.automationworld.com/home/blog/21103936/transforming-ie-companies-into-living-businesses\",\"As the market changes, it becomes difficult for some organizations to keep up. Transitioning into a living business may be one of the keys to sustaining success in the ever-changing global market.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 02 Dec 2019 10:30:00 -0600\",\"How Business Process Modeling can Prepare you for Digital Transformation\",\"https://www.automationworld.com/factory/iiot/blog/21103680/how-business-process-modeling-can-prepare-you-for-digital-transformation\",\"Planning to move your organization into a more digital environment can often be complex, but its happening whether you like it or not. Business process modeling can help you plan your digital transformation and ease into the digital space.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Wed, 27 Nov 2019 08:37:05 -0600\",\"Bosch Rexroth and Siemens Collaborate with Qualcomm on 5G\",\"https://www.automationworld.com/factory/blog/21103544/bosch-rexroth-and-siemens-collaborate-with-qualcomm-on-5g\",\"With 5G in the early stages of deployment across the globe, Europe looks to lead the way in proving the networks benefit for manufacturing applications.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 25 Nov 2019 10:30:53 -0600\",\"Implementing Modern Technology to Reduce Downtime Troubleshooting\",\"https://www.automationworld.com/home/blog/21103056/implementing-modern-technology-to-reduce-downtime-troubleshooting\",\"Introducing the newest technology to your facility may come with a steep learning curve, but the benefits are especially large when it comes to a reduction in downtime troubleshooting.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 18 Nov 2019 00:50:00 -0600\",\"Umbrella System Integrator: Why Worry? Its not Even Raining\",\"https://www.automationworld.com/factory/blog/21103033/umbrella-system-integrator-why-worry-its-not-even-raining\",\"In any automation project, there are multiple tasks that need to be handled all at the same time. An Umbrella System Integrator can help an organization consolidate these issues and ultimately help manufacturers reach their productivity goals.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 11 Nov 2019 10:30:00 -0600\",\"Manufacturing Digitalization That Works\",\"https://www.automationworld.com/home/blog/21096625/manufacturing-digitalization-that-works\",\"Though digitalization is a process that is often seen as great, the benefits are not the same for everyone. Asking how digitalization is going to benefit your organization may be important to your digital future.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Sun, 10 Nov 2019 10:30:00 -0600\",\"Industrial Transformation: Six \\\"Ah-Ha\\\" Moments That Might Surprise You\",\"https://www.automationworld.com/home/blog/21096619/industrial-transformation-six-ahha-moments-that-might-surprise-you\",\"Industrial Transformation has taken over the conversation in many organizations. In this article, youll see the biggest Ah-Ha moments organizations have had regarding Industrial Transformation.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Sat, 09 Nov 2019 10:30:00 -0600\",\"Is Finance Helping Your Optimizing Operations?\",\"https://www.automationworld.com/home/blog/21096615/is-finance-helping-your-optimizing-operations\",\"In order for optimizing operations to move forward, finance needs to work with all of the organization. So, as companies move to optimize, everyone should ask is how finance is helping.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Fri, 08 Nov 2019 10:01:42 -0600\",\"MES is Dead, IIOT has arrived.\",\"https://www.automationworld.com/home/blog/21096439/mes-is-dead-iiot-has-arrived\",\"If your company is struggling to choose between an MES or IIoT solution, you wont find the right answers until you begin asking the right questions.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 04 Nov 2019 13:15:11 -0600\",\"Benefits of Agile in a Systems Integrator World\",\"https://www.automationworld.com/home/blog/21095681/benefits-of-agile-in-a-systems-integrator-world\",\"From project development to general productivity, having an agile system in a systems integrator world is extremely beneficial. Jeff Miller lays out how your company can benefit from an Agile project delivery methodology.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 28 Oct 2019 10:30:00 -0500\",\"Decentralizing Tribal Knowledge in Your Team\",\"https://www.automationworld.com/home/blog/15611780/decentralizing-tribal-knowledge-in-your-team\",\"While it\u0027s great to have experts on your team, tribal knowledge can cause major problems to your workflow as teams get reorganized. These tips will help you manage and avoid tribal knowledge before it becomes an issue.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Fri, 25 Oct 2019 17:07:38 -0500\",\"Certification Emphasizes Cybersecurity of Schneider Electrics Processes\",\"https://www.automationworld.com/process/blog/15611781/certification-emphasizes-cybersecurity-of-schneider-electrics-processes\",\"TV Rheinland has certified the automation suppliers Secure Development Lifecycle process to ISA/IEC 62443-4-1 cybersecurity standards. This was a highlight to this weeks Triconex and Foxboro user group meetings in Austin.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 21 Oct 2019 10:30:00 -0500\",\"Using Split Range Time Proportional with PID Loops\",\"https://www.automationworld.com/home/blog/15611761/using-split-range-time-proportional-with-pid-loops\",\"Though pretty complex in nature and difficult to program, there are way more benefits to tuning and using PID loops that can ultimately be incredibly useful when it comes to your development process.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Fri, 18 Oct 2019 12:47:57 -0500\",\"The Machine Economy is Upon Us\",\"https://www.automationworld.com/products/networks/blog/15611760/the-machine-economy-is-upon-us\",\"The IOTA Foundation has been working on an IoT communication protocol that will enable machines to autonomously conduct transactions in a fee-free, secure, and trustworthy exchange.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Thu, 17 Oct 2019 09:00:00 -0500\",\"Emerson and the Integration of Process and Discrete Automation\",\"https://www.automationworld.com/products/control/blog/15611741/emerson-and-the-integration-of-process-and-discrete-automation\",\"Emerson executives Peter Zornio and Stuart Harris provide insights into Emersons future following its acquisitions last year of Aventics and GE Intelligent Platforms.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"],[\"Mon, 14 Oct 2019 10:30:00 -0500\",\"Green Energy: Implementing Innovation, Research, and Development\",\"https://www.automationworld.com/home/blog/15611756/green-energy-implementing-innovation-research-and-development\",\"As carbon emissions becomes more of a concern throughout the country, more people and organizations are looking to more alternative and sustainable energy sources. And though the goal is to reduce carbon emissions, there are many ways to meet that goal.\u003c\\/div\u003e\u003c\\/div\u003e\u003c\\/div\u003e\"]]}",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "Refrigeration",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "dataType": "String",
+          "name": "Compressor1",
+          "typeId": "Compressor",
+          "value": "",
+          "parameters": {
+            "CompressorNumber": {
+              "dataType": "String",
+              "value": "1"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "pressureDischarge",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "CompressorNumber",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "hoa",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "dataType": "String",
+          "name": "Tower2",
+          "typeId": "Tower",
+          "value": "",
+          "parameters": {
+            "TowerNumber": {
+              "dataType": "String",
+              "value": "2"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "makeup",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "TowerNumber",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "fanSpeed",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "pH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "mmOH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Pumps",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "chemHOA",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "circHOA",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "bromineHOA",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "temp",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/accumulatorLevel",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "alarms": [
+            {
+              "ackPipeline": "North Area",
+              "mode": "OnCondition",
+              "setpointA": 50.0,
+              "timeOnDelaySeconds": 2.0,
+              "name": "High Level",
+              "deadband": 0.5,
+              "timeOffDelaySeconds": 1.0,
+              "label": "",
+              "displayPath": "",
+              "priority": "Medium"
+            }
+          ],
+          "historyEnabled": true,
+          "name": "accumulatorLevel",
+          "value": 35,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/ambientTemp",
+          "dataType": "Float4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "ambientTemp",
+          "formatString": "#,##0.00",
+          "value": 72.93316,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "dataType": "String",
+          "name": "Compressor2",
+          "typeId": "Compressor",
+          "value": "",
+          "parameters": {
+            "CompressorNumber": {
+              "dataType": "String",
+              "value": "2"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "pressureDischarge",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "hoa",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "CompressorNumber",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "dataType": "String",
+          "name": "Tower1",
+          "typeId": "Tower",
+          "value": "",
+          "parameters": {
+            "TowerNumber": {
+              "dataType": "String",
+              "value": "1"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "Pumps",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "bromineHOA",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "circHOA",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "chemHOA",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "temp",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "pH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "TowerNumber",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "mmOH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "makeup",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "fanSpeed",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/receiverLevel",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "receiverLevel",
+          "value": 97,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/valveDischarge",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "valveDischarge",
+          "value": 0,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/ambientHum",
+          "dataType": "Float4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "ambientHum",
+          "formatString": "#,##0.00",
+          "value": 67.29719,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "[Simulator]_Meta:Refrigeration/valveKing",
+          "dataType": "Int4",
+          "historyProvider": "IADemo",
+          "historyEnabled": true,
+          "name": "valveKing",
+          "value": 1,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Transaction Group",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "memory",
+          "dataType": "Boolean",
+          "name": "Trigger",
+          "value": false,
+          "tagType": "AtomicTag"
+        },
+        {
+          "eventScripts": [
+            {
+              "eventid": "valueChanged",
+              "script": "\tif currentValue.value:\n\t\tsystem.tag.write(\"[.]Trigger\", False)"
+            }
+          ],
+          "valueSource": "expr",
+          "expression": "{[.]Trigger} \u0026\u0026 \nminutesBetween({[.]Trigger.LastChange}, now(0)) \u003e\u003d 1",
+          "dataType": "Boolean",
+          "name": "Watchdog",
+          "value": false,
+          "tagType": "AtomicTag"
+        }
+      ]
+    }
+  ]
+}

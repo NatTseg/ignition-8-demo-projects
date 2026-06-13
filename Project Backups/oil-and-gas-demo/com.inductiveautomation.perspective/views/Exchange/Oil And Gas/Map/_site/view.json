@@ -1,0 +1,423 @@
+{
+  "custom": {},
+  "params": {
+    "site": "site-a",
+    "style": {
+      "backgroundColor": "rgba(96,96,96,1)",
+      "border": "1px solid black",
+      "borderRadius": "2px",
+      "boxShadow": "7px 7px 1px 0px rgba(0, 0, 0, 0.4)",
+      "classes": "",
+      "zIndex": 1
+    }
+  },
+  "propConfig": {
+    "params.site": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.style": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 126,
+      "width": 184
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 122,
+          "width": 116,
+          "x": 66,
+          "y": 1
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "expression": "{[default]Now Timer Tags/Now 1}"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "code": "\t\tsite \u003d self.view.params.site.replace(\u0027-\u0027, \u0027 \u0027)\n\treturn [{\u0027name\u0027: \u0027Flow\u0027, \u0027value\u0027: system.tag.read(\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/Flow\u0027 %site)},\n\t {\u0027name\u0027: \u0027DP\u0027, \u0027value\u0027: system.tag.read(\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/DP\u0027 %site)},\n\t  {\u0027name\u0027: \u0027SP\u0027, \u0027value\u0027: system.tag.read(\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/SP\u0027 %site)},\n\t   {\u0027name\u0027: \u0027Temp\u0027, \u0027value\u0027: system.tag.read(\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/Temp\u0027 %site)}]",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.data[0].value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "replace({view.params.site}, \u0027-\u0027, \u0027 \u0027)"
+                },
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/{1}/Flow"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[1].value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "replace({view.params.site}, \u0027-\u0027, \u0027 \u0027)"
+                },
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/{1}/DP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[2].value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "replace({view.params.site}, \u0027-\u0027, \u0027 \u0027)"
+                },
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/{1}/SP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[3].value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "1": "replace({view.params.site}, \u0027-\u0027, \u0027 \u0027)"
+                },
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/{1}/Temp"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "fontSize": "13px"
+            }
+          },
+          "columns": [
+            {
+              "align": "auto",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "name",
+              "footer": {
+                "align": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "string",
+              "resizable": true,
+              "sortable": true,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewPath": "",
+              "width": 40
+            },
+            {
+              "align": "auto",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "value",
+              "footer": {
+                "align": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "number": "value",
+              "numberFormat": "0,0.00000",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "number",
+              "resizable": true,
+              "sortable": true,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewPath": "",
+              "width": 70
+            }
+          ],
+          "data": [
+            {
+              "name": "Flow"
+            },
+            {
+              "name": "DP"
+            },
+            {
+              "name": "SP"
+            },
+            {
+              "name": "Temp"
+            }
+          ],
+          "enableHead": false,
+          "enableHeader": false,
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "striped": {
+              "color": {
+                "even": "#F4F4F4",
+                "odd": "#E5E5F8"
+              }
+            }
+          },
+          "style": {
+            "border": "1px solid black"
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.navigate(page\u003d\u0027/details/%s\u0027 %self.view.params.site)"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMouseEnter": {
+              "config": {
+                "script": "\tself.props.style.background \u003d \u0027rgba(255,255,255,0.1)\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMouseLeave": {
+              "config": {
+                "script": "\tself.props.style.background \u003d \u0027rgba(0, 0, 110, 0.2)\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Details"
+        },
+        "position": {
+          "height": 40,
+          "width": 64,
+          "x": 1,
+          "y": 1
+        },
+        "props": {
+          "style": {
+            "background": "rgba(0, 0, 110, 0.2)",
+            "border": "4px outset white",
+            "borderRadius": "2px",
+            "color": "white",
+            "cursor": "pointer",
+            "fontSize": "14pt",
+            "textAlign": "center"
+          },
+          "text": "View"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(\u0027oilSiteExpand\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMouseEnter": {
+              "config": {
+                "script": "\tself.props.style.background \u003d \u0027rgba(255,255,255,0.1)\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMouseLeave": {
+              "config": {
+                "script": "\tself.props.style.background \u003d \u0027rgba(0, 0, 110, 0.2)\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Expand"
+        },
+        "position": {
+          "height": 40,
+          "width": 64,
+          "x": 1,
+          "y": 42
+        },
+        "props": {
+          "style": {
+            "background": "rgba(0, 0, 110, 0.2)",
+            "border": "4px outset white",
+            "borderRadius": "2px",
+            "color": "white",
+            "cursor": "pointer",
+            "fontSize": "14pt",
+            "textAlign": "center"
+          },
+          "text": "Info"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(\u0027oilSiteClose\u0027, {\u0027site\u0027: self.view.params.site}, \u0027page\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMouseEnter": {
+              "config": {
+                "script": "\tself.props.style.background \u003d \u0027rgba(255,255,255,0.1)\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMouseLeave": {
+              "config": {
+                "script": "\tself.props.style.background \u003d \u0027rgba(0, 0, 110, 0.2)\u0027"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Close"
+        },
+        "position": {
+          "height": 40,
+          "width": 64,
+          "x": 1,
+          "y": 82.296875
+        },
+        "props": {
+          "style": {
+            "background": "rgba(0, 0, 110, 0.2)",
+            "border": "4px outset white",
+            "borderRadius": "2px",
+            "color": "white",
+            "cursor": "pointer",
+            "fontSize": "14pt",
+            "textAlign": "center"
+          },
+          "text": "Exit"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style": {
+        "binding": {
+          "config": {
+            "path": "view.params.style"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

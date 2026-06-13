@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Quantico';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quantico-Regular'), local('Quantico Regular'),
+         url('/data/perspective/fonts/Quantico-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quantico';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Quantico-Bold'), local('Quantico Bold'),
+         url('/data/perspective/fonts/Quantico-Bold.ttf') format('truetype');
+}
+
+/* OPTIONAL ITALIC FONT STYLES - UNCOMMENT TO USE - Adds small perfromance hit to pages loading */
+/* @font-face {
+    font-family: 'Quantico';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Quantico-Italic'), local('Quantico Italic'),
+         url('/data/perspective/fonts/Quantico-Italic.ttf') format('truetype');
+}
+
+/* @font-face {
+    font-family: 'Quantico';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Quantico-BoldItalic'), local('Quantico BoldItalic'),
+         url('/data/perspective/fonts/Quantico-BoldItalic.ttf') format('truetype');
+}
+*/
+
+@font-face {
+    font-family: 'ShareTechMono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('ShareTechMono-Regular'), local('ShareTechMono Regular'),
+         url('/data/perspective/fonts/ShareTechMono-Regular.ttf') format('truetype');
+}

@@ -1,0 +1,2537 @@
+{
+  "custom": {
+    "systemMode": "",
+    "tagPath": "[default]BMS/",
+    "tagValue": "2",
+    "widgetDimensions": {
+      "height": 0,
+      "width": 0
+    }
+  },
+  "params": {
+    "ac": -1,
+    "beingEdited": false,
+    "columnCount": 1,
+    "columnSpan": 1,
+    "compressor": -1,
+    "editable": false,
+    "highThreshold": "",
+    "icon": "",
+    "iconVisible": true,
+    "lowThreshold": "",
+    "mappings": [],
+    "mobile": "",
+    "name": "",
+    "numberFormat": "",
+    "path": "",
+    "rowCount": 1,
+    "rowSpan": 1,
+    "type": "",
+    "units": "",
+    "widgetID": -1,
+    "widgetTitle": ""
+  },
+  "propConfig": {
+    "custom.systemMode": {
+      "binding": {
+        "config": {
+          "expression": "if({view.params.path}\u003d\u0027System Mode\u0027,\r\n\r\nif({[default]BMS/90BR/AHU/Call_for_Heating}\u003d1,\r\n\"HEAT\",\r\nif({[default]BMS/90BR/AHU/Call_for_Peak_Cool}\u003d1,\r\n\"PEAK\",\r\nif({[default]BMS/90BR/AHU/Call_for_Cooling}\u003d1,\r\n\"COOL\",\r\n\"OFF\"\r\n))),\u0027\u0027)"
+        },
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.tagPath": {
+      "binding": {
+        "config": {
+          "struct": {
+            "compressor": "{view.params.compressor}",
+            "path": "{view.params.path}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t# If the user selected a path that should contain a compressor number in it,\n\t# then this transform adds the compressor number to the path.\t\n\t\n\tcompressor \u003d value[\u0027compressor\u0027]\n\tpath \u003d value[\u0027path\u0027]\n\t\n\tif \u0027BMS\u0027 not in path:\n\t\tpath \u003d \u0027[default]BMS/\u0027 + path\n\t\n\tif compressor \u003d\u003d -1:\n\t\treturn path\n\telse:\n\t\t# Path should contain compressor number.\n\t\t# Example: [default]BMS/Blue/HVAC/AC1/Comp1/HMI_HOA\n\t\tif len(path) \u003e 0 and \u0027Comp\u0027 in path:\n\t\t\tpathParts \u003d path.split(\u0027/\u0027)\n\t\t\tnewPath \u003d \u0027\u0027\n\t\t\ti \u003d 0\n\t\t\tfor part in pathParts:\n\t\t\t\tif i !\u003d 4:\n\t\t\t\t\tnewPath \u003d newPath + part + \u0027/\u0027\n\t\t\t\telse:\n\t\t\t\t\tnewPath \u003d newPath + \u0027Comp\u0027 + str(compressor) + \u0027/\u0027\n\t\t\t\ti \u003d i + 1\n\t\t\t\t\n\t\t\treturn newPath[:-1]\n\t\telse:\n\t\t\treturn path\n\t",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.tagValue": {
+      "binding": {
+        "config": {
+          "expression": "try(numberFormat(tag({view.custom.tagPath}),{view.params.numberFormat}),\u0027tagFailure\u0027)"
+        },
+        "transforms": [
+          {
+            "code": "\tif value !\u003d \u0027tagFailure\u0027:\t\n\t\t# If mappings exist for this tag, then return the \u0027mapped value\u0027.\n\t\t# Otherwise, return the tag value.\n\t\tmappings \u003d self.params.mappings\n\t\t\n\t\tif len(mappings) \u003d\u003d 0:\n\t\t\treturn value\n\t\telse:\n\t\t\tfor mapping in mappings:\n\t\t\t\tmappingParts \u003d mapping.split(\u0027,\u0027)\n\t\t\t\tif int(value) \u003d\u003d int(mappingParts[0]):\n\t\t\t\t\treturn mappingParts[1]\n\telse:\n\t\treturn \u0027\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.testing": {
+      "persistent": true
+    },
+    "custom.widgetDimensions": {
+      "binding": {
+        "config": {
+          "struct": {
+            "columnCount": "{view.params.columnCount}",
+            "columnSpan": "{view.params.columnSpan}",
+            "rowCount": "{view.params.rowCount}",
+            "rowSpan": "{view.params.rowSpan}",
+            "viewportHeight": "{page.props.dimensions.viewport.height}",
+            "viewportWidth": "{page.props.dimensions.viewport.width}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\t# Utilize the dimensions of the viewport, the number of dashboard rows/cols, and the number\n\t# of rows/cols that the widget spans in order to figure out the width and height of the\n\t# widget in pixels (to help with font size and icon size).\t\n\t\n\tviewportWidth \u003d value[\u0027viewportWidth\u0027]\n\tviewportHeight \u003d value[\u0027viewportHeight\u0027]\n\n\trowSpan \u003d value[\u0027rowSpan\u0027]\n\tcolumnSpan \u003d value[\u0027columnSpan\u0027]\n\trowCount \u003d value[\u0027rowCount\u0027]\n\tcolumnCount \u003d value[\u0027columnCount\u0027]\n\t\n\tif viewportWidth \u003d\u003d None or viewportHeight \u003d\u003d None:\n\t\treturn {\u0027width\u0027:0,\u0027height\u0027:0}\n\telse:\n\t\tpixelPerCol \u003d viewportWidth / float(columnCount)\n\t\tpixelPerRow \u003d viewportHeight / float(rowCount)\n\t\t\n\t\twidgetPixelWidth \u003d pixelPerCol * columnSpan\n\t\twidgetPixelHeight \u003d (pixelPerRow * rowSpan)\n\t\t\n\t\treturn {\u0027width\u0027:widgetPixelWidth,\u0027height\u0027:widgetPixelHeight}",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.ac": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.alarmInfo": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.beingEdited": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.color": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.colors": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.columnCount": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.columnSpan": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.compressor": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.editable": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.floorNumber": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.fontSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.group": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.highThreshold": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.icon": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.iconSize": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.iconVisible": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.lowThreshold": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mappings": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minutes": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.mobile": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.numberFormat": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.path": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.refresh": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rowCount": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rowSpan": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showChange": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showLegend": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showX": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.showY": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagInfo": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.type": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.unit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.units": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.widgetID": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.widgetTitle": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 172,
+      "width": 262
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.theme}\u003d\u0027hvac-dark\u0027 || {session.props.theme}\u003d\u0027hvac-dark-warm\u0027,\u0027--neutral-10\u0027,\u0027--neutral-60\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "defaultTitle": "{parent.custom.default}",
+                      "widgetTitle": "{view.params.widgetTitle}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# If user has not specified a title for widget, then return the default title.\n\t\n\twidgetTitle \u003d value[\u0027widgetTitle\u0027]\n\tdefaultTitle \u003d value[\u0027defaultTitle\u0027]\n\t\n\tif len(widgetTitle) \u003e 0:\n\t\treturn widgetTitle\n\telse:\n\t\treturn defaultTitle",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "15px",
+                "fontWeight": "bold",
+                "marginLeft": "8px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "25px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.default": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "ac": "{view.params.ac}",
+                  "compressorNum": "{view.params.compressor}",
+                  "name": "{view.params.name}",
+                  "path": "{view.params.path}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\ttypeMap \u003d {\u0027\u0027:\u0027\u0027,\u0027fan\u0027:\u0027Fan\u0027, \u0027condenser\u0027:\u0027Condenser\u0027, \u0027economizer\u0027:\u0027Economizer\u0027,\u0027compressor\u0027:\u0027Compressor\u0027,\u0027heatingControls\u0027:\u0027Heating Controls\u0027,\u0027other\u0027:\u0027\u0027}\n\t\n\tac \u003d value[\u0027ac\u0027]\n\tpath \u003d value[\u0027path\u0027]\n\ttype \u003d value[\u0027type\u0027]\n\tname \u003d value[\u0027name\u0027]\n\t\n\tif ac in [-1,3]:\n\t\tac \u003d \u0027\u0027\n\telse:\n\t\tac \u003d \u0027AHU \u0027 + str(ac) + \u0027 - \u0027\n\t\n\tif type \u003d\u003d \u0027compressor\u0027 and \u0027Comp\u0027 in path:\n\t\ttypeName \u003d \u0027Compressor \u0027 + str(value[\u0027compressorNum\u0027]) + \u0027 \u0027 + name\n\telif type \u003d\u003d \u0027other\u0027:\n\t\ttypeName \u003d name\n\telse:\n\t\ttypeName \u003d typeMap[type] + \u0027 \u0027 + name\n\t\n\treturn ac + typeName",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "justify": "space-between",
+          "style": {
+            "marginTop": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Value"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "!{view.params.editable}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({parent.custom.valueClass}\u003d\u0027building-automation-demo/page/animate-warning\u0027,\u0027building-automation-demo/page/animate-warning-text\u0027,\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if({parent.custom.valueFill}\u003d\u0027var(--neutral-20)\u0027 || {parent.custom.valueFill}\u003d\u0027var(--neutral-80)\u0027,\u0027--neutral-100\u0027,{parent.custom.valueFill})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "numChars": "len({this.props.text})",
+                  "type": "{view.params.type}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return 45px. Otherwise, utilize the min between 0.25*widgetWidth\n\t# and max if the widgetHeight is greater than the widgetWidth or the min\n\t# between 0.25*widgetHeight and max if the widgetHeight is less than or\n\t# equal to the widgetWidth. If the num of characters is greater than or equal\n\t# to 6, then max is 45; otherwise max is 60.\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\tnumChars \u003d float(value[\u0027numChars\u0027])\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tif numChars \u003e\u003d 6:\n\t\tmax \u003d 45\n\telse:\n\t\tmax \u003d 60\n\t\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min((0.25*widgetWidth),max)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min((0.25*widgetHeight),max)) + \u0027px\u0027\n\telse:\n\t\treturn \u002745px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.style.paddingBottom": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "iconVisible": "{view.params.iconVisible}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If icon is visible, add a small amount (6% of widgetHeight) of padding\n\t# on the bottom.\n\t\n\ticonVisible \u003d value[\u0027iconVisible\u0027]\n\t\n\tif iconVisible:\n\t\treturn \u00270px\u0027\n\telse:\n\t\twidgetHeight \u003d float(value[\u0027widgetDimensions\u0027][\u0027height\u0027])\n\t\treturn str(widgetHeight*0.06) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "path": "{view.params.path}",
+                  "systemMode": "{view.custom.systemMode}",
+                  "tagValue": "{view.custom.tagValue}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# Return the empty string if type and tag path are empty. If the widget is\n\t# viewing the System Mode, then return the value of the systemMode custom\n\t# property. Otherwise, return the tag value and the units.\n\t\n\tif value[\u0027type\u0027] \u003d\u003d \u0027\u0027 and len(value[\u0027path\u0027]) \u003d\u003d 0:\n\t\treturn \u0027\u0027\n\telif value[\u0027path\u0027] \u003d\u003d \u0027System Mode\u0027:\n\t\treturn value[\u0027systemMode\u0027]\n\telse:\n\t\treturn str(value[\u0027tagValue\u0027]) + self.view.params.units",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "center"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Numeric Entry"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.editable"
+              },
+              "type": "property"
+            }
+          },
+          "props.format": {
+            "binding": {
+              "config": {
+                "path": "view.params.numberFormat"
+              },
+              "type": "property"
+            }
+          },
+          "props.inputBounds.maximum": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "tagPath": "{view.custom.tagPath}"
+                },
+                "tagPath": "{tagPath}.engHigh"
+              },
+              "type": "tag"
+            }
+          },
+          "props.inputBounds.minimum": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "tagPath": "{view.custom.tagPath}"
+                },
+                "tagPath": "{tagPath}.engLow"
+              },
+              "type": "tag"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "expression": "if({parent.custom.valueClass}\u003d\u0027building-automation-demo/page/animate-warning\u0027,\u0027building-automation-demo/page/animate-warning-text\u0027,\u0027\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if({parent.custom.valueFill}\u003d\u0027var(--neutral-20)\u0027 || {parent.custom.valueFill}\u003d\u0027var(--neutral-80)\u0027,\u0027--neutral-100\u0027,{parent.custom.valueFill})"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.fontSize": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "numChars": "len({this.props.text})",
+                  "type": "{view.params.type}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return 45px. Otherwise, utilize the min between 0.25*widgetWidth\n\t# and max if the widgetHeight is greater than the widgetWidth or the min\n\t# between 0.25*widgetHeight and max if the widgetHeight is less than or\n\t# equal to the widgetWidth. If the num of characters is greater than or equal\n\t# to 6, then max is 45; otherwise max is 60.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\tnumChars \u003d float(value[\u0027numChars\u0027])\n\ttype \u003d value[\u0027type\u0027]\n\t\n\tlabelWidth \u003d widgetWidth\n\tlabelHeight \u003d widgetHeight\n\t\n\tif numChars \u003e\u003d 6:\n\t\tmax \u003d 45\n\telse:\n\t\tmax \u003d 60\n\t\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif labelWidth \u003c labelHeight:\n\t\t\treturn str(min((0.25*labelWidth),max)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min((0.25*labelHeight),max)) + \u0027px\u0027\n\telse:\n\t\treturn \u002745px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.style.paddingBottom": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "iconVisible": "{view.params.iconVisible}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\ticonVisible \u003d value[\u0027iconVisible\u0027]\n\t\n\tif iconVisible:\n\t\treturn \u00270px\u0027\n\telse:\n\t\twidgetHeight \u003d float(value[\u0027widgetDimensions\u0027][\u0027height\u0027])\n\t\treturn str(widgetHeight*0.06) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "tagPath": "{view.custom.tagPath}"
+                },
+                "tagPath": "{tagPath}"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "align": "center",
+          "inputBounds": {},
+          "style": {
+            "backgroundColor": "#FFFFFF00",
+            "borderStyle": "none",
+            "outlineStyle": "none"
+          }
+        },
+        "type": "ia.input.numeric-entry-field"
+      },
+      {
+        "meta": {
+          "name": "Custom"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 80 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 80 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,80)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,80)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. Otherwise, if the user\n\t# has manually configured an icon and it is not one of the built-in icons,\n\t# then display this (to display the selected material io icon). If the icon\n\t# that the user configured is one of the built-in icons (like economizer),\n\t# then do not display this.\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\t\n\t\treturn False\n\telse:\n\t\tif len(value[\u0027icon\u0027]) \u003e 0 and value[\u0027icon\u0027] not in [\u0027economizer\u0027,\u0027fan\u0027,\u0027heating_controls\u0027,\u0027condenser\u0027,\u0027compressor\u0027,\u0027temperature\u0027,\u0027pressure\u0027]:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.color": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "\u0027material/\u0027 + {view.params.icon}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginLeft": "78%"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Fallback"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 80 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 80 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,80)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,80)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "compressor": "{../Compressor.position.display}",
+                  "condenser": "{../Condenser.position.display}",
+                  "custom": "{../Custom.position.display}",
+                  "economizer": "{../Economizer.position.display}",
+                  "fan": "{../Fan.position.display}",
+                  "heating": "{../Heating.position.display}",
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "name": "{view.params.name}",
+                  "path": "{view.params.path}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. If the user did not manually\n\t# configure an icon and none of the built-in icons are visible based on the values\n\t# of the params, then display this. \n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\t\n\t\treturn False\n\telse:\n\t\tdisplays \u003d [value[\u0027economizer\u0027],value[\u0027fan\u0027],value[\u0027heating\u0027],value[\u0027condenser\u0027],value[\u0027compressor\u0027],value[\u0027custom\u0027]]\n\t\tpath \u003d value[\u0027path\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif len(icon) \u003e 0:\n\t\t\treturn False\n\t\telif True in displays:\n\t\t\treturn False\n\t\telif \u0027temp\u0027 in path.lower() or \u0027temp\u0027 in name.lower() or \u0027differential\u0027 in path.lower() or \u0027differential\u0027 in name.lower() or \u0027pressure\u0027 in name.lower():\n\t\t\treturn False\n\t\telif len(path) \u003e 0:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.color": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "display": "{this.position.display}",
+                  "name": "{view.params.name}",
+                  "path": "{view.params.path}",
+                  "systemMode": "{view.custom.systemMode}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If the user did not manually configure an icon and the rest of the built-in\n\t# icons are not visible due to the values of the params, then this icon will\n\t# be displayed. Utilize the values of the params to help determine what fallback\n\t# icon should be displayed.\n\t\n\tdisplay \u003d value[\u0027display\u0027]\n\tpath \u003d value[\u0027path\u0027]\n\tname \u003d value[\u0027name\u0027]\n\t\n\tif display \u003d\u003d False:\n\t\treturn \u0027\u0027\n\telse:\n\t\tif \u0027smoke\u0027 in name.lower():\n\t\t\treturn \u0027material/smoke_free\u0027\n\t\telif \u0027cold\u0027 in name.lower() or \u0027cold\u0027 in path.lower() or \u0027cooling\u0027 in name.lower() or \u0027cooling\u0027 in path.lower() or \u0027peak\u0027 in path.lower():\n\t\t\treturn \u0027material/ac_unit\u0027\n\t\telif \u0027heat\u0027 in name.lower() or \u0027heat\u0027 in path.lower() or \u0027heating\u0027 in name.lower() or \u0027heating\u0027 in path.lower() or \u0027hot\u0027 in name.lower() or \u0027hot\u0027 in path.lower():\n\t\t\treturn \u0027material/whatshot\u0027\n\t\telif path \u003d\u003d \u0027System Mode\u0027:\n\t\t\tsystemMode \u003d value[\u0027systemMode\u0027]\n\t\t\tif systemMode in [\u0027PEAK\u0027,\u0027COOL\u0027]:\n\t\t\t\treturn \u0027material/ac_unit\u0027\n\t\t\telif systemMode \u003d\u003d \u0027HEAT\u0027:\n\t\t\t\treturn \u0027material/whatshot\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027material/info\u0027\n\t\telse:\n\t\t\treturn \u0027material/info\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "marginLeft": "78%"
+          }
+        },
+        "type": "ia.display.icon"
+      },
+      {
+        "meta": {
+          "name": "Compressor"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 80 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 80 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,80)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,80)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. Otherwise, if the user\n\t# has not manually configured an icon and the value type is compressor, or\n\t# if the user manually selected compressor, then display this. Otherwise,\n\t# do not display this.\t\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\t\n\t\treturn False\n\telse:\n\t\ttype \u003d value[\u0027type\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif type \u003d\u003d \u0027compressor\u0027 and len(icon) \u003d\u003d 0:\n\t\t\treturn True\n\t\telif icon \u003d\u003d \u0027compressor\u0027:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.fill": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "M160,963 l0,-268 -71,0 0,71 18,90 0,17 -36,54 -36,-54 0,-17 18,-90 0,-53 -36,-36 18,-18 0,-142 -35,0 0,-72 53,0 0,-17 54,0 0,17 53,0 0,107 107,-124 0,-268 107,0 0,-71 -71,0 -89,18 -18,0 -54,-36 54,-36 18,0 89,18 53,0 36,-36 18,18 142,0 0,-35 72,0 0,53 18,0 0,54 -18,0 0,321 107,124 0,411 35,0 0,36 -642,0 0,-36 36,0z",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M231,285 l428,0 0,18 -428,0 0,-18z",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M231,249 l428,0 0,18 -428,0 0,-18z",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M231,214 l428,0 0,17 -428,0 0,-17z",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M231,321 l428,0 0,17 -428,0 0,-17z",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M695,891 l0,-214 -3,-38 -8,-36 -13,-34 -19,-31 -22,-28 -26,-25 -29,-21 -33,-17 -34,-11 -37,-7 -13,-1 -13,0 -13,0 -37,5 -35,10 -34,15 -30,19 -27,24 -24,27 -19,30 -15,34 -10,35 -5,38 0,12 0,214",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M160,891 l571,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M160,963 l571,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M267,428 l36,17",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M588,445 l36,-17",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M374,160 l250,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M196,107 l0,-72",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M214,35 l0,72",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M303,89 l0,-36",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M374,89 l-18,-36 54,-18",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M374,107 l178,0 0,-72",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M606,160 l0,-160",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M624,107 l0,-54",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M107,873 l-72,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M107,856 l-72,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M89,766 l-36,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M89,695 l-36,18 -18,-54",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M35,517 l72,0 0,178",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M107,445 l-54,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M0,463 l160,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M160,695 l0,-143",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            }
+          ],
+          "style": {
+            "marginLeft": "79%",
+            "padding": "4px",
+            "transform": "scaleX(-1)"
+          },
+          "viewBox": "0 0 766 999"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Fan",
+          "tooltip": {
+            "enabled": true,
+            "text": "ACCESS CONTROLS"
+          }
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 90 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 90 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,90)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,90)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. Otherwise, if the user\n\t# has not manually configured an icon and the value type is fan, or if the user\n\t# manually selected fan, then display this. Otherwise, do not display this.\t\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\n\t\treturn False\n\telse:\n\t\ttype \u003d value[\u0027type\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif type \u003d\u003d \u0027fan\u0027 and len(icon) \u003d\u003d 0:\n\t\t\treturn True\n\t\telif icon \u003d\u003d \u0027fan\u0027:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.elements[27].fill.paint": {
+            "binding": {
+              "config": {
+                "path": "session.props.theme"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \"var(--neutral-10)\"\n\telse:\n\t\treturn \"var(--neutral-50)\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.elements[6].fill.paint": {
+            "binding": {
+              "config": {
+                "path": "session.props.theme"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \"var(--neutral-10)\"\n\telse:\n\t\treturn \"var(--neutral-50)\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.fill": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "M0,0 l999,0 0,999 -999,0 0,-999z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M0,709 l999,-418 0,708 -999,0 0,-290z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M0,751 l999,-418 0,666 -999,0 0,-248z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M0,813 l999,-418 0,604 -999,0 0,-186z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M0,0 l999,0 0,999 -999,0 0,-999",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M675,925 l-116,32 -120,0 -116,-32 -104,-60 -86,-84 -61,-106 -31,-116 0,-120 32,-118 60,-104 84,-84 106,-61 116,-31 120,0 118,31 104,61 84,84 61,104 31,118 0,120 -31,116 -61,106 -84,84 -106,60z",
+              "fill": {
+                "paint": "var(--neutral-50)"
+              },
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M667,907 l-110,29 -116,0 -110,-29 -100,-58 -82,-82 -58,-100 -29,-110 1,-116 28,-112 58,-98 82,-82 100,-58 110,-29 116,0 110,29 100,58 82,82 58,100 29,110 0,116 -29,110 -58,100 -82,82 -100,58z",
+              "fill": {},
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M569,915 l0,-346 -140,0 0,346 140,0z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M569,915 l-18,-31 -14,-31 -11,-33 -6,-33 -3,-34 0,-34 4,-34 8,-33 12,-32 16,-31 6,-10 6,-10 -9,0 -131,0 -18,30 -13,32 -10,32 -7,34 -2,22 -1,11 0,12 2,34 5,33 9,33 13,32 16,31 6,10 9,0 131,0z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M569,915 l0,-346 -140,0 -18,30 -13,32 -10,32 -7,34 -3,33 1,34 4,34 8,33 11,33 15,31 12,20 140,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M895,647 l-302,-174 -68,120 300,174 70,-120z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M895,647 l-36,0 -34,-4 -34,-7 -32,-11 -31,-15 -30,-17 -27,-21 -25,-23 -22,-27 -20,-28 -6,-11 -5,-10 -4,7 -17,31 -17,29 -17,30 -9,15 -4,8 5,10 18,30 22,27 23,25 27,22 29,18 30,16 32,12 33,8 34,5 12,1 11,0 12,0 12,0 17,-30 18,-30 17,-30 13,-23 5,-7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M895,647 l-302,-174 -68,120 17,31 20,28 23,25 26,23 28,20 30,16 31,13 33,10 34,6 34,2 24,0 70,-120",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M825,231 l-300,174 68,120 302,-174 -70,-120z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M825,231 l-18,31 -20,28 -24,25 -25,23 -28,19 -30,17 -31,13 -33,10 -33,7 -35,2 -11,0 -12,-1 4,8 17,29 17,31 17,29 13,23 11,0 12,0 35,-2 34,-6 33,-10 32,-13 30,-17 28,-20 25,-22 24,-26 20,-28 12,-19 6,-11 -5,-7 -17,-30 -18,-30 -17,-30 -9,-15 -4,-8z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M825,231 l-300,174 68,120 11,0 35,0 35,-6 34,-8 31,-13 31,-15 28,-19 27,-22 24,-24 22,-27 18,-29 6,-11 -70,-120",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M429,83 l0,346 140,0 0,-346 -140,0z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M429,83 l18,31 14,31 10,33 7,33 3,34 -1,34 -4,34 -8,33 -12,32 -15,31 -6,10 -6,10 9,0 131,0 18,-30 13,-32 10,-32 7,-34 2,-22 1,-11 0,-12 -2,-34 -5,-33 -9,-33 -13,-32 -16,-31 -6,-10 -9,0 -131,0z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M429,83 l0,346 140,0 18,-30 13,-32 10,-32 7,-34 3,-33 -1,-34 -4,-34 -8,-33 -11,-33 -15,-31 -12,-20 -140,0",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M103,351 l302,174 68,-120 -300,-174 -70,120z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M103,351 l36,0 34,4 34,7 32,11 31,15 30,17 27,21 25,23 22,27 20,28 6,11 5,10 4,-7 17,-31 17,-29 17,-30 9,-15 4,-8 -5,-10 -18,-30 -22,-27 -23,-25 -27,-22 -29,-18 -30,-16 -32,-12 -33,-8 -34,-5 -12,-1 -11,0 -12,0 -12,0 -17,30 -18,30 -17,30 -13,23 -5,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M103,351 l302,174 68,-120 -17,-31 -20,-28 -23,-25 -26,-23 -28,-20 -30,-16 -31,-13 -33,-10 -34,-6 -34,-2 -24,0 -70,120",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "M173,767 l300,-174 -68,-120 -302,174 70,120z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M173,767 l18,-31 20,-28 24,-25 25,-23 28,-19 30,-17 31,-13 33,-10 33,-7 35,-2 11,0 12,1 -4,-8 -17,-29 -17,-31 -17,-29 -13,-23 -11,0 -12,0 -35,2 -34,6 -33,10 -32,13 -30,17 -28,20 -25,22 -24,26 -20,28 -12,19 -6,11 5,7 17,30 18,30 17,30 9,15 4,8z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M173,767 l300,-174 -68,-120 -11,0 -35,0 -35,6 -34,8 -31,13 -31,15 -28,19 -27,22 -24,24 -22,27 -18,29 -6,11 70,120",
+              "name": "path",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "cx": "499",
+              "cy": "499",
+              "name": "circle",
+              "r": "122",
+              "stroke": {
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "circle"
+            },
+            {
+              "cx": "499",
+              "cy": "499",
+              "name": "circle",
+              "r": "104",
+              "type": "circle"
+            },
+            {
+              "cx": "499",
+              "cy": "499",
+              "fill": {},
+              "name": "circle",
+              "r": 44,
+              "type": "circle"
+            },
+            {
+              "d": "M62,973 l62,0 0,19 -62,0 0,-19z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M145,973 l62,0 0,19 -62,0 0,-19z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M291,973 l62,0 0,19 -62,0 0,-19z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M936,992 l-62,0 0,-19 62,0 0,19z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M853,992 l-62,0 0,-19 62,0 0,19z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M707,992 l-62,0 0,-19 62,0 0,19z",
+              "name": "path",
+              "type": "path"
+            }
+          ],
+          "style": {
+            "marginLeft": "78%"
+          },
+          "viewBox": "0 0 999 999"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Condenser"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 90 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 90 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,90)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,90)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. Otherwise, if the user\n\t# has not manually configured an icon and the value type is condenser, or\n\t# if the user manually selected condenser, then display this. Otherwise, do\n\t# not display this.\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\t\n\t\treturn False\n\telse:\n\t\ttype \u003d value[\u0027type\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif type \u003d\u003d \u0027condenser\u0027 and len(icon) \u003d\u003d 0:\n\t\t\treturn True\n\t\telif icon \u003d\u003d \u0027condenser\u0027:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.elements[1].fill.paint": {
+            "binding": {
+              "config": {
+                "path": "session.props.theme"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \"var(--neutral-10)\"\n\telse:\n\t\treturn \"var(--neutral-50)\"",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.fill": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "M43,611 l-43,-44 0,-524 43,-43 912,0 43,43 0,524 -43,44 -912,0z",
+              "name": "path",
+              "stroke": {
+                "paint": "var(--neutral-20)",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M21,43 l956,0 0,524 -956,0 0,-524z",
+              "fill": {},
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M98,98 l33,0 0,-9 -26,-24 -36,0 -26,24 0,412 33,0 0,-403 11,-7 11,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M151,501 l34,0 0,8 -26,26 -36,0 -25,-26 0,-411 33,0 0,403 10,6 10,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M207,98 l32,0 0,-9 -24,-24 -38,0 -24,24 0,412 32,0 0,-403 10,-7 12,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M261,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M315,98 l34,0 0,-9 -26,-24 -36,0 -26,24 0,412 34,0 0,-403 10,-7 10,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M371,501 l32,0 0,8 -26,26 -36,0 -26,-26 0,-411 34,0 0,403 10,6 12,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M425,98 l34,0 0,-9 -26,-24 -36,0 -26,24 0,412 32,0 0,-403 12,-7 10,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M479,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 34,0 0,403 10,6 10,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M535,98 l32,0 0,-9 -26,-24 -36,0 -26,24 0,412 34,0 0,-403 10,-7 12,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M589,501 l32,0 0,8 -24,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M643,98 l34,0 0,-9 -26,-24 -36,0 -26,24 0,412 34,0 0,-403 10,-7 10,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M699,501 l32,0 0,8 -26,26 -36,0 -26,-26 0,-411 34,0 0,403 10,6 12,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M753,98 l32,0 0,-9 -24,-24 -36,0 -26,24 0,412 32,0 0,-403 12,-7 10,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M807,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M863,98 l32,0 0,-9 -26,-24 -36,0 -24,24 0,412 32,0 0,-403 10,-7 12,7z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M917,501 l34,0 0,8 -26,26 -36,0 -26,-26 0,-411 32,0 0,403 12,6 10,-6z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M971,91 l0,-26 -29,0 -25,24 0,412 34,0 0,-403 9,-7 11,0z",
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M21,507 l0,28 30,0 25,-26 0,-8 -33,0 -11,6 -11,0z",
+              "name": "path",
+              "type": "path"
+            }
+          ],
+          "style": {
+            "marginLeft": "78%"
+          },
+          "viewBox": "0 0 998 611"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Heating"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 90 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 90 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,90)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,90)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. Otherwise, if the user has\n\t# not manually configured an icon and the value type is heatingControls, or if\n\t# the user manually selected heatingControls, then display this. Otherwise, do\n\t# not display this.\t\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\n\t\treturn False\n\telse:\n\t\ttype \u003d value[\u0027type\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif type \u003d\u003d \u0027heatingControls\u0027 and len(icon) \u003d\u003d 0:\n\t\t\treturn True\n\t\telif icon \u003d\u003d \u0027heating_controls\u0027:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.fill": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs319",
+              "name": "defs319",
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 59.326109,99.9916 h 16.66875 v 66.14583 h -16.66875 z",
+                  "id": "path20",
+                  "name": "path20",
+                  "stroke": {
+                    "dasharray": "none",
+                    "paint": "#4c4c4c",
+                    "width": "0.529167"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 75.994859,99.9916 h 16.404166 v 66.14583 H 75.994859 Z",
+                  "id": "path22",
+                  "name": "path22",
+                  "stroke": {
+                    "dasharray": "none",
+                    "paint": "#4c4c4c",
+                    "width": "0.529167"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 92.399025,99.9916 h 16.668755 v 66.14583 H 92.399025 Z",
+                  "id": "path24",
+                  "name": "path24",
+                  "stroke": {
+                    "dasharray": "none",
+                    "paint": "#4c4c4c",
+                    "width": "0.529167"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 109.06778,99.9916 h 16.40416 v 66.14583 h -16.40416 z",
+                  "id": "path26",
+                  "name": "path26",
+                  "stroke": {
+                    "dasharray": "none",
+                    "paint": "#4c4c4c",
+                    "width": "0.529167"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 125.47194,99.9916 h 16.66875 v 66.14583 h -16.66875 z",
+                  "id": "path28",
+                  "name": "path28",
+                  "stroke": {
+                    "dasharray": "none",
+                    "paint": "#4c4c4c",
+                    "width": "0.529167"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 142.14069,99.9916 h 16.40417 v 66.14583 h -16.40417 z",
+                  "id": "path30",
+                  "name": "path30",
+                  "stroke": {
+                    "dasharray": "none",
+                    "paint": "#4c4c4c",
+                    "width": "0.529167"
+                  },
+                  "type": "path"
+                }
+              ],
+              "id": "layer1",
+              "name": "layer1",
+              "transform": "translate(-59.061526,-69.36712)",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "m 163.9119,40.93401 c -3.27026,0 -5.32934,1.11752 -7.14608,2.07911 -1.57457,0.90956 -2.78584,1.55932 -4.96596,1.55932 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55932 -1.81674,-0.98758 -3.80312,-2.07911 -7.14608,-2.07911 -3.34287,0 -5.32926,1.11752 -7.14608,2.07911 -1.57457,0.90956 -2.78576,1.55932 -4.96587,1.55932 v 5.06781 c 3.27017,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.83167 2.85845,-1.55932 4.96587,-1.55932 2.10751,0 3.39139,0.64966 4.96596,1.55932 1.81683,0.98757 3.80312,2.0791 7.14608,2.0791 3.34287,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.83167 2.85845,-1.55932 4.96596,-1.55932 2.18012,0 3.3913,0.64966 4.96587,1.55932 1.81683,0.98757 3.82738,2.0791 7.14608,2.0791 v -5.06781 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.55932 -1.81682,-0.98758 -3.8759,-2.07911 -7.14608,-2.07911 z",
+                  "id": "path1375",
+                  "name": "path1375",
+                  "stroke": {
+                    "width": "2.50909"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 171.05798,26.302337 c -1.81682,-0.98757 -3.82738,-2.0791 -7.14608,-2.0791 -3.3187,0 -5.32934,1.09153 -7.14608,2.0791 -1.57457,0.83168 -2.85845,1.55933 -4.96596,1.55933 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55933 -1.81674,-0.96162 -3.80312,-2.0791 -7.14608,-2.0791 -3.34287,0 -5.32926,1.09153 -7.14608,2.0791 -1.57457,0.85761 -2.83419,1.55933 -4.96587,1.55933 v 5.01583 c 3.27017,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.85761 2.83418,-1.55933 4.96587,-1.55933 2.13177,0 3.39139,0.64976 4.96596,1.55933 1.81683,0.98757 3.80312,2.0791 7.14608,2.0791 3.34287,0 5.32925,-1.11752 7.14608,-2.0791 1.57457,-0.83168 2.85845,-1.55933 4.96596,-1.55933 2.18012,0 3.3913,0.64976 4.96587,1.55933 1.81683,0.98757 3.82738,2.0791 7.14608,2.0791 v -5.06781 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.50735 z",
+                  "id": "path1373",
+                  "name": "path1373",
+                  "stroke": {
+                    "width": "2.50909"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 163.9119,57.696768 c -3.27026,0 -5.32934,1.11751 -7.14608,2.0791 -1.57457,0.83167 -2.85845,1.55932 -4.96596,1.55932 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55932 -1.81674,-0.98757 -3.80312,-2.0791 -7.14608,-2.0791 -3.34287,0 -5.32926,1.11751 -7.14608,2.0791 -1.57457,0.83167 -2.83419,1.55932 -4.96587,1.55932 v 5.06782 c 3.27017,0 5.32925,-1.11752 7.14608,-2.07911 1.57457,-0.90956 2.78575,-1.55932 4.96587,-1.55932 2.18021,0 3.39139,0.64976 4.96596,1.55932 1.81683,0.98758 3.80312,2.07911 7.14608,2.07911 3.34287,0 5.32925,-1.11752 7.14608,-2.07911 1.57457,-0.90956 2.78575,-1.55932 4.96596,-1.55932 2.18012,0 3.3913,0.64976 4.96587,1.55932 1.81683,0.98758 3.82738,2.07911 7.14608,2.07911 v -5.06782 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.55932 -1.81682,-0.98757 -3.8759,-2.0791 -7.14608,-2.0791 z",
+                  "id": "path1371",
+                  "name": "path1371",
+                  "stroke": {
+                    "width": "2.50909"
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "m 163.9119,74.459519 c -3.27026,0 -5.32934,1.091531 -7.14608,2.079111 -1.57457,0.8576 -2.85845,1.55932 -4.96596,1.55932 -2.18021,0 -3.39139,-0.64976 -4.96596,-1.55932 -1.81674,-0.98758 -3.80312,-2.079111 -7.14608,-2.079111 -3.34287,0 -5.32926,1.091531 -7.14608,2.079111 -1.57457,0.8576 -2.83419,1.55932 -4.96587,1.55932 v 5.06781 c 3.27017,0 5.32925,-1.09153 7.14608,-2.0791 1.57457,-0.8576 2.83418,-1.55932 4.96587,-1.55932 2.13177,0 3.39139,0.64966 4.96596,1.55932 1.81683,0.98757 3.80312,2.0791 7.14608,2.0791 3.34287,0 5.32925,-1.09153 7.14608,-2.0791 1.57457,-0.8576 2.85845,-1.55932 4.96596,-1.55932 2.18012,0 3.3913,0.64966 4.96587,1.55932 1.81683,0.98757 3.82738,2.0791 7.14608,2.0791 v -5.06781 c -2.18011,0 -3.3913,-0.64976 -4.96587,-1.55932 -1.81682,-0.98758 -3.8759,-2.079111 -7.14608,-2.079111 z",
+                  "id": "path1108-3",
+                  "name": "path1108-3",
+                  "stroke": {
+                    "width": "2.50909"
+                  },
+                  "type": "path"
+                }
+              ],
+              "id": "layer3",
+              "name": "layer3",
+              "transform": "matrix(-0.01464824,0.53431864,-0.74671805,0,92.19221,-68.166165)",
+              "type": "group"
+            }
+          ],
+          "style": {
+            "marginLeft": "78%"
+          },
+          "viewBox": "0 0 99.747917 97.034896"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Economizer",
+          "tooltip": {
+            "enabled": true,
+            "text": "ACCESS CONTROLS"
+          }
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 100 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 100 if the widgetWidth is greater than or equal to the widgetHeight.\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,100)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,100)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "type": "{view.params.type}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is false, then do not display this. Otherwise, if the user\n\t# has not manually configured an icon and the value type is economizer, or\n\t# if the user manually selected economizer, then display this. Otherwise,\n\t# do not display this.\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\n\t\treturn False\n\telse:\n\t\ttype \u003d value[\u0027type\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif type \u003d\u003d \u0027economizer\u0027 and len(icon) \u003d\u003d 0:\n\t\t\treturn True\n\t\telif icon \u003d\u003d \u0027economizer\u0027:\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.fill": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "id": "defs1667",
+              "name": "defs1667",
+              "type": "defs"
+            },
+            {
+              "d": "M 1.3778146,51.361252 H 218.99855 V 438.85555 H 1.3778146 Z",
+              "id": "path1603",
+              "name": "path1603",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 218.7514,51.608402 v -13 l 75,-37.0000002 V 14.608402 Z",
+              "id": "path1605",
+              "name": "path1605",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 294.72758,0.99905228 -0.1488,0.0731017 -8.5e-4,4.136e-4 L 218.50353,38.434148 0.41557456,38.494808 75.86896,1.2338872 Z",
+              "id": "path1607",
+              "name": "path1607",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": 2
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 170.7514,387.6084 v -75 l 11,-5 v 74 z",
+              "id": "path1609",
+              "name": "path1609",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 218.7514,438.6084 75,-38 V 14.608402 l -75,37 z",
+              "id": "path1611",
+              "name": "path1611",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M 0.58160456,38.166941 H 219.19286 V 52.043413 H 0.58160456 Z M 218.1514,38.687563 v 13.876472 m 0.48705,-1.523633 H 0.02719456 Z m -1.04905,-11.826 H 0.17740456 Z M 1.7014046,38.482666 v 13.876472 m 0.562,-14.138972 v 13.876472",
+              "id": "path1613",
+              "name": "path1613",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "1.11708"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M 101.7514,424.6084 V 62.608402 h 5 V 424.6084 Z",
+              "id": "path1615",
+              "name": "path1615",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#000000",
+                "width": "1"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 93.751405,312.6084 12.999995,-5 h 75 l -11,5 z",
+              "id": "path1629",
+              "name": "path1629",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 143.7514,115.6084 h -1 -10 l -7,-4 -5,-8 v -3.999998 l 3,-9 5,-4 18,-8 6,-3 11,3 6,7 1,6 -3,8.999998 -5,4 z",
+              "id": "path1639",
+              "name": "path1639",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M 93.751405,312.6084 H 167.7514 v 75 H 93.751405 Z",
+              "id": "path1643",
+              "name": "path1643",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 136.7514,86.608402 10,4 5,9 -3,9.999998 -9,6 h -3 l -11,-4 -5,-8 v -3.999998 l 5,-9 z",
+              "id": "path1645",
+              "name": "path1645",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "M 231.7514,312.6084 V 62.608402 h 38 l 149,124.999998 z",
+              "id": "path1649",
+              "name": "path1649",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 231.7514,62.608402 51,-24 h 37 l -50,24 z",
+              "id": "path1651",
+              "name": "path1651",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 269.7514,62.608402 50,-24 150,124.999998 -51,24 z",
+              "id": "path1653",
+              "name": "path1653",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 418.7514,187.6084 51,-24 -187,125 -51,24 z",
+              "id": "path1655",
+              "name": "path1655",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 207.7514,376.6084 v -64 l 6,-2 v 61 z",
+              "id": "path1657",
+              "name": "path1657",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 178.7514,312.6084 5,-2 h 30 l -6,2 z",
+              "id": "path1659",
+              "name": "path1659",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            },
+            {
+              "d": "m 178.7514,312.6084 h 29 v 64 h -29 z",
+              "id": "path1661",
+              "name": "path1661",
+              "stroke": {
+                "dasharray": "none",
+                "paint": "#4c4c4c",
+                "width": "2"
+              },
+              "type": "path"
+            }
+          ],
+          "style": {
+            "marginLeft": "78%",
+            "transform": "scaleX(-1)"
+          },
+          "viewBox": "0 0 471.59729 440.23611"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Temp"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.17*widgetWidth and 60 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.17*widgetHeight and\n\t# 60 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.25*widgetWidth,60)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.25*widgetHeight,60)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "compressor": "{../Compressor.position.display}",
+                  "condenser": "{../Condenser.position.display}",
+                  "custom": "{../Custom.position.display}",
+                  "economizer": "{../Economizer.position.display}",
+                  "fan": "{../Fan.position.display}",
+                  "heating": "{../Heating.position.display}",
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "name": "{view.params.name}",
+                  "path": "{view.params.path}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is true, and if the user manually selected the \u0027temperature\u0027 icon, \n\t# or if the user did not configure an icon manually and \u0027temp\u0027 or \u0027differential\u0027 is\n\t# in the tag path, then display this icon. Otherwise, do not display this.\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\t\n\t\treturn False\n\telse:\n\t\tdisplays \u003d [value[\u0027economizer\u0027],value[\u0027fan\u0027],value[\u0027heating\u0027],value[\u0027condenser\u0027],value[\u0027compressor\u0027],value[\u0027custom\u0027]]\n\t\tpath \u003d value[\u0027path\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif icon \u003d\u003d \u0027temperature\u0027:\n\t\t\treturn True\n\t\telif True in displays:\n\t\t\treturn False\n\t\telif \u0027temp\u0027 in path.lower() or \u0027temp\u0027 in name.lower() or \u0027differential\u0027 in path.lower() or \u0027differential\u0027 in name.lower():\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.fill.paint": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M0,0h24v24H0V0z",
+                  "fill": {
+                    "paint": "transparent"
+                  },
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M15,13V5c0-1.66-1.34-3-3-3S9,3.34,9,5v8c-1.21,0.91-2,2.37-2,4c0,2.76,2.24,5,5,5s5-2.24,5-5C17,15.37,16.21,13.91,15,13z M11,11V5c0-0.55,0.45-1,1-1s1,0.45,1,1v1h-1v1h1v1v1h-1v1h1v1H11z",
+                  "name": "path",
+                  "type": "path"
+                }
+              ],
+              "name": "group",
+              "type": "group"
+            }
+          ],
+          "fill": {},
+          "style": {
+            "marginLeft": "78%"
+          },
+          "viewBox": "0 0 24 24"
+        },
+        "type": "ia.shapes.svg"
+      },
+      {
+        "meta": {
+          "name": "Pressure"
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "mobile": "{view.params.mobile}",
+                  "widgetDimensions": "{view.custom.widgetDimensions}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If mobile, return \u002775px\u0027. Otherwise, return the min between 0.25*widgetWidth and 90 if\n\t# the widgetHeight is greater than the widgetWidth or the min between 0.25*widgetHeight and\n\t# 90 if the widgetWidth is greater than or equal to the widgetHeight.\t\n\t\n\twidgetWidth \u003d value[\u0027widgetDimensions\u0027][\u0027width\u0027]\n\twidgetHeight \u003d value[\u0027widgetDimensions\u0027][\u0027height\u0027]\n\t\n\tif value[\u0027mobile\u0027] !\u003d True:\n\t\tif widgetWidth \u003c widgetHeight:\n\t\t\treturn str(min(0.28*widgetWidth,90)) + \u0027px\u0027\n\t\telse:\n\t\t\treturn str(min(0.28*widgetHeight,90)) + \u0027px\u0027\n\telse:\n\t\treturn \u002775px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "position.display": {
+            "binding": {
+              "config": {
+                "struct": {
+                  "compressor": "{../Compressor.position.display}",
+                  "condenser": "{../Condenser.position.display}",
+                  "custom": "{../Custom.position.display}",
+                  "economizer": "{../Economizer.position.display}",
+                  "fan": "{../Fan.position.display}",
+                  "heating": "{../Heating.position.display}",
+                  "icon": "{view.params.icon}",
+                  "iconVisible": "{view.params.iconVisible}",
+                  "name": "{view.params.name}",
+                  "path": "{view.params.path}"
+                },
+                "waitOnAll": true
+              },
+              "transforms": [
+                {
+                  "code": "\t# If iconVisible is true, and if the user manually selected the \u0027pressure\u0027 icon, \n\t# or if the user did not configure an icon manually and \u0027pressure\u0027 is in the tag\n\t# path, then display this icon. Otherwise, do not display this.\t\n\t\n\tif value[\u0027iconVisible\u0027] \u003d\u003d False:\t\n\t\treturn False\n\telse:\n\t\tdisplays \u003d [value[\u0027economizer\u0027],value[\u0027fan\u0027],value[\u0027heating\u0027],value[\u0027condenser\u0027],value[\u0027compressor\u0027],value[\u0027custom\u0027]]\n\t\tpath \u003d value[\u0027path\u0027]\n\t\tname \u003d value[\u0027name\u0027]\n\t\ticon \u003d value[\u0027icon\u0027]\n\t\t\n\t\tif icon \u003d\u003d \u0027pressure\u0027:\n\t\t\treturn True\n\t\telif True in displays:\n\t\t\treturn False\n\t\telif \u0027pressure\u0027 in name.lower():\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False",
+                  "type": "script"
+                }
+              ],
+              "type": "expr-struct"
+            }
+          },
+          "props.fill.paint": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueFill"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "config": {
+                "path": "parent.custom.valueClass"
+              },
+              "type": "property"
+            }
+          },
+          "props.style.marginBottom": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.style.marginRight": {
+            "binding": {
+              "config": {
+                "path": "view.custom.widgetDimensions.width"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn str(0.01*value) + \u0027px\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elements": [
+            {
+              "d": "M0 0h24v24H0z",
+              "fill": {
+                "paint": "transparent"
+              },
+              "name": "path",
+              "type": "path"
+            },
+            {
+              "d": "M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44zm-9.79 6.84a2 2 0 0 0 2.83 0l5.66-8.49-8.49 5.66a2 2 0 0 0 0 2.83z",
+              "name": "path",
+              "type": "path"
+            }
+          ],
+          "fill": {},
+          "style": {
+            "marginLeft": "78%"
+          },
+          "viewBox": "0 0 24 24"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root",
+      "tooltip": {
+        "style": {
+          "backgroundColor": "var(--neutral-10)",
+          "color": "var(--neutral-100)"
+        }
+      }
+    },
+    "propConfig": {
+      "custom.valueClass": {
+        "binding": {
+          "config": {
+            "struct": {
+              "highThreshold": "{view.params.highThreshold}",
+              "lowThreshold": "{view.params.lowThreshold}",
+              "mappings": "{view.params.mappings}",
+              "tagValue": "{view.custom.tagValue}",
+              "theme": "{session.props.theme}",
+              "type": "{view.params.type}"
+            },
+            "waitOnAll": true
+          },
+          "transforms": [
+            {
+              "code": "\t# If tag has no mappings, then figure out if the value label needs the animateWarning style\n\t# class by checking if a threshold is being used, and if so, check to see if the tag has\n\t# exceeded the threshold(s) (if so, return an animateWarning class; otherwise, return \u0027\u0027).\n\t\n\tmappings \u003d value[\u0027mappings\u0027]\n\t\n\tif value[\u0027theme\u0027] in [\u0027hvac-dark\u0027,\u0027hvac-dark-warm\u0027]:\n\t\twidgetIcon \u003d \u0027building-automation-demo/page/systems-overview/framework/dashboard/widgets/widget-icon\u0027\n\t\tanimateWarning \u003d \u0027building-automation-demo/page/animate-warning\u0027\n\telse:\n\t\twidgetIcon \u003d \u0027building-automation-demo/page/systems-overview/framework/dashboard/widgets/widget-icon-light\u0027\n\t\tanimateWarning \u003d \u0027building-automation-demo/page/systems-overview/framework/dashboard/widgets/animate-warning-light\u0027\n\t\n\tif len(mappings) \u003e 0:\n\t\treturn \u0027\u0027\n\telse:\n\t\n\t\timport numbers\n\t\t\n\t\tlowThreshold \u003d value[\u0027lowThreshold\u0027]\n\t\thighThreshold \u003d value[\u0027highThreshold\u0027]\n\t\ttagValue \u003d value[\u0027tagValue\u0027]\n\t\t\n\t\tif tagValue !\u003d \u0027\u0027:\n\t\t\ttagValue \u003d float(tagValue.replace(\u0027,\u0027,\u0027\u0027))\n\t\t\n\t\t# Both thresholds are equal to the empty string by default.\n\t\t# So, if both thresholds are not of type numbers.Number, then they must be empty.\n\t\t# If they are of type numbers.Number, then user wants to utilize thresholds.\n\t\tif isinstance(lowThreshold,numbers.Number) and isinstance(highThreshold,numbers.Number):\n\t\t\tif tagValue \u003c lowThreshold or tagValue \u003e highThreshold:\n\t\t\t\treturn animateWarning\n\t\t\telse:\n\t\t\t\treturn widgetIcon\n\t\telse:\n\t\t\tif not isinstance(lowThreshold,numbers.Number) and not isinstance(highThreshold,numbers.Number):\n\t\t\t\treturn widgetIcon\n\t\t\telse:\n\t\t\t\tif isinstance(lowThreshold,numbers.Number):\n\t\t\t\t\tif tagValue \u003c lowThreshold:\n\t\t\t\t\t\treturn animateWarning\n\t\t\t\t\telse:\n\t\t\t\t\t\treturn widgetIcon\n\t\t\t\telif isinstance(highThreshold,numbers.Number):\n\t\t\t\t\tif tagValue \u003e highThreshold:\n\t\t\t\t\t\treturn animateWarning\n\t\t\t\t\telse:\n\t\t\t\t\t\treturn widgetIcon",
+              "type": "script"
+            }
+          ],
+          "type": "expr-struct"
+        }
+      },
+      "custom.valueFill": {
+        "binding": {
+          "config": {
+            "struct": {
+              "mappings": "{view.params.mappings}",
+              "path": "{view.params.path}",
+              "systemMode": "{view.custom.systemMode}",
+              "tagValue": "{view.custom.tagValue}",
+              "theme": "{session.props.theme}",
+              "valueClass": "{this.custom.valueClass}"
+            },
+            "waitOnAll": true
+          },
+          "transforms": [
+            {
+              "code": "\t# Determine color of the value label. If the tag does not contain any mappings,\n\t# then either use --neutral-20 or --neutral-80 (depending on light vs dark).\n\t# Otherwise, find the correct color based on the tag mappings and the current\n\t# tag value, and return the color.\n\tif \u0027animate\u0027 in value[\u0027valueClass\u0027]:\n\t\treturn \u0027\u0027\n\telse:\n\t\tmappings \u003d value[\u0027mappings\u0027]\n\t\t\n\t\tif len(mappings) \u003d\u003d 0:\n\t\t\tif value[\u0027theme\u0027] in [\u0027hvac-dark\u0027,\u0027hvac-dark-warm\u0027]:\n\t\t\t\treturn \u0027var(--neutral-20)\u0027\n\t\t\telse:\n\t\t\t\treturn \u0027var(--neutral-80)\u0027\n\t\telse:\n\t\t\tif value[\u0027path\u0027] \u003d\u003d \u0027System Mode\u0027:\n\t\t\t\ttagValue \u003d value[\u0027systemMode\u0027]\n\t\t\telse:\n\t\t\t\ttagValue \u003d value[\u0027tagValue\u0027]\n\t\t\t\t\n\t\t\tfor mapping in mappings:\n\t\t\t\tmappingParts \u003d mapping.split(\u0027,\u0027)\n\t\t\t\tif tagValue \u003d\u003d mappingParts[1]:\n\t\t\t\t\tif \u0027--\u0027 in mappingParts[2]:\n\t\t\t\t\t\treturn \u0027var(\u0027 + mappingParts[2] + \u0027)\u0027\n\t\t\t\t\telse:\n\t\t\t\t\t\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\t\t\t\t\t\tcolorsLight \u003d ({\u0027#2CDB1A\u0027:\u0027#1a990c\u0027,\u0027ECCD04\u0027:\u0027#c4aa00\u0027,\n\t\t\t\t\t\t\t\u0027#f5a442\u0027:\u0027#cc7308\u0027,\u0027#2875fa\u0027:\u0027#0449bf\u0027})\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\treturn colorsLight[mappingParts[2]]\n\t\t\t\t\t\telse:\n\t\t\t\t\t\t\treturn mappingParts[2]",
+              "type": "script"
+            }
+          ],
+          "type": "expr-struct"
+        }
+      },
+      "meta.tooltip.enabled": {
+        "binding": {
+          "config": {
+            "path": "view.params.beingEdited"
+          },
+          "type": "property"
+        }
+      },
+      "meta.tooltip.text": {
+        "binding": {
+          "config": {
+            "expression": "\u0027Widget ID: \u0027 + toStr({view.params.widgetID})"
+          },
+          "type": "expr"
+        }
+      },
+      "props.style": {
+        "binding": {
+          "config": {
+            "path": "session.props.theme"
+          },
+          "transforms": [
+            {
+              "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn {\"classes\": \"\",\"overflow\": \"hidden\",\"backgroundColor\": \"var(--neutral-10)\"}\n\telse:\n\t\treturn {\"classes\": \"\",\"overflow\": \"hidden\",\"backgroundColor\": \"var(--neutral-50)\"}",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

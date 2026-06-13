@@ -1,0 +1,94 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 800,
+      "height": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "TitleLabel"
+        },
+        "position": {
+          "x": 40,
+          "y": 40,
+          "width": 400,
+          "height": 48
+        },
+        "props": {
+          "text": "Simple Dashboard",
+          "style": {
+            "fontSize": "28px",
+            "fontWeight": "bold",
+            "color": "var(--neutral-90)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "MetricLabel"
+        },
+        "position": {
+          "x": 40,
+          "y": 130,
+          "width": 200,
+          "height": 24
+        },
+        "props": {
+          "text": "Current Value",
+          "style": {
+            "fontSize": "13px",
+            "fontWeight": "600",
+            "color": "var(--neutral-60)"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "NumericDisplay"
+        },
+        "position": {
+          "x": 40,
+          "y": 160,
+          "width": 300,
+          "height": 80
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "type": "tag",
+              "config": {
+                "tagPath": "[default]Path/To/Your/Tag"
+              }
+            }
+          }
+        },
+        "props": {
+          "value": 0,
+          "format": "#,##0.0",
+          "style": {
+            "fontSize": "48px",
+            "fontWeight": "bold",
+            "color": "var(--neutral-100)"
+          }
+        },
+        "type": "ia.display.numeric-label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "var(--neutral-10)"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

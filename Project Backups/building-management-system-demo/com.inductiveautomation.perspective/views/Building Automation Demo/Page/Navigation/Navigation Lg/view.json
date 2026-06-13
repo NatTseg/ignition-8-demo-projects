@@ -1,0 +1,2474 @@
+{
+  "custom": {},
+  "params": {
+    "expanded": 0,
+    "selected": 0
+  },
+  "propConfig": {
+    "params.currentPage": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.expanded": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selected": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 100
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Logo"
+                },
+                "position": {
+                  "basis": "34px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.elements[0].elements[0].fill.paint": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.theme"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#F2F4F8\u0027 if value\u003d\u003d\u0027hvac\u0027 else \u0027#F7F3F2\u0027\n\telse:\n\t\treturn \u0027var(--neutral-70)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.elements[0].elements[1].fill.paint": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.theme"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#C1C7CD\u0027 if value\u003d\u003d\u0027hvac\u0027 else \u0027#CAC5C4\u0027\n\telse:\n\t\treturn \u0027var(--neutral-50)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "elements": [
+                        {
+                          "d": "M195.168 39.344 C 196.307 39.424,198.171 39.424,199.310 39.344 C 200.449 39.264,199.517 39.199,197.239 39.199 C 194.961 39.199,194.029 39.264,195.168 39.344 M57.772 57.692 L 56.213 59.369 57.890 57.809 C 58.812 56.952,59.566 56.197,59.566 56.133 C 59.566 55.835,59.223 56.133,57.772 57.692 M337.081 58.383 C 337.928 59.250,338.710 59.961,338.819 59.961 C 338.927 59.961,338.323 59.250,337.475 58.383 C 336.628 57.515,335.846 56.805,335.737 56.805 C 335.629 56.805,336.233 57.515,337.081 58.383 M341.223 62.525 C 341.959 63.284,342.650 63.905,342.758 63.905 C 342.867 63.905,342.353 63.284,341.617 62.525 C 340.881 61.765,340.190 61.144,340.082 61.144 C 339.973 61.144,340.487 61.765,341.223 62.525 M51.855 63.609 L 50.296 65.286 51.972 63.727 C 52.894 62.869,53.649 62.115,53.649 62.050 C 53.649 61.752,53.305 62.050,51.855 63.609 M218.694 122.714 C 205.070 124.429,191.289 137.232,193.323 146.284 C 193.536 147.231,197.689 154.860,202.975 164.013 L 212.254 180.079 167.172 180.276 C 124.694 180.462,122.015 180.514,120.788 181.184 C 110.454 186.826,108.718 212.440,118.021 222.024 C 121.228 225.327,116.622 225.025,167.156 225.247 L 212.222 225.444 203.090 241.223 C 191.766 260.791,191.703 260.998,195.109 267.480 C 201.439 279.525,222.064 287.198,229.726 280.359 C 233.522 276.971,262.331 230.373,270.059 215.122 C 276.116 203.170,276.143 202.645,271.238 192.628 C 263.906 177.657,233.105 127.649,229.440 124.766 C 227.226 123.025,222.854 122.190,218.694 122.714 M33.673 202.761 C 33.673 204.822,33.739 205.666,33.821 204.635 C 33.902 203.605,33.902 201.918,33.821 200.888 C 33.739 199.857,33.673 200.700,33.673 202.761 M360.685 202.761 C 360.685 204.389,360.755 205.054,360.840 204.241 C 360.925 203.427,360.925 202.096,360.840 201.282 C 360.755 200.468,360.685 201.134,360.685 202.761 M54.832 344.970 C 56.011 346.164,57.064 347.140,57.172 347.140 C 57.281 347.140,56.405 346.164,55.227 344.970 C 54.048 343.777,52.995 342.801,52.887 342.801 C 52.778 342.801,53.654 343.777,54.832 344.970 M339.237 345.069 L 337.081 347.337 339.349 345.181 C 341.456 343.178,341.798 342.801,341.505 342.801 C 341.444 342.801,340.423 343.821,339.237 345.069 M195.759 366.362 C 196.573 366.447,197.904 366.447,198.718 366.362 C 199.532 366.277,198.866 366.208,197.239 366.208 C 195.611 366.208,194.946 366.277,195.759 366.362 ",
+                          "fill": {
+                            "rule": "evenodd"
+                          },
+                          "name": "path0",
+                          "stroke": {
+                            "paint": "none"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "M151.874 6.930 C 145.374 8.472,143.656 8.939,137.205 10.924 L 132.595 12.342 132.385 13.765 C 132.269 14.547,131.603 23.901,130.904 34.550 L 129.632 53.913 124.481 56.524 C 117.805 59.909,113.397 62.455,107.206 66.503 L 102.183 69.787 83.782 60.732 C 73.661 55.751,65.123 51.677,64.807 51.677 C 64.076 51.677,46.154 69.602,46.154 70.334 C 46.154 70.634,50.239 79.172,55.231 89.307 L 64.309 107.734 61.381 112.151 C 57.858 117.466,53.594 124.859,50.631 130.788 L 48.454 135.145 28.862 136.421 C 18.087 137.123,8.721 137.784,8.051 137.888 C 6.871 138.073,6.785 138.229,5.400 142.708 C 2.916 150.746,-0.138 163.166,0.226 163.754 C 0.315 163.899,8.115 169.195,17.558 175.522 L 34.727 187.027 34.425 190.851 C 34.036 195.768,34.035 209.741,34.423 214.645 L 34.723 218.441 17.460 229.994 C 7.966 236.348,0.160 241.570,0.115 241.598 C -0.249 241.826,3.230 255.794,5.398 262.805 L 6.826 267.425 8.442 267.630 C 10.151 267.847,46.124 270.225,47.621 270.220 C 48.326 270.218,48.759 270.784,49.840 273.124 C 51.914 277.612,56.937 286.418,60.807 292.350 L 64.309 297.718 55.224 316.179 C 48.984 328.861,46.216 334.879,46.382 335.404 C 46.659 336.276,62.352 352.148,64.006 353.229 L 65.093 353.940 83.680 344.807 L 102.266 335.674 107.050 338.788 C 114.033 343.335,116.653 344.852,123.570 348.356 C 129.653 351.438,129.783 351.530,129.783 352.774 C 129.782 354.591,132.115 389.621,132.366 391.560 L 132.575 393.178 136.603 394.399 C 146.074 397.271,157.634 400.144,158.232 399.774 C 158.376 399.685,163.672 391.886,169.999 382.444 L 181.502 365.276 186.510 365.577 C 192.901 365.961,201.574 365.961,207.961 365.577 L 212.964 365.276 224.569 382.540 C 235.766 399.195,236.215 399.798,237.316 399.663 C 239.282 399.423,250.844 396.492,256.487 394.803 L 261.890 393.186 262.106 391.169 C 262.352 388.885,264.702 353.716,264.697 352.400 C 264.695 351.689,265.910 350.916,271.893 347.821 C 278.750 344.274,283.155 341.683,289.392 337.527 L 292.197 335.658 310.790 344.799 L 329.384 353.940 330.455 353.238 C 331.856 352.320,346.802 337.371,347.721 335.970 L 348.428 334.890 339.307 316.333 L 330.185 297.775 333.095 293.365 C 336.787 287.768,341.058 280.348,343.864 274.655 C 345.748 270.833,346.184 270.217,347.003 270.217 C 348.514 270.217,383.412 267.887,385.660 267.636 C 387.098 267.475,387.748 267.214,387.884 266.742 C 387.990 266.375,388.917 263.235,389.943 259.763 C 391.572 254.255,394.616 241.765,394.368 241.606 C 394.320 241.574,386.509 236.345,377.012 229.986 L 359.744 218.422 360.048 214.832 C 360.442 210.186,360.440 195.318,360.045 190.655 L 359.739 187.030 376.907 175.535 C 386.349 169.213,394.151 163.917,394.244 163.766 C 394.615 163.167,391.585 150.821,389.077 142.708 C 387.692 138.229,387.606 138.073,386.426 137.888 C 385.756 137.784,376.382 137.123,365.596 136.420 L 345.985 135.143 344.195 131.441 C 341.752 126.386,336.629 117.482,333.102 112.161 L 330.181 107.754 339.250 89.281 C 344.237 79.121,348.319 70.582,348.321 70.306 C 348.325 69.603,330.357 51.677,329.648 51.677 C 329.330 51.677,320.783 55.755,310.655 60.739 L 292.241 69.801 289.217 67.761 C 284.075 64.290,276.454 59.833,270.444 56.779 C 264.968 53.998,264.694 53.802,264.685 52.669 C 264.665 50.207,261.996 12.555,261.829 12.388 C 261.220 11.779,242.474 6.721,237.278 5.764 C 236.104 5.548,236.003 5.683,224.489 22.895 L 212.883 40.244 209.696 39.944 C 205.568 39.557,188.901 39.557,184.768 39.946 L 181.567 40.246 169.975 22.902 C 163.599 13.363,158.205 5.562,157.988 5.566 C 157.771 5.570,155.020 6.184,151.874 6.930 M209.467 80.499 C 282.689 87.401,334.228 159.689,316.786 231.021 C 294.505 322.144,184.642 356.266,114.822 293.747 C 56.735 241.734,62.228 148.138,126.036 102.692 C 145.613 88.749,165.650 81.864,192.308 79.920 C 195.093 79.717,204.562 80.036,209.467 80.499 ",
+                          "fill": {
+                            "rule": "evenodd"
+                          },
+                          "name": "path1",
+                          "stroke": {
+                            "paint": "none"
+                          },
+                          "type": "path"
+                        }
+                      ],
+                      "name": "svgg",
+                      "type": "group"
+                    }
+                  ],
+                  "viewBox": "0,0,400,400"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "meta": {
+                  "name": "Location"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.theme"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\treturn \u0027var(--neutral-90)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "20px",
+                    "fontWeight": "bold",
+                    "paddingLeft": "10px",
+                    "pointer-events": "none",
+                    "transition": "opacity 0.25s linear",
+                    "white-space": "nowrap"
+                  },
+                  "text": "90 Blue Ravine"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# Sends a message to navigationExpandCollapse to toggle the \u0027expanded\u0027 custom\n\t# property on the Main view (which is passed down to this view via params).\n\t\n\tsystem.perspective.sendMessage(\"navigationExpandCollapse\",payload\u003d{},scope\u003d\"page\")"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Toggle-Collapse"
+                },
+                "position": {
+                  "basis": "42px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.expanded}\u003d1"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.elements[0].fill.paint": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.theme"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#DDE1E6\u0027 if value\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\telse:\n\t\treturn \u0027var(--neutral-90)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M20.0001 11.3333V20.6666H21.3334V11.3333H20.0001ZM14.6667 12L10.6667 16L14.6667 20L15.6067 19.06L13.2201 16.6666H18.0001V15.3333H13.2201L15.6067 12.94L14.6667 12Z",
+                      "fill": {
+                        "rule": "evenodd"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": "none",
+                  "style": {
+                    "classes": "building-automation-demo/page/general-icon"
+                  },
+                  "viewBox": "0 0 32 32"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# Sends a message to navigationExpandCollapse to toggle the \u0027expanded\u0027 custom\n\t# property on the Main view (which is passed down to this view via params).\n\t\n\tsystem.perspective.sendMessage(\"navigationExpandCollapse\",payload\u003d{},scope\u003d\"page\")"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Toggle-Expand"
+                },
+                "position": {
+                  "basis": "40px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "expression": "{view.params.expanded}\u003d0"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.elements[0].fill.paint": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.theme"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#DDE1E6\u0027 if value\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\telse:\n\t\treturn \u0027var(--neutral-90)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M11.9999 11.3333V20.6666H10.6666V11.3333H11.9999ZM17.3333 12L21.3333 16L17.3333 20L16.3933 19.06L18.7799 16.6666H13.9999V15.3333H18.7799L16.3933 12.94L17.3333 12Z",
+                      "fill": {},
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": "none",
+                  "style": {
+                    "classes": "building-automation-demo/page/general-icon"
+                  },
+                  "viewBox": "4 0 32 32"
+                },
+                "type": "ia.shapes.svg"
+              }
+            ],
+            "meta": {
+              "name": "Expand"
+            },
+            "position": {
+              "basis": "80px",
+              "shrink": 0
+            },
+            "props": {
+              "alignContent": "flex-start",
+              "alignItems": "center",
+              "style": {
+                "marginBottom": "15px",
+                "marginLeft": "18px",
+                "overflow": "hidden",
+                "transition": "place-content 2s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Home"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,\u00270px\u0027,\u002725px\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,0,1)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M0 0h24v24H0z",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "style": {
+                    "transition": "fill,flex,opacity 0.25s linear"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Home"
+                    },
+                    "position": {
+                      "basis": "25px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.style.opacity": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,1,0)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "d": "M0 0h24v24H0z",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z",
+                          "name": "path",
+                          "type": "path"
+                        }
+                      ],
+                      "transition": "fill,flex,opacity 0.25s linear",
+                      "viewBox": "0 0 24 24"
+                    },
+                    "type": "ia.shapes.svg"
+                  },
+                  {
+                    "meta": {
+                      "name": "Demo Label"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "paddingLeft": "5px",
+                        "transition": "color 0.25s linear"
+                      },
+                      "text": "Go To Online Demo"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Expanded"
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,\u0027auto\u0027,\u00270px\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "justify": "center",
+                  "style": {
+                    "overflow": "hidden",
+                    "transition": "fill,flex,opacity 0.25s linear"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(url \u003d self.session.props.gateway.address + \"/data/perspective/client/OnlineDemo/\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Demo Cont",
+              "tooltip": {
+                "enabled": true,
+                "text": "GO TO ONLINE DEMO"
+              }
+            },
+            "position": {
+              "basis": "35px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 || {session.props.theme}\u003d\u0027hvac-warm\u0027,\r\n\u0027building-automation-demo/page/navigation/navigation-lg/general-button-light\u0027,\r\n\u0027building-automation-demo/page/general-button\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "justify": "center",
+              "style": {
+                "marginLeft": "12px",
+                "marginRight": "12px",
+                "overflow": "hidden",
+                "transition": "border-color 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.fill": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "style": {
+                    "marginLeft": "15px",
+                    "marginRight": "10px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "meta": {
+                  "name": "Text"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "18px",
+                    "pointer-events": "none",
+                    "transition": "opacity 0.25s linear",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Systems Overview"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# Sends a message to \u0027navigation\u0027 handler on Main view to navigate\n\t# to a different \u0027page\u0027 (updating the viewPath of the main embedded\n\t# view on Main Sm and Main Lg).\n\t\n\tsystem.perspective.sendMessage(\"navigation\",payload\u003d{\u0027page\u0027:0},scope\u003d\"page\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Overview"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.isSelected": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.selected}\u003d0"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "selected": "{this.custom.isSelected}",
+                      "theme": "{session.props.theme}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value[\u0027selected\u0027]:\n\t\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\t\treturn \u0027#DDE1E6\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-90)\u0027\n\telse:\n\t\treturn \u0027#C0C0C000\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              },
+              "props.style.cursor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.custom.isSelected},\u0027auto\u0027,\u0027pointer\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "border-radius": "5px",
+                "marginLeft": "20px",
+                "marginRight": "20px",
+                "overflow": "hidden",
+                "transition": "background-color 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.fill": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "style": {
+                    "marginLeft": "15px",
+                    "marginRight": "10px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "meta": {
+                  "name": "Text"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "18px",
+                    "pointer-events": "none",
+                    "transition": "opacity 0.25s linear",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Floor Plans"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# Sends a message to \u0027navigation\u0027 handler on Main view to navigate\n\t# to a different \u0027page\u0027 (updating the viewPath of the main embedded\n\t# view on Main Sm and Main Lg).\n\t\n\tsystem.perspective.sendMessage(\"navigation\",payload\u003d{\u0027page\u0027:1},scope\u003d\"page\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Floor Plans"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.isSelected": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.selected}\u003d1"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "selected": "{this.custom.isSelected}",
+                      "theme": "{session.props.theme}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value[\u0027selected\u0027]:\n\t\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\t\treturn \u0027#DDE1E6\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-90)\u0027\n\telse:\n\t\treturn \u0027#C0C0C000\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              },
+              "props.style.cursor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.custom.isSelected},\u0027auto\u0027,\u0027pointer\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "border-radius": "5px",
+                "marginLeft": "20px",
+                "marginRight": "20px",
+                "overflow": "hidden",
+                "transition": "background-color 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "props.fill.paint": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M0 0h24v24H0z",
+                      "fill": {
+                        "paint": "transparent"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": {},
+                  "style": {
+                    "marginLeft": "15px",
+                    "marginRight": "10px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "meta": {
+                  "name": "Text"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "18px",
+                    "pointer-events": "none",
+                    "transition": "opacity 0.25s linear",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Controls"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# Sends a message to \u0027navigation\u0027 handler on Main view to navigate\n\t# to a different \u0027page\u0027 (updating the viewPath of the main embedded\n\t# view on Main Sm and Main Lg).\n\t\n\tsystem.perspective.sendMessage(\"navigation\",payload\u003d{\u0027page\u0027:4},scope\u003d\"page\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Controls"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.isSelected": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.selected}\u003d4"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "selected": "{this.custom.isSelected}",
+                      "theme": "{session.props.theme}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value[\u0027selected\u0027]:\n\t\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\t\treturn \u0027#DDE1E6\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-90)\u0027\n\telse:\n\t\treturn \u0027#C0C0C000\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              },
+              "props.style.cursor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.custom.isSelected},\u0027auto\u0027,\u0027pointer\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "border-radius": "5px",
+                "marginLeft": "20px",
+                "marginRight": "20px",
+                "overflow": "hidden",
+                "transition": "background-color 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.fill": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M6.71916 3.13846C4.55267 4.82768 3.12638 7.43077 3 10.3846H4.80541C4.94082 7.93846 6.1685 5.79693 8.01003 4.45846L6.71916 3.13846H6.71916ZM19.1946 10.3846H21C20.8646 7.43077 19.4383 4.82768 17.2808 3.13846L15.999 4.45846C17.8225 5.79692 19.0592 7.93846 19.1946 10.3846H19.1946ZM17.4162 10.8462C17.4162 8.01231 15.9358 5.64 13.3541 5.01231V4.38462C13.3541 3.61846 12.7492 3 12 3C11.2508 3 10.6459 3.61846 10.6459 4.38462V5.01231C8.05517 5.64 6.58376 8.00308 6.58376 10.8462C6.59242 11.8223 6.39784 12.7069 6.00001 13.5C5.70325 14.0916 5.20325 14.5916 4.50001 15V16.5H19.5V15C18.9115 14.8202 18.4115 14.3202 18 13.5C17.5885 12.6798 17.394 11.7952 17.4163 10.8462H17.4162ZM12 21C13.5 21 15 19.5 15 18H9C9 19.5 10.5 21 12 21Z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "style": {
+                    "marginLeft": "15px",
+                    "marginRight": "10px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "meta": {
+                  "name": "Text"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "18px",
+                    "pointer-events": "none",
+                    "transition": "opacity 0.25s linear",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Alarming"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# Sends a message to \u0027navigation\u0027 handler on Main view to navigate\n\t# to a different \u0027page\u0027 (updating the viewPath of the main embedded\n\t# view on Main Sm and Main Lg).\n\t\n\tsystem.perspective.sendMessage(\"navigation\",payload\u003d{\u0027page\u0027:2},scope\u003d\"page\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Alarming"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.isSelected": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.selected}\u003d2"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "selected": "{this.custom.isSelected}",
+                      "theme": "{session.props.theme}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value[\u0027selected\u0027]:\n\t\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\t\treturn \u0027#DDE1E6\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-90)\u0027\n\telse:\n\t\treturn \u0027#C0C0C000\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              },
+              "props.style.cursor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.custom.isSelected},\u0027auto\u0027,\u0027pointer\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "border-radius": "5px",
+                "marginLeft": "20px",
+                "marginRight": "20px",
+                "overflow": "hidden",
+                "transition": "background-color 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "30px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.fill.paint": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M0 0h24v24H0z",
+                      "fill": {
+                        "paint": "transparent"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "fill": {},
+                  "style": {
+                    "marginLeft": "15px",
+                    "marginRight": "10px"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "meta": {
+                  "name": "Text"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "selected": "{parent.custom.isSelected}",
+                          "theme": "{session.props.theme}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027#343A3F\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#3C3838\u0027\n\t\telse:\n\t\t\treturn \u0027#FFFFFF\u0027\n\telse:\n\t\tif value[\u0027selected\u0027]:\n\t\t\treturn \u0027var(--neutral-10)\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-80)\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "fontSize": "18px",
+                    "pointer-events": "none",
+                    "transition": "opacity 0.25s linear",
+                    "white-space": "nowrap"
+                  },
+                  "text": "Trends"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\t# Sends a message to \u0027navigation\u0027 handler on Main view to navigate\n\t# to a different \u0027page\u0027 (updating the viewPath of the main embedded\n\t# view on Main Sm and Main Lg).\n\n\tsystem.perspective.sendMessage(\"navigation\",payload\u003d{\u0027page\u0027:3},scope\u003d\"page\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Trends"
+            },
+            "position": {
+              "basis": "50px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.isSelected": {
+                "binding": {
+                  "config": {
+                    "expression": "{view.params.selected}\u003d3"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "struct": {
+                      "selected": "{this.custom.isSelected}",
+                      "theme": "{session.props.theme}"
+                    },
+                    "waitOnAll": true
+                  },
+                  "transforms": [
+                    {
+                      "code": "\tif value[\u0027selected\u0027]:\n\t\tif value[\u0027theme\u0027] in [\u0027hvac\u0027,\u0027hvac-warm\u0027]:\n\t\t\treturn \u0027#DDE1E6\u0027 if value[\u0027theme\u0027]\u003d\u003d\u0027hvac\u0027 else \u0027#E5E0DF\u0027\n\t\telse:\n\t\t\treturn \u0027var(--neutral-90)\u0027\n\telse:\n\t\treturn \u0027#C0C0C000\u0027",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr-struct"
+                }
+              },
+              "props.style.cursor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({this.custom.isSelected},\u0027auto\u0027,\u0027pointer\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "border-radius": "5px",
+                "marginLeft": "20px",
+                "marginRight": "20px",
+                "overflow": "hidden",
+                "transition": "background-color 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Buttons"
+        },
+        "position": {
+          "basis": "350px",
+          "shrink": 0
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "direction": "column",
+          "justify": "space-between",
+          "style": {
+            "marginTop": "-50px",
+            "transition": "margin-top 0.6s ease"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Image"
+                },
+                "position": {
+                  "basis": "48px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "authenticated": "{session.props.auth.authenticated}",
+                          "user": "{session.custom.user}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\t# If user is authenticated, do not display this Image component (the built-in icon\n\t# will be displayed). If user is authenticated and user\u0027s \u0027usebuiltin\u0027 is equal to\n\t# true, or if the user\u0027s \u0027profileimage\u0027 is None, then do not display this Image\n\t# component; otherwise display this Image component.\n\t\n\tif value[\u0027authenticated\u0027]:\n\t\tif value[\u0027user\u0027][\u0027usebuiltin\u0027] \u003d\u003d 1:\n\t\t\treturn False\n\t\telse:\n\t\t\tif value[\u0027user\u0027][\u0027profileimage\u0027] \u003d\u003d None:\n\t\t\t\treturn False\n\t\t\telse:\n\t\t\t\treturn True\n\telse:\n\t\treturn False",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.source": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "authenticated": "{session.props.auth.authenticated}",
+                          "user": "{session.custom.user}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\t# If user is not authenticated, return None. If user is authenticated,\n\t# then create a byte array from the \u0027profileimage\u0027 bytes, write the\n\t# bytes to a \u0027file\u0027, use imghdr.what to attempt to determine the image\n\t# file type, create the \u0027source\u0027 which contains the image bytes encoded\n\t# in base64, close the file, and then return the \u0027source\u0027 string.\n\t\n\tif value[\u0027authenticated\u0027]:\n\t\tfrom com.inductiveautomation.ignition.common import Base64\n\t\timport array\n\t\timport StringIO\n\t\timport imghdr\n\t\t\n\t\tdata \u003d array.array(\u0027b\u0027,value[\u0027user\u0027].profileimage)\n\t\tf \u003d StringIO.StringIO()\n\t\tf.write(data)\n\t\t\n\t\tfileType \u003d imghdr.what(f)\n\t\tsource \u003d \"data:image/{};base64,{}\".format(fileType,Base64.encodeBytes(data))\n\t\tf.close()\n\t\t\n\t\treturn source\n\telse:\n\t\treturn None\n\t",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "fit": {
+                    "mode": "percent"
+                  },
+                  "style": {
+                    "clip-path": "circle(50%)",
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.display.image"
+              },
+              {
+                "meta": {
+                  "name": "Built In"
+                },
+                "position": {
+                  "basis": "48px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "authenticated": "{session.props.auth.authenticated}",
+                          "user": "{session.custom.user}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\t# If user is not authenticated, then display the built-in icon (should display the\n\t# built-in \u0027Person\u0027). If user is authenticated and user\u0027s \u0027usebuiltin\u0027 is equal to\n\t# true, then return true (to display built-in icon); otherwise if the user\u0027s\n\t# \u0027profileimage\u0027 is equal to None, then return true (to display built-in icon);\n\t# else if the user\u0027s \u0027profileimage\u0027 is not equal to None, then return false (do\n\t# not display built-in icon).\n\t\n\tif value[\u0027authenticated\u0027]:\n\t\tif value[\u0027user\u0027][\u0027usebuiltin\u0027] \u003d\u003d 1:\n\t\t\treturn True\n\t\telse:\n\t\t\tif value[\u0027user\u0027][\u0027profileimage\u0027] \u003d\u003d None:\n\t\t\t\treturn True\n\t\t\telse:\n\t\t\t\treturn False\n\telse:\n\t\treturn True",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.params.fill": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 || {session.props.theme}\u003d\u0027hvac-warm\u0027,\u0027var(--neutral-10)\u0027,\u0027#b5b5b5\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.params.name": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "authenticated": "{session.props.auth.authenticated}",
+                          "user": "{session.custom.user}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "transforms": [
+                        {
+                          "code": "\t# If user is not authenticated, then display the built-in icon \u0027Person\u0027. If user\n\t# is authenticated and user\u0027s \u0027built-in\u0027 is currently None, then display the\n\t# built-in icon \u0027Person\u0027; otherwise, display one of the four possible built-in\n\t# icons (based on the user\u0027s \u0027built-in\u0027).\n\t\n\tif value[\u0027authenticated\u0027]:\n\t\tif value[\u0027user\u0027][\u0027builtin\u0027] \u003d\u003d None:\n\t\t\treturn \u0027Person\u0027\n\t\telse:\n\t\t\treturn value[\u0027user\u0027][\u0027builtin\u0027]\n\telse:\n\t\treturn \u0027Person\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  }
+                },
+                "props": {
+                  "params": {
+                    "selected": false,
+                    "showLabel": false
+                  },
+                  "path": "Building Automation Demo/Page/User Config/Framework/Built In Icon",
+                  "style": {
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.display.view"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Name"
+                    },
+                    "position": {
+                      "basis": "25px"
+                    },
+                    "propConfig": {
+                      "props.style.color": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 ||  {session.props.theme}\u003d\u0027hvac-warm\u0027,\u0027#FFFFFF\u0027,\u0027--neutral-90\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "session.props.auth"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\t# If user is not authenticated, return \u0027Demo User\u0027. If user is authenticated, then\n\t# check first name and last name to see if either are not equal to None; if both\n\t# are not equal to None, then display user\u0027s full name; if last name is None but\n\t# first name isn\u0027t, then display user\u0027s first name; otherwise display the user\u0027s\n\t# username.\n\t\n\tif value.authenticated:\n\t\tif value[\u0027user\u0027][\u0027firstName\u0027] !\u003d None:\n\t\t\tif value[\u0027user\u0027][\u0027lastName\u0027] !\u003d None:\n\t\t\t\treturn value[\u0027user\u0027][\u0027firstName\u0027] + \u0027 \u0027 + value[\u0027user\u0027][\u0027lastName\u0027]\n\t\t\telse:\n\t\t\t\treturn value[\u0027user\u0027][\u0027firstName\u0027]\n\t\telse:\n\t\t\treturn value[\u0027user\u0027][\u0027userName\u0027]\n\telse:\n\t\treturn \u0027Demo User\u0027",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": "15px",
+                        "paddingLeft": "5px",
+                        "pointer-events": "none",
+                        "white-space": "nowrap"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "basis": "15px"
+                    },
+                    "propConfig": {
+                      "props.style.color": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 ||  {session.props.theme}\u003d\u0027hvac-warm\u0027,\u0027#FFFFFF\u0027,\u0027--neutral-90\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "expression": "{session.custom.user.title}"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value \u003d\u003d None:\n\t\treturn \u0027Guest\u0027\n\telse:\n\t\treturn value",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "style": {
+                        "fontSize": "13px",
+                        "paddingLeft": "5px",
+                        "pointer-events": "none",
+                        "white-space": "nowrap"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({this.props.style.opacity}\u003d0,\u00270px\u0027,\u0027auto\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d1,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "alignContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "overflow": "hidden",
+                    "paddingBottom": "7px",
+                    "transition": "opacity 0.25s linear"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# Sets expanded custom property to true, which increases the height (basis)\n\t# of the Options container (which reveals the Change Theme button and Log In\n\t# button if user is not authenticated, or the Settings button and Log Out\n\t# button if the user is authenticated).\n\t\n\tself.parent.parent.parent.getChild(\"User\").custom.expanded \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Options"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../User.custom.expanded},\u00270px\u0027,\u002725px\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.fill": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 ||  {session.props.theme}\u003d\u0027hvac-warm\u0027,\u0027#FFFFFF\u0027,\u0027var(--neutral-80)\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../User.custom.expanded}\u003dtrue,0,1)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "style": {
+                    "cursor": "pointer",
+                    "transition": "flex 0.33s ease, opacity 0.5s ease"
+                  },
+                  "viewBox": "10 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# Sets expanded custom property to false, which decreases the height (basis)\n\t# of the Options container.\n\t\n\tself.parent.parent.parent.getChild(\"User\").custom.expanded \u003d False"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Collapse"
+                },
+                "propConfig": {
+                  "position.basis": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../User.custom.expanded},\u002740px\u0027,\u00270px\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.fill": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 ||  {session.props.theme}\u003d\u0027hvac-warm\u0027,\u0027#FFFFFF\u0027,\u0027var(--neutral-80)\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "props.style.opacity": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({..../User.custom.expanded}\u003dtrue,1,0)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "elements": [
+                    {
+                      "d": "M0 0h24v24H0z",
+                      "fill": {
+                        "paint": "none"
+                      },
+                      "name": "path",
+                      "type": "path"
+                    },
+                    {
+                      "d": "M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z",
+                      "name": "path",
+                      "type": "path"
+                    }
+                  ],
+                  "style": {
+                    "cursor": "pointer",
+                    "transition": "flex 0.33s ease, opacity 0.5s ease"
+                  },
+                  "viewBox": "0 0 24 24"
+                },
+                "type": "ia.shapes.svg"
+              }
+            ],
+            "meta": {
+              "name": "Container"
+            },
+            "position": {
+              "basis": "48px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.marginTop": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.expanded}\u003dfalse,\u002717px\u0027,\u002710px\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden",
+                "paddingLeft": "18px",
+                "transition": "margin-top 0.5s ease"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Gear"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "position.basis": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,\u00270px\u0027,\u002723px\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.style.opacity": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,0,1)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "d": "M0,0h24v24H0V0z",
+                              "fill": {
+                                "paint": "none"
+                              },
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "type": "group"
+                        }
+                      ],
+                      "style": {
+                        "transition": "fill,flex,opacity 0.25s linear"
+                      },
+                      "viewBox": "0 0 24 24"
+                    },
+                    "type": "ia.shapes.svg"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Gear"
+                        },
+                        "position": {
+                          "basis": "23px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "elements": [
+                                {
+                                  "d": "M0,0h24v24H0V0z",
+                                  "fill": {
+                                    "paint": "none"
+                                  },
+                                  "name": "path",
+                                  "type": "path"
+                                },
+                                {
+                                  "d": "M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "type": "group"
+                            }
+                          ],
+                          "style": {
+                            "transition": "fill 0.25s linear"
+                          },
+                          "viewBox": "0 0 24 24"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Settings"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "session.props.auth.authenticated"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value:\n\t\treturn \u0027Settings\u0027\n\telse:\n\t\treturn \u0027Change Theme\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "paddingLeft": "5px",
+                            "transition": "color 0.25s linear"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Expanded"
+                    },
+                    "propConfig": {
+                      "position.basis": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,\u0027auto\u0027,\u00270px\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.style.opacity": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,1,0)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "overflow": "hidden",
+                        "transition": "fill,flex,opacity 0.25s linear"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# If the user has logged-in, then open the User Config popup so that the user can\n\t# modify the user settings. If user has not logged-in, then open the Change Theme\n\t# popup so that the guest user can try changing the theme.\n\t\n\tif self.session.props.auth.authenticated:\n\t\tsystem.perspective.openPopup(\u0027settings\u0027,\u0027Building Automation Demo/Page/User Config/User Config Lg\u0027,params\u003d{\u0027currTheme\u0027:self.session.props.theme},resizable\u003dFalse,title\u003d\u0027Settings\u0027)\n\telse:\n\t\tif self.view.params.expanded \u003d\u003d 0:\n\t\t\tleft \u003d 100\n\t\telse:\n\t\t\tleft \u003d 280\n\t\tsystem.perspective.openPopup(\u0027settings\u0027,\u0027Building Automation Demo/Page/User Config/Framework/Change Theme Lg\u0027,params\u003d{},resizable\u003dFalse,title\u003d\u0027Change Theme\u0027,position \u003d {\u0027bottom\u0027:100,\u0027left\u0027:left})"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Preferences Cont",
+                  "tooltip": {}
+                },
+                "position": {
+                  "basis": "35px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.tooltip.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d0 \u0026\u0026 {..../User.custom.expanded}\u003dtrue,true,false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "meta.tooltip.text": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.auth.authenticated"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value:\n\t\treturn \u0027SETTINGS\u0027\n\telse:\n\t\treturn \u0027CHANGE THEME\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.classes": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 || {session.props.theme}\u003d\u0027hvac-warm\u0027,\r\n\u0027building-automation-demo/page/navigation/navigation-lg/general-button-light\u0027,\r\n\u0027building-automation-demo/page/general-button\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "justify": "center",
+                  "style": {
+                    "overflow": "hidden",
+                    "transition": "border-color 0.25s linear"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Login"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "position.basis": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,\u00270px\u0027,\u002723px\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "session.props.auth.authenticated"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value:\n\t\treturn False\n\telse:\n\t\treturn True",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.opacity": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,0,1)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "elements": [
+                            {
+                              "fill": {
+                                "paint": "none"
+                              },
+                              "height": "24",
+                              "name": "rect",
+                              "type": "rect",
+                              "width": "24"
+                            }
+                          ],
+                          "name": "group",
+                          "type": "group"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "d": "M11,7L9.6,8.4l2.6,2.6H2v2h10.2l-2.6,2.6L11,17l5-5L11,7z M20,19h-8v2h8c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-8v2h8V19z",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "name": "group",
+                          "type": "group"
+                        }
+                      ],
+                      "style": {
+                        "transition": "fill,flex,opacity 0.25s linear"
+                      },
+                      "viewBox": "0 0 24 24"
+                    },
+                    "type": "ia.shapes.svg"
+                  },
+                  {
+                    "meta": {
+                      "name": "Logout"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "position.basis": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,\u00270px\u0027,\u002723px\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "path": "session.props.auth.authenticated"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tif value:\n\t\treturn True\n\telse:\n\t\treturn False",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      },
+                      "props.style.opacity": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,0,1)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "d": "M0 0h24v24H0z",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "name": "path",
+                          "type": "path"
+                        },
+                        {
+                          "d": "M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z",
+                          "name": "path",
+                          "type": "path"
+                        }
+                      ],
+                      "style": {
+                        "transition": "fill,flex,opacity 0.25s linear"
+                      },
+                      "viewBox": "0 0 24 24"
+                    },
+                    "type": "ia.shapes.svg"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Logout"
+                        },
+                        "position": {
+                          "basis": "23px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "path": "session.props.auth.authenticated"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value:\n\t\treturn True\n\telse:\n\t\treturn False",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "d": "M0 0h24v24H0z",
+                              "fill": {
+                                "paint": "none"
+                              },
+                              "name": "path",
+                              "type": "path"
+                            },
+                            {
+                              "d": "M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z",
+                              "name": "path",
+                              "type": "path"
+                            }
+                          ],
+                          "style": {
+                            "transition": "fill 0.25s linear"
+                          },
+                          "viewBox": "0 0 24 24"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Login"
+                        },
+                        "position": {
+                          "basis": "23px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "path": "session.props.auth.authenticated"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value:\n\t\treturn False\n\telse:\n\t\treturn True",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "elements": [
+                            {
+                              "elements": [
+                                {
+                                  "fill": {
+                                    "paint": "none"
+                                  },
+                                  "height": "24",
+                                  "name": "rect",
+                                  "type": "rect",
+                                  "width": "24"
+                                }
+                              ],
+                              "name": "group",
+                              "type": "group"
+                            },
+                            {
+                              "elements": [
+                                {
+                                  "d": "M11,7L9.6,8.4l2.6,2.6H2v2h10.2l-2.6,2.6L11,17l5-5L11,7z M20,19h-8v2h8c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-8v2h8V19z",
+                                  "name": "path",
+                                  "type": "path"
+                                }
+                              ],
+                              "name": "group",
+                              "type": "group"
+                            }
+                          ],
+                          "style": {
+                            "transition": "fill 0.25s linear"
+                          },
+                          "viewBox": "0 0 24 24"
+                        },
+                        "type": "ia.shapes.svg"
+                      },
+                      {
+                        "meta": {
+                          "name": "Lbl"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "session.props.auth.authenticated"
+                              },
+                              "transforms": [
+                                {
+                                  "code": "\tif value:\n\t\treturn \u0027Log Out\u0027\n\telse:\n\t\treturn \u0027Log In\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "paddingLeft": "5px",
+                            "transition": "color 0.25s linear"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Expanded"
+                    },
+                    "propConfig": {
+                      "position.basis": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,\u0027auto\u0027,\u00270px\u0027)"
+                          },
+                          "type": "expr"
+                        }
+                      },
+                      "props.style.opacity": {
+                        "binding": {
+                          "config": {
+                            "expression": "if({view.params.expanded}\u003d1,1,0)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "overflow": "hidden",
+                        "transition": "fill,flex,opacity 0.25s linear"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "config": {
+                        "script": "\t# If the user has logged-in, then log the user out.\n\t# If user has not logged-in, then call login().\n\t\n\tif self.session.props.auth.authenticated:\n\t\tsystem.perspective.logout()\n\telse:\n\t\tsystem.perspective.login()"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Logout Login Cont",
+                  "tooltip": {}
+                },
+                "position": {
+                  "basis": "35px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "meta.tooltip.enabled": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({view.params.expanded}\u003d0 \u0026\u0026 {..../User.custom.expanded}\u003dtrue,true,false)"
+                      },
+                      "type": "expr"
+                    }
+                  },
+                  "meta.tooltip.text": {
+                    "binding": {
+                      "config": {
+                        "path": "session.props.auth.authenticated"
+                      },
+                      "transforms": [
+                        {
+                          "code": "\tif value:\n\t\treturn \u0027LOG OUT\u0027\n\telse:\n\t\treturn \u0027LOG IN\u0027",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.classes": {
+                    "binding": {
+                      "config": {
+                        "expression": "if({session.props.theme}\u003d\u0027hvac\u0027 || {session.props.theme}\u003d\u0027hvac-warm\u0027,\r\n\u0027building-automation-demo/page/navigation/navigation-lg/general-button-light\u0027,\r\n\u0027building-automation-demo/page/general-button\u0027)"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "justify": "center",
+                  "style": {
+                    "marginTop": "10px",
+                    "overflow": "hidden",
+                    "transition": "border-color 0.25s linear"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Options"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.basis": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.expanded}\u003d1,\u002780px\u0027,\u00270px\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.expanded}\u003d1,1,0)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.pointer-events": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.expanded}\u003d1,\u0027auto\u0027,\u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "justify": "space-evenly",
+              "style": {
+                "marginLeft": "15px",
+                "marginRight": "15px",
+                "overflow": "hidden",
+                "paddingBottom": "5px",
+                "transition": "flex,opacity 0.25s linear"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "custom": {
+          "expanded": false
+        },
+        "meta": {
+          "name": "User"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.basis": {
+            "binding": {
+              "config": {
+                "expression": "if({this.custom.expanded}\u003d1,\u0027190px\u0027,\u002780px\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "session.props.theme"
+              },
+              "transforms": [
+                {
+                  "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#697077\u0027 if value\u003d\u003d\u0027hvac\u0027 else \u0027#736F6F\u0027\n\telse:\n\t\treturn \u0027var(--neutral-20)\u0027",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "justify": "space-between",
+          "style": {
+            "overflow": "hidden",
+            "transition": "flex 0.5s ease"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.backgroundColor": {
+        "binding": {
+          "config": {
+            "path": "session.props.theme"
+          },
+          "transforms": [
+            {
+              "code": "\tif value in [\u0027hvac-warm\u0027,\u0027hvac\u0027]:\n\t\treturn \u0027#878D96\u0027 if value\u003d\u003d\u0027hvac\u0027 else \u0027#8F8B8B\u0027\n\telse:\n\t\treturn \u0027var(--neutral-30)\u0027",
+              "type": "script"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-between",
+      "style": {
+        "overflow": "hidden",
+        "transition": "background-color 0.25s linear"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

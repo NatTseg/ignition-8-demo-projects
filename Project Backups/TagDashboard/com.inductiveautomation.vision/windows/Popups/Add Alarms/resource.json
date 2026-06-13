@@ -1,0 +1,19 @@
+{
+  "scope": "C",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "thumbnail.png",
+    "window.bin"
+  ],
+  "attributes": {
+    "xml-format-version": 1,
+    "lastModificationSignature": "02fa0b8b9d1fd9ae5f83de543eac52ae97f76de90ab6f79cd07c27af1625294d",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2019-04-19T23:46:25Z"
+    },
+    "parameter-names": "tagPath"
+  }
+}

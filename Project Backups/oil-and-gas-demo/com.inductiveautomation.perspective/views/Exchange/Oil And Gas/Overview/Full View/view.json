@@ -1,0 +1,775 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {
+    "params.loaded": {
+      "binding": {
+        "config": {
+          "expression": "true"
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    },
+    "params.title": {
+      "binding": {
+        "config": {
+          "expression": "\"Overview\""
+        },
+        "type": "expr"
+      },
+      "paramDirection": "output"
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 815,
+      "width": 960
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "40px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "background": "slategray",
+            "borderBottom": "5px ridge gray",
+            "color": "white",
+            "fontSize": "1.1em",
+            "overflow": "hidden",
+            "padding": "10px 5px"
+          },
+          "text": "Oil \u0026 Gas Demo - Remote Site Monitoring"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "basis": "220px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "expression": "{[default]Now Timer Tags/Now 1}"
+              },
+              "enabled": false,
+              "transforms": [
+                {
+                  "code": "\twells \u003d []\n\t\n#\twell \u003d []\n#\twell.append(\u0027Site\u0027)\n#\twell.append(\u0027Flow\u0027)\n#\twell.append(\u0027DP\u0027)\n#\twell.append(\u0027SP\u0027)\n#\twell.append(\u0027Temp\u0027)\n#\twell.append(\u0027Status\u0027)\n#\twells.append(well)\n\t\n\tsites \u003d [\u0027Site A\u0027,\u0027Site B\u0027,\u0027Site C\u0027,\u0027Site D\u0027]\n\tfor site in sites:\n\t\twell \u003d {}\n\t\twell[\u0027Site\u0027] \u003d site\n\t\twell[\u0027Flow\u0027] \u003d system.tag.readBlocking([\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/Flow\u0027 %site])\n\t\twell[\u0027DP\u0027] \u003d system.tag.readBlocking([\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/DP\u0027 %site])\n\t\twell[\u0027SP\u0027] \u003d system.tag.readBlocking([\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/SP\u0027 %site])\n\t\twell[\u0027Temp\u0027] \u003d system.tag.readBlocking([\u0027[default]Exchange/Oil And Gas Demo/Wells/%s/Temp\u0027 %site])\n\t\twell[\u0027Status\u0027] \u003d \u0027OK\u0027\n\t\twells.append(well)\n\t\n\treturn wells",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.data[0].DP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site A/DP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[0].Flow[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site A/Flow"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[0].SP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site A/SP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[0].Temp[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site A/Temp"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[1].DP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site B/DP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[1].Flow[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site B/Flow"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[1].SP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site B/SP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[1].Temp[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site B/Temp"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[2].DP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site C/DP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[2].Flow[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site C/Flow"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[2].SP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site C/SP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[2].Temp[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site C/Temp"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[3].DP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site D/DP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[3].Flow[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site D/Flow"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[3].SP[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site D/SP"
+              },
+              "type": "tag"
+            }
+          },
+          "props.data[3].Temp[0]": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Oil And Gas Demo/Wells/Site D/Temp"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Site",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Flow",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "DP",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "SP",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Temp",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Temp",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Status",
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "#62A3F6",
+                  "linecap": "round",
+                  "width": 5
+                },
+                "max": 100,
+                "track": {
+                  "color": "#DADADA",
+                  "linecap": "round",
+                  "width": 2
+                },
+                "value": {
+                  "color": "#7D7D7D",
+                  "show": true
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "#2196F3",
+                  "unselected": "#FFFFFF"
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            }
+          ],
+          "data": [
+            {
+              "DP": [
+                null
+              ],
+              "Flow": [
+                null
+              ],
+              "SP": [
+                null
+              ],
+              "Site": "Site A",
+              "Status": "OK",
+              "Temp": [
+                null
+              ]
+            },
+            {
+              "DP": [
+                null
+              ],
+              "Flow": [
+                null
+              ],
+              "SP": [
+                null
+              ],
+              "Site": "Site B",
+              "Status": "OK",
+              "Temp": [
+                null
+              ]
+            },
+            {
+              "DP": [
+                null
+              ],
+              "Flow": [
+                null
+              ],
+              "SP": [
+                null
+              ],
+              "Site": "Site C",
+              "Status": "OK",
+              "Temp": [
+                null
+              ]
+            },
+            {
+              "DP": [
+                null
+              ],
+              "Flow": [
+                null
+              ],
+              "SP": [
+                null
+              ],
+              "Site": "Site D",
+              "Status": "OK",
+              "Temp": [
+                null
+              ]
+            }
+          ],
+          "enableFiltering": true,
+          "enableHead": false,
+          "pager": {
+            "bottom": false
+          },
+          "rows": {
+            "style": {
+              "color": "black"
+            }
+          },
+          "selection": {
+            "enableRowSelection": false
+          },
+          "style": {
+            "background": "black",
+            "border": "5px ridge gray",
+            "height": "200px",
+            "margin": "10px 20px 10px 20px",
+            "maxHeight": "value"
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "basis": "410px",
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "params": {
+            "loaded": true,
+            "title": "Map"
+          },
+          "path": "Exchange/Oil And Gas/Map/Mobile View",
+          "style": {
+            "border": "5px ridge gray",
+            "height": "value",
+            "margin": "0px 20px 20px 20px"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

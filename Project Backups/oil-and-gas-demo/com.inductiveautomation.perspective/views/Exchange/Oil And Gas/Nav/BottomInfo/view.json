@@ -1,0 +1,122 @@
+{
+  "custom": {},
+  "params": {
+    "size": "xl"
+  },
+  "propConfig": {
+    "params.size": {
+      "paramDirection": "input"
+    },
+    "props.defaultSize.height": {
+      "binding": {
+        "config": {
+          "path": "view.params.size"
+        },
+        "transforms": [
+          {
+            "code": "\treturn 30 if value in [\u0027xs\u0027, \u0027s\u0027] else 50",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 582
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Date"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "dateFormat(now(60000), \"MMM d, h:mm a\")"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginRight": "20px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "UserName"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "{session.props.auth.authenticated}"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\treturn \"User: %s\" %(self.session.props.auth.user.firstName if value and self.session.props.auth.user.firstName else \"guest\")",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "textAlign": "right"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "UserInfo"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "fontSize": "1.4em",
+            "padding": "0px 10px 0px 10px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "alignContent": "center",
+      "alignItems": "center",
+      "style": {
+        "backgroundImage": "linear-gradient(180deg, rgba(83, 120, 149, 1), rgba(9, 32, 63, 1))",
+        "borderRadius": "0px 10px 0px 0px",
+        "borderRight": "5px ridge rgba(120,150,150,1)",
+        "borderTop": "5px ridge rgba(120,150,150,1)",
+        "color": "white",
+        "overflow": "hidden",
+        "padding": "10px 5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

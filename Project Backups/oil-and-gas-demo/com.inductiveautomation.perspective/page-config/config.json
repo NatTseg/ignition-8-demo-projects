@@ -1,0 +1,31 @@
+{
+  "pages": {
+    "/": {
+      "title": "",
+      "viewPath": "Exchange/Oil And Gas/Main View"
+    },
+    "/:view/:site": {
+      "title": "",
+      "viewPath": "Exchange/Oil And Gas/Main View"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom",
+    "top": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 100,
+        "viewParams": {},
+        "viewPath": "Exchange/Oil And Gas/Nav/TopFull"
+      }
+    ]
+  }
+}

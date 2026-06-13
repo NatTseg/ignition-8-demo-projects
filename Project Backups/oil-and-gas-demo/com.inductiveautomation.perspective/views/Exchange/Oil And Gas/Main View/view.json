@@ -1,0 +1,178 @@
+{
+  "custom": {
+    "view": "Overview"
+  },
+  "params": {
+    "site": "site-a",
+    "view": ""
+  },
+  "propConfig": {
+    "custom.view": {
+      "binding": {
+        "config": {
+          "path": "view.params.view"
+        },
+        "transforms": [
+          {
+            "code": "\tif value \u003d\u003d \"\":\n\t\treturn \"Overview\"\n\telif value \u003d\u003d \"productiontrends\":\n\t\treturn \"Production\"\n\telse:\n\t\treturn value.title()",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "params.site": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.view": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Large View"
+        },
+        "position": {
+          "size": "large"
+        },
+        "propConfig": {
+          "props.params.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.site"
+              },
+              "transforms": [
+                {
+                  "fallback": "rgba(93, 130, 159, 1)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "site-b",
+                      "output": "rgba(93, 130, 199, 1)"
+                    },
+                    {
+                      "input": "site-c",
+                      "output": "rgba(93, 160, 159, 1)"
+                    },
+                    {
+                      "input": "site-d",
+                      "output": "rgba(153, 130, 159, 1)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.site": {
+            "binding": {
+              "config": {
+                "path": "view.params.site"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn value.replace(\u0027-\u0027, \u0027 \u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "\"Exchange/Oil And Gas/\" + {view.custom.view} + \"/Full View\""
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "loaded": true,
+            "title": "Overview"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Small View"
+        },
+        "propConfig": {
+          "props.params.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.site"
+              },
+              "transforms": [
+                {
+                  "fallback": "rgba(93, 130, 159, 1)",
+                  "inputType": "scalar",
+                  "mappings": [
+                    {
+                      "input": "site-b",
+                      "output": "rgba(93, 130, 199, 1)"
+                    },
+                    {
+                      "input": "site-c",
+                      "output": "rgba(93, 160, 159, 1)"
+                    },
+                    {
+                      "input": "site-d",
+                      "output": "rgba(153, 130, 159, 1)"
+                    }
+                  ],
+                  "outputType": "scalar",
+                  "type": "map"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.site": {
+            "binding": {
+              "config": {
+                "path": "view.params.site"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn value.replace(\u0027-\u0027, \u0027 \u0027)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "\"Exchange/Oil And Gas/\" + {view.custom.view} + \"/Mobile View\""
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "loaded": true,
+            "title": "site a"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.breakpt"
+  }
+}
